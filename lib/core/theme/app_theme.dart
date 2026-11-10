@@ -63,35 +63,34 @@ class AppTheme {
           TargetPlatform.iOS: const _FixedLtrCupertinoPageTransitionsBuilder(),
         },
       );
-  // AnimeWitcher palette. The official Android app uses #EEC60A as
-  // colorAccent across interactive controls, tabs, selection states and progress.
-  static const Color animeWitcherAccent = Color(0xFFEEC60A);
-  static const Color animeWitcherAccentTransparent = Color(0xAEEEC60A);
+  // OtakuFlQma palette.
+  static const Color otakuFlQmaPrimary = Color(0xFFE60066);
+  static const Color otakuFlQmaPrimaryTransparent = Color(0xAEE60066);
+  static const Color otakuFlQmaSecondary = Color(0xFFFF1A75);
+  static const Color otakuFlQmaGold = Color(0xFFD4AF65);
 
-  // Premium Colors
-  static const Color background = Color(0xFF0F0F13); // Deep dark blue-grey
-  static const Color surface = Color(0xFF18181F);
-  static const Color surfaceHighlight = Color(0xFF22222E);
-  static const Color primary = animeWitcherAccent;
-  static const Color primaryVariant = animeWitcherAccent;
-  static const Color secondary = animeWitcherAccent;
+  // Dark Theme Colors
+  static const Color background = Color(0xFF101318);
+  static const Color surface = Color(0xFF181B22);
+  static const Color surfaceHighlight = Color(0xFF1E222B);
+  static const Color primary = otakuFlQmaPrimary;
+  static const Color primaryVariant = otakuFlQmaPrimary;
+  static const Color secondary = otakuFlQmaSecondary;
   static const Color error = Color(0xFFEF4444);
-  static const Color onSurface = Color(0xFFE5E7EB);
-  static const Color textSecondary = Color(0xFF9CA3AF);
+  static const Color onSurface = Color(0xFFFFFFFF);
+  static const Color textSecondary = Color(0xFFBEBBB5);
 
-  // Light Theme Colors
-  static const Color lightBackground = Color(0xFFF5F1EC); // primary surface
-  static const Color lightSurface = Color(0xFFFAF8F5); // surfaceContainerLowest
-  static const Color lightSurfaceHighlight = Color(
-    0xFFE8E2D8,
-  ); // surfaceContainerHigh
-  static const Color lightTextPrimary = Color(0xFF2C2521); // onSurface
-  static const Color lightTextSecondary = Color(0xFF5C5C5C); // onSurfaceVariant
+  // Light Theme Colors (kept for compatibility, adjusted for new palette)
+  static const Color lightBackground = Color(0xFFF5F1EC);
+  static const Color lightSurface = Color(0xFFFAF8F5);
+  static const Color lightSurfaceHighlight = Color(0xFFE8E2D8);
+  static const Color lightTextPrimary = Color(0xFF2C2521);
+  static const Color lightTextSecondary = Color(0xFF5C5C5C);
 
-  /// Icons and secondary text on the dark theme's pure-black surfaces.
-  static const Color darkIconNeutral = Color(0xFFD3D5DC);
+  /// Icons and secondary text on the dark theme's surfaces.
+  static const Color darkIconNeutral = Color(0xFFBEBBB5);
   // Kept as a compatibility alias for existing callers/tests.
-  static const Color lightCoral = animeWitcherAccent;
+  static const Color lightCoral = otakuFlQmaPrimary;
 
   static SnackBarThemeData snackBarThemeFor(ColorScheme colorScheme) {
     final isDark = colorScheme.brightness == Brightness.dark;
@@ -182,9 +181,9 @@ class AppTheme {
     outline: Color(0xFF3A3936),
   );
 
-  /// True black for OLED screens, with the app's gold.
+  /// True black for OLED screens, with the app's red accent.
   static const AppDarkPalette amoledPalette = AppDarkPalette(
-    accent: animeWitcherAccent,
+    accent: otakuFlQmaPrimary,
     onAccent: Color(0xFF2B2300),
     background: Color(0xFF000000),
     surface: Color(0xFF0A0A0A),
@@ -381,28 +380,22 @@ class AppTheme {
   }
 
   static ThemeData createDarkTheme(ColorScheme? _) {
-    // Keep the official AnimeWitcher accent fixed instead of allowing Android
-    // dynamic colors to replace it with a device-specific blue/purple palette.
+    // OtakuFlQma uses a red accent (#E60066) with custom dark surfaces.
     var colorScheme = ColorScheme.fromSeed(
-      seedColor: animeWitcherAccent,
+      seedColor: otakuFlQmaPrimary,
       brightness: Brightness.dark,
-      surface: const Color(0xFF000000),
+      surface: surface,
     );
 
-    // AnimeWitcher uses one gold accent for its interactive theme. Force the
-    // key Material roles to that same accent while preserving semantic errors.
+    // Force the key Material roles to the OtakuFlQma accent while preserving semantic errors.
     colorScheme = colorScheme.copyWith(
-      primary: animeWitcherAccent,
-      onPrimary: Colors.black,
-      secondary: animeWitcherAccent,
-      onSecondary: Colors.black,
-      tertiary: animeWitcherAccent,
+      primary: otakuFlQmaPrimary,
+      onPrimary: Colors.white,
+      secondary: otakuFlQmaSecondary,
+      onSecondary: Colors.white,
+      tertiary: otakuFlQmaGold,
       onTertiary: Colors.black,
-      surface: const Color(0xFF000000),
-      // The seeded value is a dim grey that all but disappears against a pure
-      // black background. Icons and secondary labels are drawn in it
-      // throughout the app, so it is lifted to something legible rather than
-      // colouring each of them by hand.
+      surface: surface,
       onSurfaceVariant: darkIconNeutral,
     );
 
@@ -411,15 +404,11 @@ class AppTheme {
       fontFamily: appFontFamily,
       pageTransitionsTheme: _pageTransitionsTheme,
       brightness: Brightness.dark,
-      // An icon that names no colour of its own still has to be visible on
-      // black; Material's default leans too dark for this background.
       iconTheme: const IconThemeData(color: darkIconNeutral),
-      scaffoldBackgroundColor: const Color(
-        0xFF000000,
-      ), // Pure Black Background for Screens
-      // Dialog Theme (Premium Grey)
+      scaffoldBackgroundColor: background,
+      // Dialog Theme
       dialogTheme: DialogThemeData(
-        backgroundColor: const Color(0xFF18181F),
+        backgroundColor: surface,
         surfaceTintColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(_surfaceRadius),
@@ -428,15 +417,15 @@ class AppTheme {
         titleTextStyle: _appFont(
           fontSize: 20,
           fontWeight: FontWeight.w600,
-          color: const Color(0xFFF9FAFB),
+          color: onSurface,
         ),
       ),
 
-      // Bottom Sheet Theme (Premium Grey)
+      // Bottom Sheet Theme
       bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: const Color(0xFF18181F),
+        backgroundColor: surface,
         surfaceTintColor: Colors.transparent,
-        modalBackgroundColor: const Color(0xFF18181F),
+        modalBackgroundColor: surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: const BorderRadius.vertical(
@@ -449,9 +438,9 @@ class AppTheme {
       popupMenuTheme: _popupMenuTheme(colorScheme),
       menuTheme: _menuTheme(colorScheme),
 
-      // Card Theme (Pitch Black for List Items)
+      // Card Theme
       cardTheme: const CardThemeData(
-        color: Color(0xFF000000),
+        color: surfaceHighlight,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -467,47 +456,47 @@ class AppTheme {
             displayLarge: _appFont(
               fontSize: 32,
               fontWeight: FontWeight.bold,
-              color: const Color(0xFFF9FAFB),
+              color: onSurface,
             ),
             displayMedium: _appFont(
               fontSize: 28,
               fontWeight: FontWeight.bold,
-              color: const Color(0xFFF9FAFB),
+              color: onSurface,
             ),
             displaySmall: _appFont(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: const Color(0xFFF9FAFB),
+              color: onSurface,
             ),
             headlineMedium: _appFont(
               fontSize: 24,
               fontWeight: FontWeight.w600,
-              color: const Color(0xFFF9FAFB),
+              color: onSurface,
             ),
             titleLarge: _appFont(
               fontSize: 20,
               fontWeight: FontWeight.w600,
-              color: const Color(0xFFF9FAFB),
+              color: onSurface,
             ),
             titleMedium: _appFont(
               fontSize: 16,
               fontWeight: FontWeight.w600,
-              color: const Color(0xFFF9FAFB),
+              color: onSurface,
             ),
-            bodyLarge: _appFont(fontSize: 16, color: const Color(0xFFE5E7EB)),
-            bodyMedium: _appFont(fontSize: 14, color: const Color(0xFF9CA3AF)),
-            bodySmall: _appFont(fontSize: 12, color: const Color(0xFF6B7280)),
+            bodyLarge: _appFont(fontSize: 16, color: onSurface),
+            bodyMedium: _appFont(fontSize: 14, color: textSecondary),
+            bodySmall: _appFont(fontSize: 12, color: textSecondary.withValues(alpha: 0.7)),
             labelLarge: _appFont(
               fontSize: 14,
               fontWeight: FontWeight.w600,
               letterSpacing: 0.1,
-              color: const Color(0xFFF9FAFB),
+              color: onSurface,
             ),
           ),
 
       // AppBar
       appBarTheme: AppBarTheme(
-        backgroundColor: const Color(0xFF000000),
+        backgroundColor: surface,
         elevation: 0,
         centerTitle: false,
         scrolledUnderElevation: 0,
@@ -517,9 +506,7 @@ class AppTheme {
 
       // Bottom Navigation
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: const Color(
-          0xFF000000,
-        ), // Pure Black matches background
+        backgroundColor: surface,
         selectedItemColor: colorScheme.primary,
         unselectedItemColor: colorScheme.onSurfaceVariant,
         type: BottomNavigationBarType.fixed,
@@ -536,7 +523,7 @@ class AppTheme {
       // Input Decoration
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: const Color(0xFF18181F), // Slightly lighter grey for fields
+        fillColor: surfaceHighlight,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide.none,
@@ -555,16 +542,12 @@ class AppTheme {
         ),
       ),
 
-      // Chip Theme — the light theme styles chips explicitly, so the dark
-      // theme has to as well or filter chips fall back to Material's default
-      // grey and stop reading as part of the gold accent language.
+      // Chip Theme
       chipTheme: ChipThemeData(
-        backgroundColor: const Color(0xFF18181F),
+        backgroundColor: surfaceHighlight,
         disabledColor: colorScheme.onSurface.withValues(alpha: 0.12),
         selectedColor: colorScheme.primary.withValues(alpha: 0.18),
         secondarySelectedColor: colorScheme.primary.withValues(alpha: 0.18),
-        // Semi-bold: at chip size the regular weight read as faint beside
-        // the page's other labels.
         labelStyle: TextStyle(
           color: colorScheme.onSurface,
           fontWeight: FontWeight.w600,
@@ -611,46 +594,44 @@ class AppTheme {
         foregroundColor: colorScheme.onPrimary,
       ),
 
-      // Ripple / Splash / Highlights — pointer feedback matters far more on
-      // desktop, where hover is the primary affordance for "this is tappable".
+      // Ripple / Splash / Highlights
       splashColor: colorScheme.primary.withValues(alpha: 0.1),
       hoverColor: colorScheme.primary.withValues(alpha: 0.06),
       highlightColor: colorScheme.primary.withValues(alpha: 0.05),
 
-      // Selection Text Theme — keeps the caret/selection gold instead of the
-      // default blue that Material picks for dark schemes.
+      // Selection Text Theme
       textSelectionTheme: TextSelectionThemeData(
         cursorColor: colorScheme.primary,
         selectionColor: colorScheme.primary.withValues(alpha: 0.3),
         selectionHandleColor: colorScheme.primary,
       ),
 
-      dividerColor: const Color(0xFF22222E),
+      dividerColor: surfaceHighlight,
       dividerTheme: const DividerThemeData(
         thickness: 1,
         space: 1,
-        color: Color(0xFF22222E),
+        color: surfaceHighlight,
       ),
     );
   }
 
   static ThemeData createLightTheme(ColorScheme? _) {
     final generatedScheme = ColorScheme.fromSeed(
-      seedColor: animeWitcherAccent,
+      seedColor: otakuFlQmaPrimary,
       brightness: Brightness.light,
     );
     final colorScheme = generatedScheme.copyWith(
-      primary: animeWitcherAccent,
-      onPrimary: Colors.black,
-      secondary: animeWitcherAccent,
-      onSecondary: Colors.black,
-      tertiary: animeWitcherAccent,
+      primary: otakuFlQmaPrimary,
+      onPrimary: Colors.white,
+      secondary: otakuFlQmaSecondary,
+      onSecondary: Colors.white,
+      tertiary: otakuFlQmaGold,
       onTertiary: Colors.black,
       surface: lightBackground,
       onSurface: lightTextPrimary,
       onSurfaceVariant: lightTextSecondary,
-      outline: const Color(0xFFC9BBA6), // Warm sand outline
-      outlineVariant: const Color(0xFFD9C9AE), // Soft warm tan outlineVariant
+      outline: const Color(0xFFC9BBA6),
+      outlineVariant: const Color(0xFFD9C9AE),
       error: const Color(0xFFBA1A1A),
       onError: Colors.white,
       surfaceContainerLowest: lightSurface,

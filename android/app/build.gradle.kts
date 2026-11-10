@@ -9,9 +9,9 @@ plugins {
 }
 
 android {
-    namespace = "com.animewitcher.app"
+    namespace = "com.otakuflqma.app"
     compileSdk = rootProject.extra["projectCompileSdk"] as Int
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.animewitcher.app"
+        applicationId = "com.otakuflqma.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

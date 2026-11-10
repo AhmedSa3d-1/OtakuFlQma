@@ -470,7 +470,7 @@ class _MyAppState extends ConsumerState<MyApp>
           scaffoldMessengerKey: ref
               .read(notificationServiceProvider)
               .messengerKey,
-          title: 'AnimeWitcher',
+          title: 'OtakuFlQma',
           debugShowCheckedModeBanner: false,
           scrollBehavior: const MaterialScrollBehavior().copyWith(
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
@@ -552,7 +552,7 @@ class _MyAppState extends ConsumerState<MyApp>
           rootWidget = PlatformMenuBar(
             menus: <PlatformMenuItem>[
               PlatformMenu(
-                label: 'AnimeWitcher',
+                label: 'OtakuFlQma',
                 menus: <PlatformMenuItem>[
                   if (PlatformProvidedMenuItem.hasMenu(
                     PlatformProvidedMenuItemType.about,
