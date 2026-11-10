@@ -619,7 +619,7 @@ class _SubtitleSyncDialogState extends ConsumerState<SubtitleSyncDialog> {
                                 english: 'Subtitle delay',
                                 arabic: 'تأخير الترجمة',
                               ),
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: HotstarPlayerStyle.primaryText,
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
@@ -693,12 +693,12 @@ class _SubtitleSyncDialogState extends ConsumerState<SubtitleSyncDialog> {
                                   ),
                                   decoration: InputDecoration(
                                     hintText: "1000 ms",
-                                    hintStyle: TextStyle(color: Colors.white30),
-                                    contentPadding: EdgeInsets.symmetric(
+                                    hintStyle: const TextStyle(color: Colors.white30),
+                                    contentPadding: const EdgeInsets.symmetric(
                                       vertical: 8,
                                     ),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
+                                    enabledBorder: const UnderlineInputBorder(
+                                      borderSide: const BorderSide(
                                         color: Colors.white38,
                                       ),
                                     ),

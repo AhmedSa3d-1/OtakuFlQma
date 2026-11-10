@@ -53,8 +53,9 @@ class MultimediaCardLayout {
     BuildContext context, {
     double fallback = 16,
   }) {
-    if (context.isHandsetLandscape)
+    if (context.isHandsetLandscape) {
       return handsetLandscapeGridHorizontalPadding;
+    }
     if (context.isHandset) return handsetPortraitGridHorizontalPadding;
     return fallback;
   }

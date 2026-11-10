@@ -357,7 +357,7 @@ class _CharactersScreenState extends ConsumerState<CharactersScreen>
                   FilterStyleTabBar(
                     controller: _tabController,
                     isScrollable: false,
-                    tabs: [
+                    tabs: const [
                       FilterStyleTab(
                         label: 'الشخصيات',
                         icon: Icons.groups_rounded,
@@ -482,7 +482,7 @@ class _CharactersScreenState extends ConsumerState<CharactersScreen>
       );
     }
     if (_favorites.isEmpty) {
-      return _CharactersStatus(
+      return const _CharactersStatus(
         message: 'لا توجد شخصيات في المفضلة',
         icon: Icons.favorite_border_rounded,
       );

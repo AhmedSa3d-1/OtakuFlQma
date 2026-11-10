@@ -263,9 +263,9 @@ class _AppRootState extends State<AppRoot> {
         child: DynamicColorBuilder(
           builder: (lightDynamic, darkDynamic) {
             const color = AppTheme.otakuFlQmaPrimary;
-            return ColoredBox(
+            return const ColoredBox(
               color: Colors.black,
-              child: Center(child: AppLoadingIndicator(color: color)),
+              child: const Center(child: const AppLoadingIndicator(color: color)),
             );
           },
         ),
@@ -585,35 +585,35 @@ class _MyAppState extends ConsumerState<MyApp>
                     ),
                     onSelected: () {},
                   ),
-                  PlatformMenuItemGroup(
+                  const PlatformMenuItemGroup(
                     members: <PlatformMenuItem>[
-                      PlatformMenuItem(
+                      const PlatformMenuItem(
                         label: 'قص',
-                        shortcut: SingleActivator(
+                        shortcut: const SingleActivator(
                           LogicalKeyboardKey.keyX,
                           meta: true,
                         ),
                         onSelected: null,
                       ),
-                      PlatformMenuItem(
+                      const PlatformMenuItem(
                         label: 'نسخ',
-                        shortcut: SingleActivator(
+                        shortcut: const SingleActivator(
                           LogicalKeyboardKey.keyC,
                           meta: true,
                         ),
                         onSelected: null,
                       ),
-                      PlatformMenuItem(
+                      const PlatformMenuItem(
                         label: 'لصق',
-                        shortcut: SingleActivator(
+                        shortcut: const SingleActivator(
                           LogicalKeyboardKey.keyV,
                           meta: true,
                         ),
                         onSelected: null,
                       ),
-                      PlatformMenuItem(
+                      const PlatformMenuItem(
                         label: 'تحديد الكل',
-                        shortcut: SingleActivator(
+                        shortcut: const SingleActivator(
                           LogicalKeyboardKey.keyA,
                           meta: true,
                         ),

@@ -105,9 +105,9 @@ void main() {
     final otherId = logicalDownloadIdForMangaChapter(mangaId: 'manga-package', chapterId: 'other');
     final otherParent = taskIdForGeneration(otherId, 3);
     await File(p.join(otherDirectory.path, '0001.png')).writeAsBytes(tinyMangaPng);
-    await MangaChapterManifestV2(
+    await const MangaChapterManifestV2(
       version: 1, mangaId: 'manga-package', chapterId: 'other', pageCount: 2,
-      completedIndexes: const {0}, isComplete: false,
+      completedIndexes: {0}, isComplete: false,
     ).writeTo(otherDirectory);
     await f.store.put(f.record.copyWith(
       logicalId: otherId, taskId: otherParent, unitKey: 'other',
@@ -151,7 +151,7 @@ void main() {
       await f.downloader._status(child.taskId, TaskStatus.canceled);
       await _until(() async => f.manager.snapshotFor(f.logicalId)?.status == DownloadTransportStatus.missing);
       waiting = f.manager.start(request).then<DownloadTransportSnapshot?>(
-        (snapshot) => snapshot, onError: (Object _, StackTrace __) => null,
+        (snapshot) => snapshot, onError: (Object _, StackTrace _) => null,
       );
       await _until(() async => await f.store.get(request.logicalId) != null);
       expect((await f.store.get(request.logicalId))?.awaitingAdmission, isTrue,
@@ -474,9 +474,9 @@ final class _Fixture {
     final directory = await Directory.systemTemp.createTemp('aw-manga-package-owner-');
     final f = _Fixture(directory, _Downloader(), intent: intent, limit: limit);
     await File(p.join(directory.path, '0001.png')).writeAsBytes(tinyMangaPng);
-    await MangaChapterManifestV2(
+    await const MangaChapterManifestV2(
       version: 1, mangaId: 'manga-package', chapterId: 'chapter', pageCount: 2,
-      completedIndexes: const {0}, isComplete: false,
+      completedIndexes: {0}, isComplete: false,
     ).writeTo(directory);
     await f.store.put(f.record);
     return f;

@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 MultimediaItem _item(String title, MultimediaContentType type) => MultimediaItem(
   title: title,
-  url: 'https://example.test/' + title,
+  url: 'https://example.test/$title',
   posterUrl: '',
   contentType: type,
 );

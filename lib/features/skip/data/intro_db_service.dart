@@ -124,8 +124,8 @@ class IntroDbService implements SkipService {
         _endpoint,
         queryParameters: <String, dynamic>{
           if (tmdbId != null) 'tmdb_id': tmdbId else 'imdb_id': imdbId,
-          if (season != null) 'season': season,
-          if (episode != null) 'episode': episode,
+          'season': ?season,
+          'episode': ?episode,
         },
       );
 

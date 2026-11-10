@@ -916,7 +916,7 @@ void main() {
                     Text(
                       'ascending:${ref.watch(episodeSortAscendingProvider)}',
                     ),
-                    Expanded(child: MangaChapterList(chapters: chapters)),
+                    const Expanded(child: const MangaChapterList(chapters: chapters)),
                   ],
                 ),
               ),
@@ -950,7 +950,7 @@ void main() {
     final releaseSync = Completer<void>();
     final repository = MangaReadingRepository(
       _MemoryStorage(),
-      syncReadStates: (_, __, ___) async {
+      syncReadStates: (_, _, _) async {
         if (!syncStarted.isCompleted) syncStarted.complete();
         await releaseSync.future;
       },

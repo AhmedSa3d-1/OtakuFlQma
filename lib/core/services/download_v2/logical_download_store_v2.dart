@@ -170,7 +170,7 @@ final class _LogicalMutationQueue {
     final result = previous.catchError((_) {}).then((_) => action());
     final barrier = result.then<void>(
       (_) {},
-      onError: (Object _, StackTrace __) {},
+      onError: (Object _, StackTrace _) {},
     );
     _tails[key] = barrier;
     return result.whenComplete(() {

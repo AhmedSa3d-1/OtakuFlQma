@@ -24,7 +24,7 @@ void main() {
     final temp = await Directory.systemTemp.createTemp('aw-manga-pause-final-');
     addTearDown(() => temp.delete(recursive: true));
     await File('${temp.path}/0001.png').writeAsBytes(tinyMangaPng);
-    await MangaChapterManifestV2(
+    await const MangaChapterManifestV2(
       version: MangaChapterManifestV2.currentVersion, mangaId: 'm1', chapterId: '1',
       pageCount: 2, completedIndexes: {0, 1}, isComplete: true,
     ).writeTo(temp);
@@ -233,12 +233,12 @@ void main() {
     final temp = await Directory.systemTemp.createTemp('aw_manga_complete_');
     addTearDown(() => temp.delete(recursive: true));
 
-    await MangaChapterManifestV2(
+    await const MangaChapterManifestV2(
       version: MangaChapterManifestV2.currentVersion,
       mangaId: 'm1',
       chapterId: '1',
       pageCount: 2,
-      completedIndexes: const <int>{0, 1},
+      completedIndexes: <int>{0, 1},
       isComplete: true,
     ).writeTo(temp);
     await File('${temp.path}/0001.webp').writeAsBytes(tinyMangaPng);
@@ -337,12 +337,12 @@ void main() {
     final temp = await Directory.systemTemp.createTemp('aw_manga_preserve_');
     addTearDown(() => temp.delete(recursive: true));
 
-    await MangaChapterManifestV2(
+    await const MangaChapterManifestV2(
       version: MangaChapterManifestV2.currentVersion,
       mangaId: 'm2',
       chapterId: '2',
       pageCount: 2,
-      completedIndexes: const <int>{0, 1},
+      completedIndexes: <int>{0, 1},
       isComplete: true,
     ).writeTo(temp);
     final firstPage = File('${temp.path}/0001.webp');

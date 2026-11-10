@@ -127,16 +127,16 @@ Future<_Harness> _pump(
                 onTap: () {},
               ),
           ],
-          child: Scaffold(
+          child: const Scaffold(
             body: Stack(
               children: [
-                const Positioned.fill(
+                Positioned.fill(
                   child: ColoredBox(
                     key: ValueKey<String>('page'),
                     color: Colors.black,
                   ),
                 ),
-                Positioned(top: 20, left: 12, child: const AppSideMenuButton()),
+                Positioned(top: 20, left: 12, child: AppSideMenuButton()),
               ],
             ),
           ),

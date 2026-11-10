@@ -66,29 +66,25 @@ final class DownloadStartRequestV2 {
 /// and the generation fence that rejects stale package callbacks.
 final class DownloadManagerV2 {
   DownloadManagerV2({
-    required LogicalDownloadStoreV2 store,
+    required this._store,
     required BackgroundDownloaderGateway gateway,
-    required DownloadSourceResolverV2 sourceResolver,
+    required this._sourceResolver,
     DownloadIntegrityVerifierV2? integrityVerifier,
-    MangaChapterPageResolverV2? mangaChapterPageResolver,
+    this._mangaChapterPageResolver,
     DownloadDiagnosticsV2? diagnostics,
     Iterable<DownloadPresentationObserverV2> presentationObservers =
         const <DownloadPresentationObserverV2>[],
-    NativeParallelPauseReadinessV2? parallelPauseReadiness,
+    this._parallelPauseReadiness,
     int Function()? maxConcurrentDownloads,
     int Function()? nowMillis,
-  }) : _store = store,
-       _gateway = gateway,
-       _sourceResolver = sourceResolver,
+  }) : _gateway = gateway,
        _integrityVerifier =
            integrityVerifier ?? const DownloadIntegrityVerifierV2(),
-       _mangaChapterPageResolver = mangaChapterPageResolver,
        _diagnostics = diagnostics ?? const NoopDownloadDiagnosticsV2(),
        _presentationObservers =
            List<DownloadPresentationObserverV2>.unmodifiable(
              presentationObservers,
            ),
-       _parallelPauseReadiness = parallelPauseReadiness,
        _maxConcurrentDownloads =
            maxConcurrentDownloads ?? (() => kDownloadConcurrencyMax),
        _nowMillis = nowMillis ?? (() => DateTime.now().millisecondsSinceEpoch);
@@ -280,7 +276,9 @@ final class DownloadManagerV2 {
         for (final recovered in rehydrated) {
           final identity = parseDownloadTaskIdentityV2(recovered.taskId);
           if (identity == null || identity.logicalId != record.logicalId ||
-              identity.generation >= record.generation) continue;
+              identity.generation >= record.generation) {
+            continue;
+          }
           olderParents[identity.generation] = taskIdForGeneration(
             identity.logicalId, identity.generation,
           );
@@ -861,8 +859,10 @@ final class DownloadManagerV2 {
           _snapshots[logicalId] = base;
           _recordDiagnostic(logicalId, base);
           _scheduleAdmissionPromotion();
-          if (base.status == DownloadTransportStatus.complete) return record.mediaKind == DownloadMediaKind.mangaChapter
+          if (base.status == DownloadTransportStatus.complete) {
+            return record.mediaKind == DownloadMediaKind.mangaChapter
               ? (_snapshots[logicalId] ?? base) : base;
+          }
           throw StateError(
             'Download did not pause safely; existing progress was preserved',
           );
@@ -1544,7 +1544,7 @@ final class DownloadManagerV2 {
     // The stored future is awaited at promotion; attach a swallowing
     // listener now so a failed prefetch is never an unhandled error. The
     // failure itself is retried fresh at promotion (see _resolveMangaPages).
-    unawaited(pages.then((_) {}, onError: (Object _, StackTrace __) {}));
+    unawaited(pages.then((_) {}, onError: (Object _, StackTrace _) {}));
     _mangaPagePrefetches[request.logicalId] = (
       pages: pages,
       startedAtMillis: _nowMillis(),
@@ -1771,8 +1771,9 @@ final class DownloadManagerV2 {
             } catch (_) {
               final current = await _store.get(latest.logicalId);
               if (current == null ||
-                  current.intent == DownloadUserIntent.failed)
+                  current.intent == DownloadUserIntent.failed) {
                 return _AdmissionAttempt.promoted;
+              }
               final failedRecord = current.copyWith(
                 intent: DownloadUserIntent.failed,
                 awaitingAdmission: false,
@@ -2670,7 +2671,7 @@ final class DownloadManagerV2 {
         ...records.where(
           (record) => record.intent == DownloadUserIntent.canceled,
         ),
-        if (removed != null) removed,
+        ?removed,
       ]) {
         final destination = (await _destinationFile(record.destinationPath))
             .path;
@@ -2735,8 +2736,9 @@ final class DownloadManagerV2 {
       final normalizedRoot = p.normalize(p.absolute(root));
       if (!p.isWithin(normalizedRoot, destination)) continue;
       if (await FileSystemEntity.type(normalizedRoot, followLinks: false) !=
-          FileSystemEntityType.directory)
+          FileSystemEntityType.directory) {
         continue;
+      }
       // Both lexical and resolved containment must hold. A chapter symlink
       // cannot grant authority over an unrelated directory or the media root.
       final canonicalRoot = await Directory(normalizedRoot)
@@ -2751,8 +2753,9 @@ final class DownloadManagerV2 {
         if (manifest == null ||
             mangaRecord == null ||
             manifest.mangaId != mangaRecord.mediaId ||
-            manifest.chapterId != mangaRecord.unitKey)
+            manifest.chapterId != mangaRecord.unitKey) {
           return;
+        }
         await directory.delete(recursive: true);
         return;
       }
@@ -2826,7 +2829,9 @@ final class DownloadManagerV2 {
       final match = RegExp(r'^([0-9]+)\.[^.]+$').firstMatch(p.basename(entity.path));
       final page = match == null ? null : int.tryParse(match.group(1)!);
       if (page == null || page <= 0 || page > manifest.pageCount ||
-          valid.containsKey(page - 1)) continue;
+          valid.containsKey(page - 1)) {
+        continue;
+      }
       final index = page - 1;
       if (checkpointOnly && !manifest.completedIndexes.contains(index)) continue;
       if (await manifest.isPageValid(index, entity)) {
@@ -3014,8 +3019,9 @@ final class DownloadManagerV2 {
               record.taskId != snapshot.taskId ||
               record.intent == DownloadUserIntent.canceled ||
               record.intent == DownloadUserIntent.failed ||
-              record.completedAtMillis != null)
+              record.completedAtMillis != null) {
             return;
+          }
           await _persistFailure(record, snapshot);
         }),
       );
@@ -3276,7 +3282,9 @@ final class DownloadManagerV2 {
       if (!await directory.exists()) return {};
       final manifest = await MangaChapterManifestV2.readFrom(directory);
       if (manifest == null || manifest.mangaId != record.mediaId ||
-          manifest.chapterId != record.unitKey || manifest.pageCount <= 0) return {};
+          manifest.chapterId != record.unitKey || manifest.pageCount <= 0) {
+        return {};
+      }
       final files = await _verifiedMangaPageFiles(directory, manifest);
       return {
         for (final index in files.keys)
@@ -3383,7 +3391,9 @@ final class DownloadManagerV2 {
           );
         } catch (error) {
           if (renewableHandle is SourceRenewingDownloadTransportHandleV2 &&
-              await _yieldSourceRenewalToStop(record, renewableHandle!)) return;
+              await _yieldSourceRenewalToStop(record, renewableHandle!)) {
+            return;
+          }
           final current = await _store.get(logicalId);
           // The fresh start may already have saved this as an unknown failure;
           // it is the expired source that failed, and the UI says so.
@@ -3663,7 +3673,7 @@ final class _KeyedCommandQueue<K> {
     final result = previous.catchError((Object _) {}).then((_) => action());
     final barrier = result.then<void>(
       (_) {},
-      onError: (Object _, StackTrace __) {},
+      onError: (Object _, StackTrace _) {},
     );
     _tails[id] = barrier;
     return result.whenComplete(() {

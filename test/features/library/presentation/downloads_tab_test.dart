@@ -251,9 +251,9 @@ Widget _downloadsApp(
     bottomNavigationBar: withTaskbar
         ? const SizedBox(height: 80, child: ColoredBox(color: Colors.purple))
         : null,
-    body: RepaintBoundary(
-      key: ValueKey('downloads-tab-root'),
-      child: DownloadsTab(),
+    body: const RepaintBoundary(
+      key: const ValueKey('downloads-tab-root'),
+      child: const DownloadsTab(),
     ),
   );
   if (shellDirection != null) {
@@ -1463,13 +1463,13 @@ void main() {
             () => _StubDownloadsNotifier([waiting, running]),
           ),
           downloadProgressProvider.overrideWithValue({
-            running.task.metaData: DownloadProgressData(
+            running.task.metaData: const DownloadProgressData(
               taskId: 'ep3',
               progress: 0.18,
               status: TaskStatus.running,
               totalSize: 365400000,
             ),
-            waiting.task.metaData: DownloadProgressData(
+            waiting.task.metaData: const DownloadProgressData(
               taskId: 'ep4',
               progress: 0,
               status: TaskStatus.enqueued,

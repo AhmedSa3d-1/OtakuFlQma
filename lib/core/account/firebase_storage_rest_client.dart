@@ -128,8 +128,8 @@ String _multipartBoundary() {
 
 String? _downloadToken(dynamic raw) {
   final value = switch (raw) {
-    String value => value,
-    Iterable<dynamic> values when values.isNotEmpty => values.first.toString(),
+    final String value => value,
+    final Iterable<dynamic> values when values.isNotEmpty => values.first.toString(),
     _ => '',
   };
   final token = value.split(',').first.trim();

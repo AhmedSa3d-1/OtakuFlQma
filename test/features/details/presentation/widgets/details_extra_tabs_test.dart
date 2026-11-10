@@ -838,8 +838,8 @@ void main() {
     await tester.pumpWidget(
       _app(
         DetailsExtraTabs(
-          similar: AsyncError<List<MultimediaItem>>(
-            const AnimeWitcherSearchDisabledException(
+          similar: const AsyncError<List<MultimediaItem>>(
+            AnimeWitcherSearchDisabledException(
               animeWitcherSimilarSearchDisabledMessage,
             ),
             StackTrace.empty,

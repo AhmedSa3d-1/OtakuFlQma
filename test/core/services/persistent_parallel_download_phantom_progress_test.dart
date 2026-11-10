@@ -41,7 +41,7 @@ void main() {
       },
       recordForId: (id) async => records[id],
       onUpdate: (_) {},
-      onPartProgress: (_, __, progress) {
+      onPartProgress: (_, _, progress) {
         chunkProgresses.add(progress);
       },
       livePartIds: () async => <String>{},

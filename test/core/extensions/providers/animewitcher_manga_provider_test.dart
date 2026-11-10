@@ -1043,10 +1043,7 @@ void main() {
                 requestOptions: options,
                 statusCode: 200,
                 data:
-                    '<div class="reading-content">'
-                        '<div class="page-break"><img data-src="https://cdn.example/fresh-' +
-                    chapterLoads.toString() +
-                    '.webp"></div></div>',
+                    '<div class="reading-content"><div class="page-break"><img data-src="https://cdn.example/fresh-$chapterLoads.webp"></div></div>',
               ),
             );
             return;

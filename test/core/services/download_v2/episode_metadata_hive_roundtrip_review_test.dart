@@ -96,7 +96,7 @@ void main() {
           'url': 'show|ep2',
           'episode': 2,
           'serverName': label,
-          if (raw != null) 'serverNumber': raw,
+          'serverNumber': ?raw,
         });
         await storage.saveDownloadMetadata('selected', item, episode: source);
         final saved = await storage.getDownloadMetadata('selected');

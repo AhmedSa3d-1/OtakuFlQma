@@ -131,8 +131,9 @@ final class DownloadArtworkStoreV2 {
 
   Future<bool> _validImage(File file) async {
     if (await FileSystemEntity.type(file.path, followLinks: false) !=
-        FileSystemEntityType.file)
+        FileSystemEntityType.file) {
       return false;
+    }
     final length = await file.length();
     return length > 0 && length <= _maxBytes && await isMangaPageImageV2(file);
   }
@@ -202,8 +203,9 @@ final class DownloadArtworkStoreV2 {
     if (pending != null && pending.allowed()) {
       final result = await pending.future;
       if (!allowed()) return null;
-      if (result != null || candidates.every(pending.candidates.contains))
+      if (result != null || candidates.every(pending.candidates.contains)) {
         return result;
+      }
       if (identical(_writes[key], pending)) _writes.remove(key);
       return _ensure(
         logicalId: logicalId,
@@ -243,8 +245,9 @@ final class DownloadArtworkStoreV2 {
       if (!allowed() ||
           bytes == null ||
           bytes.isEmpty ||
-          bytes.length > _maxBytes)
+          bytes.length > _maxBytes) {
         return null;
+      }
       final directory = await _ownedDirectory(logicalId, create: true);
       if (!allowed() || directory == null) return null;
       if (staging == null) {
@@ -294,8 +297,9 @@ final class DownloadArtworkStoreV2 {
         final uri = Uri.tryParse(remote);
         if (uri == null ||
             (uri.scheme != 'https' && uri.scheme != 'http') ||
-            uri.host.isEmpty)
+            uri.host.isEmpty) {
           continue;
+        }
         try {
           final saved = await publishBytes(await _fetchLimited(uri, allowed));
           if (saved != null) return saved;
@@ -309,8 +313,9 @@ final class DownloadArtworkStoreV2 {
     } finally {
       if (staging != null) {
         try {
-          if (await _ownedStaging(logicalId, staging!))
+          if (await _ownedStaging(logicalId, staging!)) {
             await staging!.delete(recursive: true);
+          }
         } catch (_) {}
       }
     }
@@ -341,14 +346,16 @@ final class DownloadArtworkStoreV2 {
       if (!allowed() ||
           directory == null ||
           !p.equals(directory.path, target.parent.path) ||
-          !await _ownedStaging(logicalId, temporary.parent))
+          !await _ownedStaging(logicalId, temporary.parent)) {
         return null;
+      }
       final type = await localPathType(target.path);
       // Check after the last awaited stat, immediately before issuing rename.
       if (!allowed() ||
           (type != FileSystemEntityType.notFound &&
-              type != FileSystemEntityType.file))
+              type != FileSystemEntityType.file)) {
         return null;
+      }
       await _publishFile(temporary, target.path);
       if (allowed()) return target;
       // Keep the publication lock while removing our obsolete just-published
@@ -364,12 +371,13 @@ final class DownloadArtworkStoreV2 {
     });
     final barrier = operation.then<void>(
       (_) {},
-      onError: (Object _, StackTrace __) {},
+      onError: (Object _, StackTrace _) {},
     );
     _publications[logicalId] = barrier;
     return operation.whenComplete(() {
-      if (identical(_publications[logicalId], barrier))
+      if (identical(_publications[logicalId], barrier)) {
         _publications.remove(logicalId);
+      }
     });
   }
 
@@ -397,8 +405,9 @@ final class DownloadArtworkStoreV2 {
     });
     _deletions[logicalId] = operation;
     return operation.whenComplete(() {
-      if (identical(_deletions[logicalId], operation))
+      if (identical(_deletions[logicalId], operation)) {
         _deletions.remove(logicalId);
+      }
     });
   }
 
@@ -434,8 +443,9 @@ final class DownloadArtworkStoreV2 {
         if (file != null &&
             await file.exists() &&
             await file.length() <= _maxBytes &&
-            await isMangaPageImageV2(file))
+            await isMangaPageImageV2(file)) {
           return file;
+        }
       } catch (_) {}
     }
     return null;
@@ -458,8 +468,9 @@ final class DownloadArtworkStoreV2 {
         request.maxRedirects = 3;
         final response = await request.close();
         if (response.statusCode != HttpStatus.ok ||
-            response.contentLength > _maxBytes)
+            response.contentLength > _maxBytes) {
           return null;
+        }
         return _collectBytes(response);
       })().timeout(_fetchTimeout);
     } catch (_) {
@@ -495,8 +506,9 @@ bool downloadArtworkMetadataMatchesRecordV2(
       variant is! String ||
       variant.trim().isEmpty ||
       unit is! String ||
-      unit.trim().isEmpty)
+      unit.trim().isEmpty) {
     return false;
+  }
   final tmdb = rawItem['tmdbId'];
   final imdb = rawItem['imdbId'];
   final url = rawItem['url'];
@@ -510,8 +522,9 @@ bool downloadArtworkMetadataMatchesRecordV2(
   if (media.isEmpty ||
       media != record.mediaId ||
       unit.trim() != record.unitKey ||
-      variant.trim() != record.variantKey)
+      variant.trim() != record.variantKey) {
     return false;
+  }
   return logicalDownloadIdFor(
         animeId: media,
         episodeKey: unit,
@@ -538,12 +551,10 @@ final class DownloadArtworkSourceV2 {
 final class DownloadArtworkObserverV2
     implements DownloadPresentationObserverV2 {
   DownloadArtworkObserverV2({
-    required Future<DownloadArtworkSourceV2?> Function(LogicalDownloadRecordV2)
-    sourceFor,
+    required this._sourceFor,
     DownloadArtworkStoreV2? store,
     DateTime Function()? now,
-  }) : _sourceFor = sourceFor,
-       _store = store ?? downloadArtworkStoreV2,
+  }) : _store = store ?? downloadArtworkStoreV2,
        _now = now ?? DateTime.now;
 
   final Future<DownloadArtworkSourceV2?> Function(LogicalDownloadRecordV2)
@@ -564,20 +575,23 @@ final class DownloadArtworkObserverV2
   ) {
     if (_disposed ||
         record.mediaKind != DownloadMediaKind.videoEpisode ||
-        snapshot.taskId != record.taskId)
+        snapshot.taskId != record.taskId) {
       return Future<void>.value();
+    }
     final complete = record.completedAtMillis != null;
     if (!complete &&
         snapshot.status != DownloadTransportStatus.queued &&
         snapshot.status != DownloadTransportStatus.running &&
-        snapshot.status != DownloadTransportStatus.held)
+        snapshot.status != DownloadTransportStatus.held) {
       return Future<void>.value();
+    }
     final epoch = _store._epochFor(record.logicalId.value);
     final key =
         '${record.logicalId.value}:${record.generation}:$epoch:${complete ? 'complete' : 'active'}';
     final retryAt = _retryAfter[key];
-    if (retryAt != null && _now().isBefore(retryAt))
+    if (retryAt != null && _now().isBefore(retryAt)) {
       return Future<void>.value();
+    }
     if (!_seen.add(key)) return Future<void>.value();
     _retryAfter.remove(key);
     final job = _ArtworkJobV2(record, epoch, key);

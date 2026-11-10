@@ -177,8 +177,9 @@ String? _safeServerFilenameV2(String? value) {
       RegExp(
         r'^(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)',
         caseSensitive: false,
-      ).hasMatch(value))
+      ).hasMatch(value)) {
     return null;
+  }
   final bytes = utf8.encode(value);
   // Existing staging paths append ".assembling" to this leaf (11 bytes).
   if (bytes.length > 244 || utf8.decode(bytes) != value) return null;

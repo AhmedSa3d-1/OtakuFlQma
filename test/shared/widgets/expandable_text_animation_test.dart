@@ -16,11 +16,11 @@ void main() {
         'A very long story that needs several lines to render.';
 
     await tester.pumpWidget(
-      MaterialApp(
-        locale: const Locale('ar'),
+      const MaterialApp(
+        locale: Locale('ar'),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        home: const Scaffold(
+        home: Scaffold(
           body: SizedBox(
             width: 220,
             child: ExpandableText(

@@ -272,7 +272,7 @@ class _SeasonTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final labels = const <String>[
+    const labels = <String>[
       'السابق',
       'الحالي',
       'القادم',
@@ -324,7 +324,7 @@ class _OtherSeasonsList extends StatelessWidget {
     final grouped = _grouped();
     final years = grouped.keys.toList()..sort((a, b) => b.compareTo(a));
     if (years.isEmpty) {
-      return Center(child: Text('لا توجد مواسم أخرى'));
+      return const Center(child: const Text('لا توجد مواسم أخرى'));
     }
 
     const seasons = <String>['شتاء', 'ربيع', 'صيف', 'خريف'];

@@ -394,7 +394,7 @@ void main() {
     var service = await _signedInService(firestore, storage: storage);
     await service.syncAll();
 
-    var manga = storage.library.values.single;
+    final manga = storage.library.values.single;
     expect(manga.contentType, MultimediaContentType.manga);
     expect(manga.title, 'Manga One');
     expect(storage.categories[manga.url], LibraryCategory.watching.storageKey);

@@ -242,7 +242,7 @@ void main() {
       final chapter = Directory(p.join(title.path, 'Chapter'));
       await chapter.create(recursive: true);
       final manifestDirectory = symlink == 'manifest' ? outside : chapter;
-      await MangaChapterManifestV2(version: 1, mangaId: 'm1', chapterId: 'c1',
+      await const MangaChapterManifestV2(version: 1, mangaId: 'm1', chapterId: 'c1',
         pageCount: 1, completedIndexes: {}, isComplete: false).writeTo(manifestDirectory);
       if (symlink == 'manifest') {
         await Link(p.join(chapter.path, 'manifest.json')).create(p.join(outside.path, 'manifest.json'));
@@ -264,7 +264,7 @@ void main() {
       final page = File(p.join(temp.path, '0001.webp'));
       await page.writeAsBytes(tinyMangaPng);
       if (foreignManifest) {
-        await MangaChapterManifestV2(version: 1, mangaId: 'other', chapterId: 'other',
+        await const MangaChapterManifestV2(version: 1, mangaId: 'other', chapterId: 'other',
           pageCount: 1, completedIndexes: {0}, isComplete: true).writeTo(temp);
       }
       final starter = _FakePageStarter();
@@ -840,12 +840,12 @@ void main() {
     final temp = await Directory.systemTemp.createTemp('aw_manga_resume_');
     addTearDown(() => temp.delete(recursive: true));
 
-    await MangaChapterManifestV2(
+    await const MangaChapterManifestV2(
       version: MangaChapterManifestV2.currentVersion,
       mangaId: 'm1',
       chapterId: '20',
       pageCount: 3,
-      completedIndexes: const <int>{0},
+      completedIndexes: <int>{0},
       isComplete: false,
     ).writeTo(temp);
 

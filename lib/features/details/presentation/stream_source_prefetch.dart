@@ -76,7 +76,7 @@ class StreamSourcePrefetch {
     unawaited(
       future.then<void>(
         (_) {},
-        onError: (Object _, StackTrace __) {
+        onError: (Object _, StackTrace _) {
           // Only when it is still this future's entry: a later call may have
           // replaced it already, and that one deserves its own life.
           if (identical(_entries[episodeUrl]?.future, future)) {

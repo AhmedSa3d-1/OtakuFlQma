@@ -351,7 +351,7 @@ class _AnimeWitcherMyCommentsScreenState
         itemCount:
             _pager.items.length +
             (_pager.hasMore || _pager.loadingMore ? 1 : 0),
-        separatorBuilder: (_, __) => const SizedBox(height: 10),
+        separatorBuilder: (_, _) => const SizedBox(height: 10),
         itemBuilder: (context, index) {
           if (index >= _pager.items.length) {
             return const Padding(

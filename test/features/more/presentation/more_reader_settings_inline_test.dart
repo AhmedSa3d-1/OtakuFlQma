@@ -45,11 +45,11 @@ void main() {
           storageServiceProvider.overrideWithValue(MemoryStorageService()),
           mangaReaderSettingsProvider.overrideWith(_ReaderSettings.new),
         ],
-        child: MaterialApp(
-          locale: const Locale('ar'),
+        child: const MaterialApp(
+          locale: Locale('ar'),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
-          home: const MoreScreen(),
+          home: MoreScreen(),
         ),
       ),
     );

@@ -257,10 +257,11 @@ void main() {
 
   void expire(ParallelDownloadTask parent) {
     final child = native.remove('${parent.taskId}.part.1');
-    if (child == null)
+    if (child == null) {
       throw StateError(
         'Missing native: ${diagnostics.transportEvents.reversed.take(30).toList()}',
       );
+    }
     downloader.updatesController.add(
       TaskStatusUpdate(
         child,
@@ -386,8 +387,9 @@ Future<void> until(
 ]) async {
   final deadline = DateTime.now().add(const Duration(seconds: 5));
   while (!await predicate()) {
-    if (DateTime.now().isAfter(deadline))
+    if (DateTime.now().isAfter(deadline)) {
       throw TimeoutException('$reason was not reached');
+    }
     await Future<void>.delayed(const Duration(milliseconds: 10));
   }
 }

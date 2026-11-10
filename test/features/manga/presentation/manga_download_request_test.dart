@@ -44,7 +44,7 @@ void main() {
     const chapter = MangaChapter(id: '357', mangaId: 'm1', url: '/chapter', name: 'Chapter 357', number: 357);
     final id = logicalDownloadIdForMangaChapter(mangaId: 'm1', chapterId: '357');
     final oldPath = p.join(root.path, 'manga', 'Old title', 'الفصل 357-124733e7da94');
-    await MangaChapterManifestV2(version: 1, mangaId: 'm1', chapterId: '357',
+    await const MangaChapterManifestV2(version: 1, mangaId: 'm1', chapterId: '357',
       pageCount: 1, completedIndexes: {0}, isComplete: true).writeTo(Directory(oldPath));
     await File(p.join(oldPath, '0001.webp')).writeAsBytes([1, 2, 3]);
     final store = InMemoryLogicalDownloadStoreV2();

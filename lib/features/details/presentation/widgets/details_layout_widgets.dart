@@ -1026,13 +1026,13 @@ class DetailsDesktopEpisodeColumn extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: LayoutConstants.spacingMd),
+        const Padding(
+          padding: EdgeInsets.only(bottom: LayoutConstants.spacingMd),
           child: Wrap(
             spacing: 10,
             runSpacing: 10,
             crossAxisAlignment: WrapCrossAlignment.center,
-            children: const <Widget>[
+            children: <Widget>[
               EpisodeSearchButton(),
               EpisodeViewModeToggle(),
             ],

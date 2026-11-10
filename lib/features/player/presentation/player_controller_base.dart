@@ -4676,8 +4676,9 @@ class PlayerController extends Notifier<PlayerState> {
           // next re-fetch, audio/video stops (typically ~20 s into playback).
           await native.setProperty('cache-dir', tempDir.path);
         } catch (e) {
-          if (kDebugMode)
+          if (kDebugMode) {
             debugPrint('Failed to set cache-dir/cookies-file: $e');
+          }
         }
       }
 

@@ -32,7 +32,7 @@ Future<void> showTaskbarCustomizationDialog(
 
         return AlertDialog(
           surfaceTintColor: Colors.transparent,
-          title: Text('تخصيص شريط المهام'),
+          title: const Text('تخصيص شريط المهام'),
           content: SizedBox(
             width: contentWidth,
             height: maxHeight,

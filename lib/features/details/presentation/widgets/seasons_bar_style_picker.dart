@@ -29,7 +29,7 @@ Future<void> showSeasonsBarStylePicker(
               .toDouble();
           return AlertDialog(
             surfaceTintColor: Colors.transparent,
-            title: Text('شكل شريط المواسم'),
+            title: const Text('شكل شريط المواسم'),
             content: SizedBox(
               width: width,
               child: Column(
@@ -63,14 +63,14 @@ Future<void> showSeasonsBarStylePicker(
               if (!firstRun)
                 TextButton(
                   onPressed: () => Navigator.of(dialogContext).pop(),
-                  child: Text('إلغاء'),
+                  child: const Text('إلغاء'),
                 ),
               FilledButton(
                 onPressed: () {
                   ref.read(seasonsBarStyleProvider.notifier).select(selected);
                   Navigator.of(dialogContext).pop();
                 },
-                child: Text('تطبيق'),
+                child: const Text('تطبيق'),
               ),
             ],
           );

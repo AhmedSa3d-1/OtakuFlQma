@@ -85,7 +85,7 @@ class MoreScreen extends ConsumerWidget {
     const twoPaneMinimumShortestSide = 640.0;
     final size = MediaQuery.sizeOf(context);
     final headerTop = appPageHeaderContentTopInset(context);
-    final pageTitle = 'المزيد';
+    const pageTitle = 'المزيد';
     if (size.width >= twoPaneMinimumWidth &&
         size.shortestSide >= twoPaneMinimumShortestSide) {
       return Scaffold(
@@ -169,8 +169,8 @@ class MoreScreen extends ConsumerWidget {
       appBar: AppPageAppBar(
         title: pageTitle,
         canPop: false,
-        actions: <Widget>[
-          AppSideMenuButton(padding: EdgeInsetsDirectional.only(end: 12)),
+        actions: const <Widget>[
+          AppSideMenuButton(padding: const EdgeInsetsDirectional.only(end: 12)),
         ],
       ),
       body: ListView(
@@ -505,7 +505,7 @@ class _SettingsGroupPane extends ConsumerWidget {
   /// for the general group. The player is pictured in the first-launch setup
   /// only; its group, like the others, keeps the full width here.
   List<Widget> _previewsFor(BuildContext context, WidgetRef ref, int index) {
-    final caption = 'معاينة مباشرة';
+    const caption = 'معاينة مباشرة';
     final theme = ref.watch(appThemeStyleProvider);
     switch (index) {
       case 0:

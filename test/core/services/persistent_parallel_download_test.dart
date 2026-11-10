@@ -1691,8 +1691,9 @@ final class _FileProbeCounter extends IOOverrides {
 
   @override
   File createFile(String path) {
-    if (path.endsWith('.part'))
+    if (path.endsWith('.part')) {
       paths.update(path, (count) => count + 1, ifAbsent: () => 1);
+    }
     return super.createFile(path);
   }
 }

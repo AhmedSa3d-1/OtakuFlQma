@@ -179,7 +179,7 @@ class FirestoreRestClient {
           '$_documentsBase/${_encodedPath(collectionPath)}',
           queryParameters: <String, dynamic>{
             'pageSize': pageSize,
-            if (pageToken != null) 'pageToken': pageToken,
+            'pageToken': ?pageToken,
           },
           options: _options(idToken),
         );

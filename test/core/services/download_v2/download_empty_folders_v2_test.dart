@@ -28,7 +28,7 @@ void main() {
         final record = _record(destination, manga: manga);
         await f.store.put(record);
         if (manga) {
-          await MangaChapterManifestV2(
+          await const MangaChapterManifestV2(
             version: 1,
             mangaId: 'm1',
             chapterId: '357',

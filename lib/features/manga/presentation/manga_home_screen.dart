@@ -229,7 +229,7 @@ class _MangaHomeScreenState extends ConsumerState<MangaHomeScreen> {
                         child: FilledButton.tonalIcon(
                           onPressed: _reload,
                           icon: const Icon(Icons.refresh_rounded),
-                          label: Text('إعادة المحاولة'),
+                          label: const Text('إعادة المحاولة'),
                         ),
                       ),
                     )

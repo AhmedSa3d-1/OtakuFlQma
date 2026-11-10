@@ -24,7 +24,7 @@ class _FixedLtrCupertinoPageTransitionsBuilder extends PageTransitionsBuilder {
       textDirection: TextDirection.ltr,
       child: Builder(
         builder: (ltrContext) =>
-            CupertinoPageTransitionsBuilder().buildTransitions<T>(
+            const CupertinoPageTransitionsBuilder().buildTransitions<T>(
               route,
               ltrContext,
               animation,

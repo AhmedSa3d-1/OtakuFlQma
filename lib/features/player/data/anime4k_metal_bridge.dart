@@ -51,8 +51,7 @@ class Anime4kMetalTelemetry {
 /// runtime and maps native status values into the fail-closed Dart state used
 /// by backend routing.
 class Anime4kMetalBridge {
-  Anime4kMetalBridge({required Anime4kMetalNativeBindings bindings})
-    : _bindings = bindings;
+  Anime4kMetalBridge({required this._bindings});
 
   final Anime4kMetalNativeBindings _bindings;
 

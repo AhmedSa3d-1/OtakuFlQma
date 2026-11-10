@@ -462,8 +462,9 @@ class _AnimeWitcherAccountImageCropScreenState
       late final Uint8List pngBytes;
       try {
         final data = await rendered.toByteData(format: ui.ImageByteFormat.png);
-        if (data == null)
+        if (data == null) {
           throw const FormatException('Could not encode image.');
+        }
         pngBytes = data.buffer.asUint8List(
           data.offsetInBytes,
           data.lengthInBytes,

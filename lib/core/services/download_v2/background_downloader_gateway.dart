@@ -291,7 +291,9 @@ List<String> mangaChildTaskIdsForParentV2(
 ) {
   final parent = parseDownloadTaskIdentityV2(parentTaskId);
   if (parent == null || parent.pageIndex != null ||
-      !parent.logicalId.value.startsWith('manga_')) return [];
+      !parent.logicalId.value.startsWith('manga_')) {
+    return [];
+  }
   final ids = <String>[
     for (final record in records)
       if ((record.task.group == kDownloadV2SilentPackageGroup ||
@@ -373,10 +375,9 @@ final class PackageBackgroundDownloaderGateway
     Future<void> Function(String taskId)? retireDurableResumeCheckpoint,
     Future<void> Function(String taskId)? discardDurableResumeCheckpoint,
     DownloadNotificationPrefs Function()? notificationPreferences,
-    Future<void> Function()? initializePackage,
+    this._initializePackage,
     bool Function()? isIOS,
-    Future<DownloadRangeCapabilityV2> Function(DownloadTaskSpecV2 spec)?
-    rangeCapabilityProbe,
+    this._rangeCapabilityProbe,
     DownloadDiagnosticsV2? diagnostics,
   }) : _downloader = downloader ?? configuredFileDownloaderV2(),
        _retireDurableResumeCheckpoint = retireDurableResumeCheckpoint ??
@@ -385,9 +386,7 @@ final class PackageBackgroundDownloaderGateway
            (downloader == null ? discardConfiguredResumeCheckpointV2 : null),
        _notificationPreferences =
            notificationPreferences ?? (() => const DownloadNotificationPrefs()),
-       _initializePackage = initializePackage,
        _isIOS = isIOS ?? (() => Platform.isIOS),
-       _rangeCapabilityProbe = rangeCapabilityProbe,
        _diagnostics = diagnostics ?? const NoopDownloadDiagnosticsV2();
 
   final FileDownloader _downloader;
@@ -431,7 +430,7 @@ final class PackageBackgroundDownloaderGateway
     final attempt = _initializePackage?.call() ?? _initializeOnce();
     _initialization = attempt;
     unawaited(
-      attempt.catchError((Object _, StackTrace __) {
+      attempt.catchError((Object _, StackTrace _) {
         if (identical(_initialization, attempt)) {
           _initialization = null;
         }
@@ -804,8 +803,9 @@ final class PackageBackgroundDownloaderGateway
       if (parent == null ||
           parent.group != kDownloadV2DurableParallelGroup ||
           (exactTaskId != null && parent.taskId != exactTaskId) ||
-          await _downloader.database.recordForId(parent.taskId) != null)
+          await _downloader.database.recordForId(parent.taskId) != null) {
         continue;
+      }
       await _downloader.database.updateRecord(
         TaskRecord(
           parent,
@@ -1273,7 +1273,7 @@ final class PackageBackgroundDownloaderGateway
             update.status == TaskStatus.complete) {
           unawaited(
             _cleanupDurableChildTracking(update.task.taskId)
-                .catchError((Object _, StackTrace __) {}),
+                .catchError((Object _, StackTrace _) {}),
           );
         }
       },
@@ -2683,10 +2683,10 @@ final class _SelfSettlingPackageDownloadTransportHandle
         SelfSettlingParallelDownloadTransportHandleV2,
         CompletingDownloadTransportHandleV2 {
   _SelfSettlingPackageDownloadTransportHandle(
-    Transfer transfer,
-    FileDownloader downloader, {
-    required bool isIOS,
-  }) : super(transfer, downloader, isIOS: isIOS);
+    super.transfer,
+    super.downloader, {
+    required super.isIOS,
+  });
 
   @override
   Future<void> get completion => transfer.result.then<void>((_) {});

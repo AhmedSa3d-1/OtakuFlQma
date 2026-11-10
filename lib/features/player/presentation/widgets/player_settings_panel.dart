@@ -156,7 +156,7 @@ class _PlayerSettingsPanelState extends State<PlayerSettingsPanel> {
                     ...switch (_tab) {
                       _Tab.picture => [
                         if (widget.showAnime4k) ...[
-                          _RowLabel('Anime4K'),
+                          const _RowLabel('Anime4K'),
                           _Chips<Anime4kMode>(
                             values: [
                               for (final mode in Anime4kMode.values)

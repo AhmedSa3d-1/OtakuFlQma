@@ -109,10 +109,9 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
   AnimeWitcherNativeProvider(
     this._dio,
     this._settings, {
-    AnimeWitcherMalIdResolver? resolveAnimeByMalIds,
+    this._resolveAnimeByMalIds,
     bool Function()? isEcchiHidden,
-  }) : _resolveAnimeByMalIds = resolveAnimeByMalIds,
-       _isEcchiHidden = isEcchiHidden ?? _ecchiIsVisible;
+  }) : _isEcchiHidden = isEcchiHidden ?? _ecchiIsVisible;
 
   final Dio _dio;
   final SettingsRepository _settings;
@@ -409,8 +408,9 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
     if (value.containsKey('referenceValue')) {
       return value['referenceValue']?.toString() ?? '';
     }
-    if (value.containsKey('bytesValue'))
+    if (value.containsKey('bytesValue')) {
       return value['bytesValue']?.toString() ?? '';
+    }
     if (value.containsKey('geoPointValue')) return _map(value['geoPointValue']);
 
     final arrayValue = _map(value['arrayValue']);
@@ -3020,8 +3020,8 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
 
     final encodedSlug = Uri.encodeComponent(slug);
     final roots = <String>[
-      'https://manga-leko.net/tag/' + encodedSlug + '/',
-      'https://manga-leko.net/category/' + encodedSlug + '/',
+      'https://manga-leko.net/tag/$encodedSlug/',
+      'https://manga-leko.net/category/$encodedSlug/',
     ];
 
     for (final root in roots) {
@@ -3628,7 +3628,7 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
   }
 
   bool _isNewsHomeSection(_OfficialHomeSection section) {
-    final text = (section.title + ' ' + section.type + ' ' + section.indexName)
+    final text = ('${section.title} ${section.type} ${section.indexName}')
         .toLowerCase();
     return section.type == 'news' ||
         section.indexName.toLowerCase() == 'news' ||
@@ -4032,8 +4032,9 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
     for (final entry in overlay.entries) {
       final value = entry.value;
       if (value == null ||
-          _text(value).isEmpty && value is! Map && value is! List)
+          _text(value).isEmpty && value is! Map && value is! List) {
         continue;
+      }
       if (entry.key == 'details' && value is Map) {
         result['details'] = <String, dynamic>{
           ..._map(result['details']),
@@ -5283,8 +5284,9 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
   @override
   Future<List<Episode>> getEpisodes(String url) async {
     final route = _parseAnimeUrl(url);
-    if (route.animeId.isEmpty)
+    if (route.animeId.isEmpty) {
       throw StateError('AnimeWitcher anime id is missing');
+    }
     final records = await _episodeRecords(route.animeId);
     return records
         .map(
@@ -5332,9 +5334,7 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
           (record) => Episode(
             name: record.title,
             url:
-                safeEncodeUriComponent(route.animeId) +
-                '|' +
-                safeEncodeUriComponent(record.id),
+                '${safeEncodeUriComponent(route.animeId)}|${safeEncodeUriComponent(record.id)}',
             season: 1,
             episode: record.number,
             posterUrl: record.image.isEmpty ? null : record.image,
@@ -5367,7 +5367,7 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
       }
 
       final payload = await _getJson(
-        _aniZipUrl + '?mal_id=' + Uri.encodeQueryComponent('$malId'),
+        '$_aniZipUrl?mal_id=${Uri.encodeQueryComponent('$malId')}',
         timeout: _aniZipTimeout,
       );
       if (payload == null || _map(payload['episodes']).isEmpty) {
@@ -5386,9 +5386,7 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
           Episode(
             name: record.title,
             url:
-                safeEncodeUriComponent(route.animeId) +
-                '|' +
-                safeEncodeUriComponent(record.id),
+                '${safeEncodeUriComponent(route.animeId)}|${safeEncodeUriComponent(record.id)}',
             season: 1,
             episode: record.number,
             posterUrl: _useAniZipEpisodeImages && image.isNotEmpty
@@ -5439,10 +5437,12 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
   String _serverFamily(dynamic raw) {
     final value = raw is _ServerRecord ? raw.name : _text(raw);
     final name = value.trim().toUpperCase().replaceAll(RegExp(r'\s+'), ' ');
-    if (name == 'PD' || name == 'PIXELDRAIN' || name == 'PIXEL DRAIN')
+    if (name == 'PD' || name == 'PIXELDRAIN' || name == 'PIXEL DRAIN') {
       return 'PD';
-    if (name == 'ST' || name == 'STREAMTAPE' || name == 'STREAM TAPE')
+    }
+    if (name == 'ST' || name == 'STREAMTAPE' || name == 'STREAM TAPE') {
       return 'ST';
+    }
     if (name == 'MF' ||
         name == 'MF2' ||
         name == 'MD' ||
@@ -5638,7 +5638,9 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
         .replaceAll('-', '+')
         .replaceAll('_', '/');
     if (value.isEmpty) return '';
-    while (value.length % 4 != 0) value += '=';
+    while (value.length % 4 != 0) {
+      value += '=';
+    }
     try {
       return utf8.decode(base64.decode(value), allowMalformed: true).trim();
     } catch (_) {
@@ -5790,8 +5792,9 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
     if (uri == null || !uri.hasScheme) return '';
     var host = uri.host.toLowerCase();
     var endpoint = uri.pathSegments.isEmpty ? '' : uri.pathSegments.last;
-    if (_streamTapeNoiseMatches(host, 'streamtape.com'))
+    if (_streamTapeNoiseMatches(host, 'streamtape.com')) {
       host = 'streamtape.com';
+    }
     if (_streamTapeNoiseMatches(endpoint, 'get_video')) endpoint = 'get_video';
     final params = <String>[];
     var hasId = false;
@@ -5808,8 +5811,9 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
       if (key.toLowerCase() == 'id' && rest.isNotEmpty) hasId = true;
       params.add(index >= 0 ? '$key=$rest' : key);
     });
-    if (host != 'streamtape.com' || endpoint != 'get_video' || !hasId)
+    if (host != 'streamtape.com' || endpoint != 'get_video' || !hasId) {
       return '';
+    }
     return '${uri.scheme.toLowerCase()}://$host/$endpoint?${params.join('&')}';
   }
 
@@ -5896,7 +5900,9 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
   _ServerRecord? _decodeServerSource(String value) {
     if (!value.startsWith(_sourceTokenPrefix)) return null;
     var encoded = value.substring(_sourceTokenPrefix.length);
-    while (encoded.length % 4 != 0) encoded += '=';
+    while (encoded.length % 4 != 0) {
+      encoded += '=';
+    }
     try {
       final decoded = utf8.decode(base64Url.decode(encoded));
       final payload = jsonDecode(decoded);

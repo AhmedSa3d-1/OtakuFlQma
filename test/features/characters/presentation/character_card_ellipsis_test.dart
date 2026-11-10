@@ -9,15 +9,15 @@ void main() {
   ) async {
     const name = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
     await tester.pumpWidget(
-      MaterialApp(
-        home: Directionality(
+      const MaterialApp(
+        home: const Directionality(
           textDirection: TextDirection.rtl,
-          child: Center(
-            child: SizedBox(
+          child: const Center(
+            child: const SizedBox(
               width: 160,
               height: 280,
-              child: CharacterPosterCard(
-                character: AnimeWitcherCharacterHit(id: '1', name: name),
+              child: const CharacterPosterCard(
+                character: const AnimeWitcherCharacterHit(id: '1', name: name),
                 onTap: _noop,
               ),
             ),

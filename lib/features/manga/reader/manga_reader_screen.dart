@@ -986,15 +986,15 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialogContext) => AlertDialog(
-        content: Text('استخدام هذه الصورة كغلاف؟'),
+        content: const Text('استخدام هذه الصورة كغلاف؟'),
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.of(dialogContext).pop(false),
-            child: Text('إلغاء'),
+            child: const Text('إلغاء'),
           ),
           TextButton(
             onPressed: () => Navigator.of(dialogContext).pop(true),
-            child: Text('موافق'),
+            child: const Text('موافق'),
           ),
         ],
       ),
@@ -1010,11 +1010,11 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
           .setCover(widget.manga.url, file.uri.toString());
       if (!mounted) return;
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('تم تحديث الغلاف')));
+          .showSnackBar(const SnackBar(content: const Text('تم تحديث الغلاف')));
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('تعذر تحديث الغلاف')));
+          .showSnackBar(const SnackBar(content: const Text('تعذر تحديث الغلاف')));
     }
   }
 
@@ -1030,7 +1030,7 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('تعذرت مشاركة الصورة')));
+          .showSnackBar(const SnackBar(content: const Text('تعذرت مشاركة الصورة')));
     }
   }
 
@@ -1049,7 +1049,7 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('تعذر حفظ الصورة')));
+          .showSnackBar(const SnackBar(content: const Text('تعذر حفظ الصورة')));
     }
   }
 

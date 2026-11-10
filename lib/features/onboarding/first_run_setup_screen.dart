@@ -224,7 +224,7 @@ class _FirstRunSetupScreenState extends ConsumerState<FirstRunSetupScreen> {
       nextLabel: isLast ? 'ابدأ المشاهدة' : 'التالي',
       children: switch (step) {
         _Step.appearance => [
-          _Heading('الألوان'),
+          const _Heading('الألوان'),
           _Choices<AppThemeStyle>(
             values: AppThemeStyle.values,
             selected: themeStyle,
@@ -236,7 +236,7 @@ class _FirstRunSetupScreenState extends ConsumerState<FirstRunSetupScreen> {
           ),
           // Phones have no layout to choose: the bar and the side menu.
           if (_isDesktop) ...[
-            _Heading('شكل التطبيق'),
+            const _Heading('شكل التطبيق'),
             for (final style in appLayoutChoices(wide: true))
               _OptionTile(
                 selected: style == _effectiveLayout,
@@ -260,9 +260,9 @@ class _FirstRunSetupScreenState extends ConsumerState<FirstRunSetupScreen> {
               contentPadding: EdgeInsets.zero,
               dense: true,
               secondary: const Icon(Icons.menu_book_rounded),
-              title: Text(
+              title: const Text(
                 'قسم خاص للمانجا في الشريط',
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                 ),
@@ -350,7 +350,7 @@ class _FirstRunSetupScreenState extends ConsumerState<FirstRunSetupScreen> {
               onChanged: (value) => setState(() => _skipCredits = value),
             ),
           ],
-          _Heading('حلقات الفلر'),
+          const _Heading('حلقات الفلر'),
           _Choices<FillerBehaviour>(
             values: FillerBehaviour.values,
             selected: _filler,
@@ -397,7 +397,7 @@ class _FirstRunSetupScreenState extends ConsumerState<FirstRunSetupScreen> {
             FilledButton.tonalIcon(
               onPressed: _openSignIn,
               icon: const Icon(Icons.login_rounded),
-              label: Text('تسجيل الدخول'),
+              label: const Text('تسجيل الدخول'),
               style: FilledButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 shape: RoundedRectangleBorder(
@@ -557,7 +557,7 @@ class _StepPanel extends StatelessWidget {
                 borderRadius: BorderRadius.circular(99),
               ),
             ),
-            child: Text('رجوع'),
+            child: const Text('رجوع'),
           ),
           const SizedBox(width: 10),
         ],

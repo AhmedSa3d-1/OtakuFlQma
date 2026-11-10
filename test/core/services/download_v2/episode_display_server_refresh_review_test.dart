@@ -398,7 +398,7 @@ void main() {
         final launched = launcher.launch(context, _item, episode: _episode);
         await tester.pump();
         provider.pending.single.complete([
-          StreamResult(
+          const StreamResult(
             url: 'https://example.test/opaque',
             source: 'manual',
             requiresResolution: true,

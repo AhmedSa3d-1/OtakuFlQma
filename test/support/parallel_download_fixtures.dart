@@ -38,8 +38,9 @@ Future<bool> publishCompletedTestFile(
   if (await FileSystemEntity.type(target.path, followLinks: false) !=
           FileSystemEntityType.notFound ||
       !await source.exists() ||
-      await source.length() != expectedBytes)
+      await source.length() != expectedBytes) {
     return false;
+  }
   await source.rename(target.path);
   return true;
 }

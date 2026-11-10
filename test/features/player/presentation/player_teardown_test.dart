@@ -32,6 +32,7 @@ class _Native extends Fake implements NativePlayer {
   bool stopEntered = false;
   bool disposeEntered = false;
   bool stopped = false;
+  @override
   bool disposed = false;
 
   @override

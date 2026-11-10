@@ -123,8 +123,8 @@ class _ContinueWatchingCardState extends ConsumerState<ContinueWatchingCard> {
     final animePosterUrl = AppImageFallbacks.poster(item.posterUrl);
     final imageCandidates = <String>{
       if (hasEpisodes && episodePosterUrl != null) episodePosterUrl,
-      if (animeBannerUrl != null) animeBannerUrl,
-      if (animePosterUrl != null) animePosterUrl,
+      ?animeBannerUrl,
+      ?animePosterUrl,
     }.toList(growable: false);
     Widget buildImageCandidate(int index) {
       if (index >= imageCandidates.length) {

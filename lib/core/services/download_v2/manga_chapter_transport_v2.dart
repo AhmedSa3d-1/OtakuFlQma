@@ -415,7 +415,7 @@ final class _MangaChapterTransportHandle implements MangaChapterTransportHandleV
 
     final previous = _pageCompletionTail;
     final next = previous
-        .catchError((Object _, StackTrace __) {})
+        .catchError((Object _, StackTrace _) {})
         .then<void>((_) => _onPageSnapshot(index, generation, snapshot));
     _pageCompletionTail = next.catchError((Object error, StackTrace _) {
       if (_disposed || _canceled || generation != _generation || _current.isFinal) return;
@@ -872,7 +872,7 @@ final class _MangaChapterTransportHandle implements MangaChapterTransportHandleV
     _progressEmitTimer = null;
     await _releasePageHandles();
     // Only an already-issued checkpoint can overwrite a replacement's state.
-    await _manifestPublication?.catchError((Object _, StackTrace __) {});
+    await _manifestPublication?.catchError((Object _, StackTrace _) {});
     await _controller.close();
   }
 

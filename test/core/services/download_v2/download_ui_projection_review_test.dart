@@ -59,7 +59,7 @@ void main() {
         variantKey: '480p', destinationPath: file.path, sourceDescriptor: const {},
         allowPause: true, retries: 0, parallelChunks: 1,
       ));
-      container.listen(downloadsProvider, (_, __) {});
+      container.listen(downloadsProvider, (_, _) {});
       await container.read(downloadsProvider.future);
       for (var i = 0; i < 20; i++) { await Future<void>.delayed(Duration.zero); }
       expect(calls.where((call) => call.method == 'start'), isNotEmpty);
@@ -120,12 +120,12 @@ void main() {
       storageServiceProvider.overrideWithValue(storage),
     ]);
     try {
-      final record = await manager.start(DownloadStartRequestV2(
+      final record = await manager.start(const DownloadStartRequestV2(
         logicalId: logical, mediaId: 'show', unitKey: 'episode://cancel-timeout',
         variantKey: '480p', destinationPath: '/tmp/cancel-timeout-live-writer.mp4',
-        sourceDescriptor: const {}, allowPause: true, retries: 0, parallelChunks: 1,
+        sourceDescriptor: {}, allowPause: true, retries: 0, parallelChunks: 1,
       ));
-      container.listen(downloadsProvider, (_, __) {});
+      container.listen(downloadsProvider, (_, _) {});
       await container.read(downloadsProvider.future);
       final handle = gateway.handles[record.taskId]!;
       handle.onCancel = () async => throw TimeoutException('native acknowledgement');
@@ -163,7 +163,7 @@ void main() {
   testWidgets('paused intent exposes a live writer and refreshes progress without durable reads', (tester) async {
     final store = _CountingStore();
     const logical = DownloadLogicalId('paused-live-writer');
-    final record = LogicalDownloadRecordV2(
+    const record = LogicalDownloadRecordV2(
       schemaVersion: kLogicalDownloadSchemaVersionV2,
       logicalId: logical, mediaId: 'show', unitKey: 'episode://1',
       variantKey: '480p', generation: 1, taskId: 'paused-live-task',
@@ -189,7 +189,7 @@ void main() {
     ]);
     try {
       await pumpUntilFuture(tester, manager.initialize(), 'paused writer transport startup');
-      container.listen(downloadsProvider, (_, __) {});
+      container.listen(downloadsProvider, (_, _) {});
       await pumpUntilFuture(tester, container.read(downloadsProvider.future), 'paused writer downloads projection');
       await tester.pump();
       expect(manager.snapshotFor(logical)?.status, DownloadTransportStatus.running);
@@ -211,7 +211,7 @@ void main() {
     testWidgets('paused intent with ${withHandle ? 'paused' : 'missing'} transport remains paused and idle', (tester) async {
       final store = _CountingStore();
       const logical = DownloadLogicalId('genuinely-paused');
-      final record = LogicalDownloadRecordV2(
+      const record = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2, logicalId: logical,
         mediaId: 'show', unitKey: 'episode://paused', variantKey: '480p',
         generation: 1, taskId: 'genuinely-paused-task', intent: DownloadUserIntent.paused,
@@ -306,9 +306,9 @@ void main() {
       final manager = DownloadManagerV2(store: store, gateway: gateway, sourceResolver: StaticSourceResolverV2());
       ProviderContainer? container;
       try {
-        await manager.start(DownloadStartRequestV2(
+        await manager.start(const DownloadStartRequestV2(
           logicalId: logical, mediaId: 'show', unitKey: 'episode://frozen', variantKey: '480p',
-          destinationPath: '/tmp/frozen-generation.mp4', sourceDescriptor: const {},
+          destinationPath: '/tmp/frozen-generation.mp4', sourceDescriptor: {},
           allowPause: true, retries: 0, parallelChunks: 1,
         ));
         final original = (await store.get(logical))!;
@@ -347,9 +347,9 @@ void main() {
     final manager = DownloadManagerV2(store: store, gateway: gateway, sourceResolver: StaticSourceResolverV2());
     ProviderContainer? container;
     try {
-      await manager.start(DownloadStartRequestV2(
+      await manager.start(const DownloadStartRequestV2(
         logicalId: logical, mediaId: 'show', unitKey: 'episode://frozen-list', variantKey: '480p',
-        destinationPath: '/tmp/frozen-list-generation.mp4', sourceDescriptor: const {},
+        destinationPath: '/tmp/frozen-list-generation.mp4', sourceDescriptor: {},
         allowPause: true, retries: 0, parallelChunks: 1, expectedBytes: 100,
       ));
       final original = (await store.get(logical))!;
@@ -366,7 +366,7 @@ void main() {
         downloadManagerV2Provider.overrideWithValue(manager), logicalDownloadStoreV2Provider.overrideWithValue(store),
         storageServiceProvider.overrideWithValue(storage),
       ]);
-      container.listen(downloadsProvider, (_, __) {});
+      container.listen(downloadsProvider, (_, _) {});
       final row = (await container.read(downloadsProvider.future)).single;
       expect(row.id, original.taskId);
       expect(row.status, TaskStatus.paused);
@@ -383,7 +383,7 @@ void main() {
   test('logical-key metadata wins over a newer recycled task payload sameLogical=$sameLogical', () async {
     final store = InMemoryLogicalDownloadStoreV2();
     const logical = DownloadLogicalId('exact-metadata-variant');
-    final record = LogicalDownloadRecordV2(
+    const record = LogicalDownloadRecordV2(
       schemaVersion: kLogicalDownloadSchemaVersionV2, logicalId: logical,
       mediaId: 'show', unitKey: 'episode://metadata', variantKey: '480p',
       generation: 1, taskId: 'reused-metadata-task', intent: DownloadUserIntent.paused,
@@ -407,7 +407,7 @@ void main() {
       storageServiceProvider.overrideWithValue(storage),
     ]);
     try {
-      container.listen(downloadsProvider, (_, __) {});
+      container.listen(downloadsProvider, (_, _) {});
       final row = (await container.read(downloadsProvider.future)).single;
       expect(row.logicalId, logical.value);
       expect(row.item.title, 'Exact variant metadata');
@@ -423,7 +423,7 @@ void main() {
     test('unproven task-key metadata remains visible without artwork ownership declared=$declaredId', () async {
       final store = InMemoryLogicalDownloadStoreV2();
       const logical = DownloadLogicalId('legacy-visible-row');
-      final record = LogicalDownloadRecordV2(
+      const record = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2, logicalId: logical,
         mediaId: 'show', unitKey: 'episode://legacy', variantKey: '480p',
         generation: 1, taskId: 'legacy-visible-task', intent: DownloadUserIntent.paused,
@@ -433,7 +433,7 @@ void main() {
       final manager = DownloadManagerV2(store: store, gateway: _ReaddGateway(), sourceResolver: StaticSourceResolverV2());
       final storage = _DownloadMetadataStorage();
       storage.metadata[record.taskId] = {
-        if (declaredId != null) 'logicalId': declaredId,
+        'logicalId': ?declaredId,
         'item': MultimediaItem(title: 'Saved legacy row', url: 'show', posterUrl: '').toJson(),
       };
       final container = ProviderContainer(overrides: [
@@ -441,7 +441,7 @@ void main() {
         storageServiceProvider.overrideWithValue(storage),
       ]);
       try {
-        container.listen(downloadsProvider, (_, __) {});
+        container.listen(downloadsProvider, (_, _) {});
         final row = (await container.read(downloadsProvider.future)).single;
         expect(row.item.title, 'Saved legacy row');
         expect(row.logicalId, logical.value);

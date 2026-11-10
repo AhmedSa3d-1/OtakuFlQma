@@ -942,7 +942,7 @@ class _HomeHeroCarouselState extends ConsumerState<HomeHeroCarousel>
           // font face with the same semibold weight and line height.
           fontWeight: FontWeight.w600,
           height: 1.2,
-          shadows: [Shadow(color: Colors.black, blurRadius: 10)],
+          shadows: const [Shadow(color: Colors.black, blurRadius: 10)],
         ),
       ),
     );

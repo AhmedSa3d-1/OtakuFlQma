@@ -1137,8 +1137,9 @@ class _AppleNativeToolbarState extends State<_AppleNativeToolbar> {
     channel.setMethodCallHandler((call) async {
       if (call.method == 'pressed') {
         final index = call.arguments as int?;
-        if (index == null || index < 0 || index >= widget.buttons.length)
+        if (index == null || index < 0 || index >= widget.buttons.length) {
           return;
+        }
         widget.buttons[index].onPressed?.call();
         return;
       }

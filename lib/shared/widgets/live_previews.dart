@@ -619,7 +619,7 @@ class SeasonsBarPagePreview extends StatelessWidget {
 /// The player: a frame, its controls, what Anime4K does to the picture, and
 /// the skip button the player really shows.
 class PlayerSettingsPreview extends StatefulWidget {
-  const PlayerSettingsPreview({
+  const PlayerSettingsPreview({super.key, 
     required this.anime4k,
     required this.mode,
     required this.skipSegments,

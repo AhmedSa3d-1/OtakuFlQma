@@ -159,7 +159,7 @@ final class _FakeGateway implements BackgroundDownloaderGateway {
 final class _FakeHandle implements DownloadTransportHandle {
   _FakeHandle(this._current);
 
-  DownloadTransportSnapshot _current;
+  final DownloadTransportSnapshot _current;
   final StreamController<DownloadTransportSnapshot> _controller =
       StreamController<DownloadTransportSnapshot>.broadcast();
 

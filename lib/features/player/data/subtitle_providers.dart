@@ -17,12 +17,10 @@ class OpenSubtitlesProvider extends SubtitleProvider {
 
   OpenSubtitlesProvider(
     this._dio, {
-    String? username,
+    this._username,
     String? password,
-    String? apiKey,
-  }) : _username = username,
-       _password = password,
-       _apiKey = apiKey;
+    this._apiKey,
+  }) : _password = password;
 
   String get _effectiveApiKey =>
       (_apiKey != null && _apiKey!.isNotEmpty) ? _apiKey! : _defaultApiKey;
@@ -329,10 +327,8 @@ class SubDLProvider extends SubtitleProvider {
   String? _email;
   String? _password;
 
-  SubDLProvider(this._dio, {String? apiKey, String? email, String? password})
-    : _apiKey = apiKey,
-      _email = email,
-      _password = password;
+  SubDLProvider(this._dio, {this._apiKey, String? email, this._password})
+    : _email = email;
 
   String? get searchApiKey => _apiKey;
 
@@ -558,7 +554,7 @@ class SubSourceProvider extends SubtitleProvider {
   static const String baseUrlKeyless = "https://api.subsource.net/api";
   final String? _apiKey;
 
-  SubSourceProvider(this._dio, {String? apiKey}) : _apiKey = apiKey;
+  SubSourceProvider(this._dio, {this._apiKey});
 
   @override
   String get name => "SubSource";

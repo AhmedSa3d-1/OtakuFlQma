@@ -167,8 +167,8 @@ class DownloadContinuedProcessingService {
       'progress': progress.clamp(0.0, 1.0).toDouble(),
       'totalBytes': totalBytes,
       'transferredBytes': transferredBytes,
-      if (completedPages != null) 'completedPages': completedPages,
-      if (totalPages != null) 'totalPages': totalPages,
+      'completedPages': ?completedPages,
+      'totalPages': ?totalPages,
       'completedCount': completedCount,
       'batchTotal': batchTotal,
       'speedBytesPerSecond': speedBytesPerSecond,
@@ -203,8 +203,8 @@ class DownloadContinuedProcessingService {
       'progress': progress.clamp(0.0, 1.0).toDouble(),
       'totalBytes': totalBytes,
       'transferredBytes': transferredBytes,
-      if (completedPages != null) 'completedPages': completedPages,
-      if (totalPages != null) 'totalPages': totalPages,
+      'completedPages': ?completedPages,
+      'totalPages': ?totalPages,
       'completedCount': completedCount,
       'batchTotal': batchTotal,
       'speedBytesPerSecond': speedBytesPerSecond,
@@ -261,7 +261,7 @@ class DownloadContinuedProcessingService {
         onSessionLost?.call();
       }
     });
-    _updateTail = operation.then<void>((_) {}, onError: (Object _, StackTrace __) {});
+    _updateTail = operation.then<void>((_) {}, onError: (Object _, StackTrace _) {});
     return operation;
   }
 
@@ -367,8 +367,8 @@ class DownloadContinuedProcessingService {
           'sessionProgress': sessionProgress,
           'sessionTotalBytes': sessionTotalBytes,
           'sessionTransferredBytes': sessionTransferredBytes,
-          if (sessionCompletedPages != null) 'sessionCompletedPages': sessionCompletedPages,
-          if (sessionTotalPages != null) 'sessionTotalPages': sessionTotalPages,
+          'sessionCompletedPages': ?sessionCompletedPages,
+          'sessionTotalPages': ?sessionTotalPages,
           'sessionSpeedBytesPerSecond': sessionSpeedBytesPerSecond,
           'sessionCurrentIndex': sessionCurrentIndex,
           'multipartPlans': multipartPlans,
@@ -387,9 +387,7 @@ class DownloadContinuedProcessingService {
     // A lost reply is ambiguous: native may have durably accepted the write.
     // Retry the exact same version once. Native treats an equal version as an
     // idempotent acknowledgement, so this cannot advance or duplicate state.
-    if (accepted == null) {
-      accepted = await write(snapshotVersion);
-    }
+    accepted ??= await write(snapshotVersion);
     if (accepted == null) return null;
 
     if (accepted > _nativeQueueSnapshotVersion) {

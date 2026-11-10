@@ -92,7 +92,7 @@ void main() {
     );
     addTearDown(container.dispose);
 
-    container.listen<HomeState>(homeDataProvider, (_, __) {});
+    container.listen<HomeState>(homeDataProvider, (_, _) {});
     await _flush();
 
     final state = container.read(homeDataProvider);
@@ -112,7 +112,7 @@ void main() {
     );
     addTearDown(container.dispose);
 
-    container.listen<HomeState>(homeDataProvider, (_, __) {});
+    container.listen<HomeState>(homeDataProvider, (_, _) {});
     await _flush();
 
     // The anime rows are on screen while the manga is still coming.

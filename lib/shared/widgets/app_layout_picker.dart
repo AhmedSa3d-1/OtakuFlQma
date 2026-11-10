@@ -94,14 +94,14 @@ Future<void> showAppLayoutPicker(
               if (!firstRun)
                 TextButton(
                   onPressed: () => Navigator.of(dialogContext).pop(),
-                  child: Text('إلغاء'),
+                  child: const Text('إلغاء'),
                 ),
               FilledButton(
                 onPressed: () {
                   ref.read(appLayoutStyleProvider.notifier).select(selected);
                   Navigator.of(dialogContext).pop();
                 },
-                child: Text('تطبيق'),
+                child: const Text('تطبيق'),
               ),
             ],
           );

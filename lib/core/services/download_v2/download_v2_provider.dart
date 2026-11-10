@@ -119,11 +119,11 @@ final downloadManagerV2Provider = Provider<DownloadManagerV2>((ref) {
     connectivity
         .checkConnectivity()
         .then(recordNetworkPath)
-        .catchError((Object _, StackTrace __) {}),
+        .catchError((Object _, StackTrace _) {}),
   );
   final networkSubscription = connectivity.onConnectivityChanged.listen(
     recordNetworkPath,
-    onError: (Object _, StackTrace __) {},
+    onError: (Object _, StackTrace _) {},
   );
   final pauseReadiness = Platform.isIOS
       ? NativeParallelPauseReadinessV2()
@@ -154,8 +154,9 @@ final downloadManagerV2Provider = Provider<DownloadManagerV2>((ref) {
           !downloadArtworkMetadataMatchesRecordV2(metadata, record)) {
         metadata = await storage.getDownloadMetadata(record.taskId);
         if (metadata == null ||
-            !downloadArtworkMetadataMatchesRecordV2(metadata, record))
+            !downloadArtworkMetadataMatchesRecordV2(metadata, record)) {
           return null;
+        }
       }
       final item = metadata['item'];
       final episode = metadata['episode'];

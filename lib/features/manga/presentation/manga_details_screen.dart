@@ -165,7 +165,7 @@ class _MangaDetailsScreenState extends ConsumerState<MangaDetailsScreen>
     ];
     if (current != null) {
       items.add(
-        AppleNativeMenuItem(
+        const AppleNativeMenuItem(
           value: _removeLibraryAction,
           label: 'إزالة من القائمة',
           systemImage: 'trash',
@@ -814,41 +814,6 @@ class _MangaDetailsScreenState extends ConsumerState<MangaDetailsScreen>
           currentCategory: currentCategory,
         ),
         story: state.details.hasError ? null : _heroStory(context, item),
-        child: Column(
-          key: const ValueKey<String>('manga-details-wide'),
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Material(
-              color: Colors.transparent,
-              child: InkWell(
-                key: const ValueKey<String>('manga-chapters-toggle'),
-                onTap: _toggleChapters,
-                borderRadius: BorderRadius.circular(14),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: Row(
-                    children: <Widget>[
-                      Text(
-                        chapterTitle,
-                        style: Theme.of(context).textTheme.titleLarge
-                            ?.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(width: 6),
-                      Icon(
-                        _chaptersExpanded
-                            ? Icons.keyboard_arrow_up_rounded
-                            : Icons.keyboard_arrow_down_rounded,
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
-                      ),
-                      const Spacer(),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 12),
-          ],
-        ),
         // The chapters are built as they scroll into view.
         slivers: <Widget>[
           if (_chaptersVisible)
@@ -922,6 +887,41 @@ class _MangaDetailsScreenState extends ConsumerState<MangaDetailsScreen>
             ),
           ),
         ],
+        child: Column(
+          key: const ValueKey<String>('manga-details-wide'),
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Material(
+              color: Colors.transparent,
+              child: InkWell(
+                key: const ValueKey<String>('manga-chapters-toggle'),
+                onTap: _toggleChapters,
+                borderRadius: BorderRadius.circular(14),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        chapterTitle,
+                        style: Theme.of(context).textTheme.titleLarge
+                            ?.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(width: 6),
+                      Icon(
+                        _chaptersExpanded
+                            ? Icons.keyboard_arrow_up_rounded
+                            : Icons.keyboard_arrow_down_rounded,
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
+                      const Spacer(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
+          ],
+        ),
       ),
     );
   }

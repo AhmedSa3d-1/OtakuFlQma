@@ -1,5 +1,6 @@
 /// V1.4.8 schedule integration: each broadcast day loads independently with
 /// bounded pages, pull-to-refresh, request cancellation, and safe tab cleanup.
+library;
 import 'more_sidebar_shell.dart';
 
 import 'dart:async';
@@ -296,12 +297,12 @@ class _ScheduleDayBody extends StatelessWidget {
             children: [
               const Icon(Icons.cloud_off_rounded, size: 42),
               const SizedBox(height: 12),
-              Text('تعذر تحميل جدول البث', textAlign: TextAlign.center),
+              const Text('تعذر تحميل جدول البث', textAlign: TextAlign.center),
               const SizedBox(height: 12),
               FilledButton.tonalIcon(
                 onPressed: () => unawaited(onRefresh()),
                 icon: const Icon(Icons.refresh_rounded),
-                label: Text('إعادة المحاولة'),
+                label: const Text('إعادة المحاولة'),
               ),
             ],
           ),
@@ -314,7 +315,7 @@ class _ScheduleDayBody extends StatelessWidget {
         child: ListView(
           physics: const AlwaysScrollableScrollPhysics(),
           padding: const EdgeInsets.fromLTRB(24, 120, 24, 110),
-          children: [
+          children: const [
             Text('لا يوجد بث مجدول لهذا اليوم', textAlign: TextAlign.center),
           ],
         ),

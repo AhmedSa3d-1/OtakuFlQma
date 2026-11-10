@@ -85,12 +85,10 @@ final class MangaReadingProgress {
 class MangaReadingRepository {
   MangaReadingRepository(
     this._storage, {
-    MangaCloudReadLookup? isCloudRead,
+    this._isCloudRead,
     MangaCloudReadSync? syncReadStates,
-    void Function()? onChanged,
-  }) : _isCloudRead = isCloudRead,
-       _syncReadStates = syncReadStates,
-       _onChanged = onChanged;
+    this._onChanged,
+  }) : _syncReadStates = syncReadStates;
 
   final StorageService _storage;
   final MangaCloudReadLookup? _isCloudRead;
@@ -101,7 +99,7 @@ class MangaReadingRepository {
       md5.convert(utf8.encode(value.trim())).toString();
 
   String _key(String mangaId, String chapterId) =>
-      'manga_progress:' + _hash(mangaId) + ':' + _hash(chapterId);
+      'manga_progress:${_hash(mangaId)}:${_hash(chapterId)}';
 
   MangaReadingProgress? _local(String mangaId, String chapterId) {
     final raw = _storage.getString(_key(mangaId, chapterId));

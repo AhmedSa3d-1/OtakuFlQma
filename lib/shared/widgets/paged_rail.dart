@@ -210,7 +210,7 @@ class _PagedRailState extends State<PagedRail> {
   Widget build(BuildContext context) {
     final Widget listView = widget.separatorBuilder != null
         ? ListView.separated(
-            controller: _controller,
+            scrollCacheExtent: ScrollCacheExtent.pixels(_aheadExtent), controller: _controller,
             scrollDirection: Axis.horizontal,
             itemCount: widget.itemCount,
             separatorBuilder: widget.separatorBuilder!,
@@ -218,11 +218,10 @@ class _PagedRailState extends State<PagedRail> {
             physics: widget.physics,
             reverse: widget.reverse,
             clipBehavior: widget.clipBehavior,
-            cacheExtent: _aheadExtent,
             itemBuilder: widget.itemBuilder,
           )
         : ListView.builder(
-            controller: _controller,
+            scrollCacheExtent: ScrollCacheExtent.pixels(_aheadExtent), controller: _controller,
             scrollDirection: Axis.horizontal,
             itemCount: widget.itemCount,
             itemExtent: widget.itemExtent,
@@ -230,7 +229,6 @@ class _PagedRailState extends State<PagedRail> {
             physics: widget.physics,
             reverse: widget.reverse,
             clipBehavior: widget.clipBehavior,
-            cacheExtent: _aheadExtent,
             itemBuilder: widget.itemBuilder,
           );
 

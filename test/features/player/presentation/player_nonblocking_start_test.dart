@@ -824,7 +824,7 @@ void main() {
       item: _item([episode]),
       videoUrl: 'https://video.test/episode/stream.m3u8',
       episode: episode,
-      selectedSource: StreamResult(url: 'https://video.test/episode/stream.m3u8', source: 'Selected'),
+      selectedSource: const StreamResult(url: 'https://video.test/episode/stream.m3u8', source: 'Selected'),
     );
     expect(controller.currentState.isLive, isFalse);
     expect(player.seeks, [const Duration(seconds: 90)]);
@@ -912,7 +912,7 @@ void main() {
     expect(catalog.streamCalls, 1, reason: 'Recovery must reach the pending resolver');
     final replacement = await replaceRoute();
     pending.complete([
-      StreamResult(url: 'https://video.test/stale.mp4', source: 'Resolved'),
+      const StreamResult(url: 'https://video.test/stale.mp4', source: 'Resolved'),
     ]);
     await flush();
     expect(controller.currentState.currentStream?.url, '/saved/replacement.mp4');
@@ -939,7 +939,7 @@ void main() {
     final pending = Completer<List<StreamResult>>();
     catalog.pendingStreams = pending;
     final switching = controller.switchToSource(
-      StreamResult(
+      const StreamResult(
         url: 'https://video.test/provider-page',
         source: 'Provider',
         requiresResolution: true,
@@ -949,7 +949,7 @@ void main() {
     expect(catalog.streamCalls, 1);
     final replacement = await replaceRoute();
     pending.complete([
-      StreamResult(url: 'https://video.test/stale.mp4', source: 'Resolved'),
+      const StreamResult(url: 'https://video.test/stale.mp4', source: 'Resolved'),
     ]);
     expect(await switching, isFalse);
     expect(replacement.opened, ['/saved/replacement.mp4']);
@@ -980,7 +980,7 @@ void main() {
       item: _item([episode], type: MultimediaContentType.livestream),
       videoUrl: 'https://video.test/live.m3u8',
       episode: episode,
-      selectedSource: StreamResult(url: 'https://video.test/live.m3u8', source: 'Live'),
+      selectedSource: const StreamResult(url: 'https://video.test/live.m3u8', source: 'Live'),
     );
     player.advance(const Duration(seconds: 5));
     await flush();

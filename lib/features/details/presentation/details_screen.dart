@@ -471,7 +471,7 @@ class _DetailsScreenState extends ConsumerState<DetailsScreen>
     ];
     if (currentCategory != null) {
       items.add(
-        AppleNativeMenuItem(
+        const AppleNativeMenuItem(
           value: _removeLibraryAction,
           label: 'إزالة من القائمة',
           systemImage: 'trash',
@@ -944,15 +944,6 @@ class _DetailsScreenState extends ConsumerState<DetailsScreen>
         nextAiring: item.nextAiring == null
             ? null
             : NextAiringChip(nextAiring: item.nextAiring!),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (shouldShowAdultContentWarning(item)) ...[
-              const AdultContentWarningBanner(),
-              const SizedBox(height: 16),
-            ],
-          ],
-        ),
         // Built as they scroll into view: a long anime has hundreds of
         // episodes.
         slivers: <Widget>[
@@ -978,6 +969,15 @@ class _DetailsScreenState extends ConsumerState<DetailsScreen>
             ),
           ),
         ],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (shouldShowAdultContentWarning(item)) ...[
+              const AdultContentWarningBanner(),
+              const SizedBox(height: 16),
+            ],
+          ],
+        ),
       ),
     );
   }
@@ -1588,13 +1588,13 @@ class _DetailsScreenState extends ConsumerState<DetailsScreen>
     AsyncValue<List<Episode>> episodesState,
   ) {
     if (episodesState.isLoading) {
-      return Column(
+      return const Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const AppLoadingIndicator(),
-          const SizedBox(height: 12),
-          Text('يتم تحميل الحلقات…', textAlign: TextAlign.center),
+          AppLoadingIndicator(),
+          SizedBox(height: 12),
+          const Text('يتم تحميل الحلقات…', textAlign: TextAlign.center),
         ],
       );
     }
@@ -1615,7 +1615,7 @@ class _DetailsScreenState extends ConsumerState<DetailsScreen>
 
     final episodes = episodesState.asData?.value ?? const <Episode>[];
     if (episodes.isEmpty) {
-      return Text('لا توجد حلقات متاحة', textAlign: TextAlign.center);
+      return const Text('لا توجد حلقات متاحة', textAlign: TextAlign.center);
     }
 
     return const SizedBox.shrink();

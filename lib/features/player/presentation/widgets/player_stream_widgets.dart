@@ -164,11 +164,11 @@ class _PlayerProgressBarState extends ConsumerState<PlayerProgressBar> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.circle, color: Colors.red, size: 7),
-                SizedBox(width: 5),
+                const Icon(Icons.circle, color: Colors.red, size: 7),
+                const SizedBox(width: 5),
                 Text(
                   appText(context, english: 'LIVE', arabic: 'مباشر'),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.w800,
                     fontSize: 11,

@@ -275,8 +275,9 @@ void main() {
           oldFetchEntered.complete();
           return oldBytes.future;
         }
-        if (!replacementFetchEntered.isCompleted)
+        if (!replacementFetchEntered.isCompleted) {
           replacementFetchEntered.complete(true);
+        }
         return Future.value(tinyMangaPng);
       },
     );

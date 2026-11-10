@@ -157,9 +157,9 @@ class _SearchResultSectionState extends ConsumerState<SearchResultSection> {
             itemCount: widget.results.length + (widget.isLoadingMore ? 3 : 0),
             itemBuilder: (context, rIndex) {
               if (rIndex >= widget.results.length) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: spacing),
-                  child: const AnimePosterShimmer(),
+                return const Padding(
+                  padding: EdgeInsets.only(right: spacing),
+                  child: AnimePosterShimmer(),
                 );
               }
 

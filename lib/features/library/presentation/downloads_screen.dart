@@ -32,8 +32,8 @@ class DownloadsScreen extends ConsumerWidget {
     final isWidescreen = isTv || context.isTabletOrLarger;
     final title = AppLocalizations.of(context)!.downloads;
 
-    final titleDirection = TextDirection.rtl;
-    final titleAlignment = Alignment.centerRight;
+    const titleDirection = TextDirection.rtl;
+    const titleAlignment = Alignment.centerRight;
 
     if (isWidescreen) {
       return Scaffold(
@@ -72,6 +72,6 @@ class DownloadsScreen extends ConsumerWidget {
     // On handsets the tab strip is the page header. Avoid repeating
     // "Downloads" in a separate AppBar and keep the two tabs immediately
     // below the system safe area.
-    return Scaffold(body: SafeArea(bottom: false, child: const DownloadsTab()));
+    return const Scaffold(body: SafeArea(bottom: false, child: DownloadsTab()));
   }
 }

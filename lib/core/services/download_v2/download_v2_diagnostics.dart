@@ -131,20 +131,16 @@ final class InMemoryDownloadDiagnosticsV2 implements DownloadDiagnosticsV2 {
 /// isolated from download control: a logging failure can never fail a transfer.
 final class FileDownloadDiagnosticsV2 implements DownloadDiagnosticsV2 {
   FileDownloadDiagnosticsV2({
-    required Future<Directory> Function() directoryProvider,
-    required bool Function() enabled,
+    required this._directoryProvider,
+    required this._enabled,
     int Function()? nowMillis,
-    Future<({String version, String buildNumber})> Function()?
-    buildIdentityProvider,
+    this._buildIdentityProvider,
     String? sessionId,
     this.fileName = 'download_v2.jsonl',
     this.maxBytes = 5 * 1024 * 1024,
     this.maxFiles = 3,
   }) : assert(maxBytes > 0),
        assert(maxFiles > 0),
-       _directoryProvider = directoryProvider,
-       _enabled = enabled,
-       _buildIdentityProvider = buildIdentityProvider,
        _nowMillis = nowMillis ?? (() => DateTime.now().millisecondsSinceEpoch),
        _sessionId =
            sessionId ?? '${DateTime.now().microsecondsSinceEpoch}-$pid';

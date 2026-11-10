@@ -47,8 +47,9 @@ void main() {
       gateway.emitSourceExpired(gateway.startedSpecs.last.taskId);
       for (var attempt = 0; attempt < 100; attempt++) {
         if ((await store.get(request.logicalId))?.intent ==
-            DownloadUserIntent.failed)
+            DownloadUserIntent.failed) {
           break;
+        }
         await Future<void>.delayed(const Duration(milliseconds: 10));
       }
       expect(resolver.calls, 4);

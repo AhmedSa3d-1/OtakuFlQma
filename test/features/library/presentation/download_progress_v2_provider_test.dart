@@ -129,7 +129,7 @@ void main() {
       downloadManagerV2Provider.overrideWithValue(manager), logicalDownloadStoreV2Provider.overrideWithValue(store),
       storageServiceProvider.overrideWithValue(storage),
     ]);
-    final subscription = container.listen(downloadsProvider, (_, __) {});
+    final subscription = container.listen(downloadsProvider, (_, _) {});
     addTearDown(() async {
       subscription.close(); container.dispose(); await manager.dispose(); await temp.delete(recursive: true);
     });
@@ -164,7 +164,7 @@ void main() {
         storageServiceProvider.overrideWithValue(storage),
       ],
     );
-    final subscription = container.listen(downloadsProvider, (_, __) {});
+    final subscription = container.listen(downloadsProvider, (_, _) {});
     addTearDown(() async {
       subscription.close();
       container.dispose();
@@ -254,7 +254,7 @@ void main() {
       logicalDownloadStoreV2Provider.overrideWithValue(store),
       storageServiceProvider.overrideWithValue(storage),
     ]);
-    final subscription = container.listen(downloadsProvider, (_, __) {});
+    final subscription = container.listen(downloadsProvider, (_, _) {});
     addTearDown(() async {
       subscription.close();
       container.dispose();

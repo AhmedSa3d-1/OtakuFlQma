@@ -10,9 +10,8 @@ import 'package:flutter_volume_controller/flutter_volume_controller.dart';
 import 'player_pip.dart';
 
 class PlayerPlatformService {
-  PlayerPlatformService({MethodChannel? pipChannel, bool? nativePip})
-    : _pipChannel = pipChannel ?? PlayerPip.channel,
-      _nativePip = nativePip;
+  PlayerPlatformService({MethodChannel? pipChannel, this._nativePip})
+    : _pipChannel = pipChannel ?? PlayerPip.channel;
 
   final MethodChannel _pipChannel;
   final bool? _nativePip;

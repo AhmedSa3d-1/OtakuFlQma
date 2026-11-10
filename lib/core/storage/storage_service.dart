@@ -1464,13 +1464,10 @@ class StorageService {
           'logicalId': logicalId.trim(),
         if (taskSnapshot != null)
           'taskSnapshot': Map<String, dynamic>.from(taskSnapshot),
-        if (queueWaiting != null)
-          kDownloadQueueWaitingMetadataKey: queueWaiting,
-        if (userPaused != null) kDownloadUserPausedMetadataKey: userPaused,
-        if (lastProgress != null)
-          kDownloadLastProgressMetadataKey: lastProgress,
-        if (lastExpectedBytes != null)
-          kDownloadLastExpectedBytesMetadataKey: lastExpectedBytes,
+        kDownloadQueueWaitingMetadataKey: ?queueWaiting,
+        kDownloadUserPausedMetadataKey: ?userPaused,
+        kDownloadLastProgressMetadataKey: ?lastProgress,
+        kDownloadLastExpectedBytesMetadataKey: ?lastExpectedBytes,
       },
     ]);
   }

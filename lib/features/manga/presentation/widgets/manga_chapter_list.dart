@@ -195,7 +195,7 @@ class _MangaChapterListState extends ConsumerState<MangaChapterList> {
     MangaReadingRepository repository,
   ) {
     final colors = Theme.of(context).colorScheme;
-    final all = 'كل الفصول';
+    const all = 'كل الفصول';
     String rangeTitle(int i) =>
         '${'الفصول'} '
         '${mangaChapterRangeLabel(ranges[i], i)}';
@@ -816,7 +816,7 @@ class _MangaChapterListState extends ConsumerState<MangaChapterList> {
           if (chapters.isEmpty) SliverToBoxAdapter(child: emptyNote()),
           SliverList.separated(
             itemCount: chapters.length,
-            separatorBuilder: (_, __) => const Divider(height: 1),
+            separatorBuilder: (_, _) => const Divider(height: 1),
             itemBuilder: (context, index) =>
                 _withTransition(row(chapters[index])),
           ),
@@ -863,7 +863,7 @@ class _MangaChapterListState extends ConsumerState<MangaChapterList> {
               padding: const EdgeInsets.symmetric(horizontal: 12),
               sliver: SliverList.separated(
                 itemCount: chapters.length,
-                separatorBuilder: (_, __) => const Divider(height: 1),
+                separatorBuilder: (_, _) => const Divider(height: 1),
                 itemBuilder: (context, index) => row(chapters[index]),
               ),
             ),

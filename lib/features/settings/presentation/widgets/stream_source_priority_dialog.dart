@@ -104,14 +104,14 @@ Future<void> _showStreamPriorityDialog(
           actions: [
             TextButton(
               onPressed: () => Navigator.of(dialogContext).pop(),
-              child: Text('إلغاء'),
+              child: const Text('إلغاء'),
             ),
             FilledButton(
               onPressed: () async {
                 await onSave(order);
                 if (dialogContext.mounted) Navigator.of(dialogContext).pop();
               },
-              child: Text('حفظ'),
+              child: const Text('حفظ'),
             ),
           ],
         );

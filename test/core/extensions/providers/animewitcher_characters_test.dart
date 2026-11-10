@@ -446,7 +446,7 @@ void main() {
 
   test('Eren-shaped integer mal_id resolves a catalog title via IN', () async {
     final stub = _stubDio();
-    final document = AnimeWitcherCharacterDocument(
+    const document = AnimeWitcherCharacterDocument(
       id: '40882',
       name: 'Eren Yeager',
       likes: 40870,

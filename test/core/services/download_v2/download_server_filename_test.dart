@@ -180,7 +180,7 @@ void main() {
     'CON.mp4',
     'bad?.mp4',
     'trailing. ',
-    '${List.filled(245, 'a').join()}',
+    (List.filled(245, 'a').join()),
   ]) {
     test('rejects unsafe server leaf ${jsonEncode(name)}', () async {
       final metadata = await _probe(

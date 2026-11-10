@@ -74,7 +74,7 @@ void main() {
         TabAlignment.start,
       );
       expect(tester.takeException(), isNull);
-    }, variant: TargetPlatformVariant({TargetPlatform.iOS}));
+    }, variant: const TargetPlatformVariant({TargetPlatform.iOS}));
   }
 
   testWidgets(

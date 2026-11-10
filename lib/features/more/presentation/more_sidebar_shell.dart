@@ -129,7 +129,7 @@ class _MoreSidebarShellState extends State<MoreSidebarShell> {
               // of them builds the new one rather than handing it the last
               // one's scroll position and state.
               : KeyedSubtree(
-                  key: ValueKey<String>('more-pane-${_group}-$_item'),
+                  key: ValueKey<String>('more-pane-$_group-$_item'),
                   child: MorePaneScope(
                     child: Builder(builder: selected.builder),
                   ),

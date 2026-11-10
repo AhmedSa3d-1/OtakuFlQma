@@ -174,7 +174,7 @@ void main() {
     tester,
   ) async {
     await tester.pumpWidget(
-      MaterialApp(
+      const MaterialApp(
         home: Scaffold(
           body: Directionality(
             textDirection: TextDirection.rtl,
@@ -182,7 +182,7 @@ void main() {
               child: SizedBox(
                 width: 120,
                 height: 240,
-                child: const AnimePosterShimmer(),
+                child: AnimePosterShimmer(),
               ),
             ),
           ),

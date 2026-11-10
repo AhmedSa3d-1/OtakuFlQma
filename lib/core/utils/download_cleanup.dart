@@ -84,8 +84,9 @@ Future<List<String>> platformConfiguredAppDownloadRoots({
         roots.add(p.join(downloads.path, 'AnimeWitcher', 'Downloads'));
       } else {
         final documents = await getApplicationDocumentsDirectory();
-        if (includeSharedRoots)
+        if (includeSharedRoots) {
           addMediaRoots(p.join(documents.path, 'Downloads'));
+        }
         roots.add(p.join(documents.path, 'AnimeWitcher', 'Downloads'));
       }
     }

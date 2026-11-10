@@ -346,7 +346,7 @@ class _PlayerEpisodesPanelState extends ConsumerState<PlayerEpisodesPanel> {
 
     final l10n = AppLocalizations.of(context)!;
 
-    final panelDirection = TextDirection.rtl;
+    const panelDirection = TextDirection.rtl;
     final currentUrl =
         ref.watch(playerControllerProvider.select((s) => s.activeEpisodeUrl)) ??
         ref.read(playerControllerProvider.notifier).currentEpisodeUrl;
@@ -697,7 +697,7 @@ class _EpisodeRowState extends ConsumerState<_EpisodeRow> {
     final ring = _focused && widget.isTv;
     final accent = Theme.of(context).colorScheme.primary;
 
-    final rowDirection = TextDirection.rtl;
+    const rowDirection = TextDirection.rtl;
     return Semantics(
       button: true,
       selected: widget.isCurrent,
@@ -847,9 +847,9 @@ class _FillerBadge extends StatelessWidget {
         color: const Color(0xFFD32F2F),
         borderRadius: BorderRadius.circular(4),
       ),
-      child: Text(
+      child: const Text(
         'فلر',
-        style: const TextStyle(
+        style: TextStyle(
           color: Colors.white,
           fontSize: 9,
           fontWeight: FontWeight.w800,

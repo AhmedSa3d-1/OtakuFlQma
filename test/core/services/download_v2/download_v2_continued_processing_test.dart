@@ -803,7 +803,7 @@ void main() {
       forceAvailableForTesting: true,
     );
     final observer = IosDownloadContinuedProcessingObserverV2(service: service);
-    final record = LogicalDownloadRecordV2(
+    const record = LogicalDownloadRecordV2(
       schemaVersion: kLogicalDownloadSchemaVersionV2,
       logicalId: const DownloadLogicalId('recovered-episode'),
       mediaId: 'anime-1',
@@ -875,7 +875,7 @@ void main() {
       final observer = IosDownloadContinuedProcessingObserverV2(
         service: service,
       );
-      final record = LogicalDownloadRecordV2(
+      const record = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2,
         logicalId: const DownloadLogicalId('episode-queued'),
         mediaId: 'anime-1',
@@ -933,7 +933,7 @@ void main() {
       final observer = IosDownloadContinuedProcessingObserverV2(
         service: service,
       );
-      final record = LogicalDownloadRecordV2(
+      const record = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2,
         logicalId: const DownloadLogicalId('episode-waiting'),
         mediaId: 'anime-1',
@@ -988,7 +988,7 @@ void main() {
       final observer = IosDownloadContinuedProcessingObserverV2(
         service: service,
       );
-      final oldRecord = LogicalDownloadRecordV2(
+      const oldRecord = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2,
         logicalId: const DownloadLogicalId('episode-old'),
         mediaId: 'anime-1',
@@ -1003,7 +1003,7 @@ void main() {
         completedAtMillis: 1,
         updatedAtMillis: 1,
       );
-      final currentRecord = LogicalDownloadRecordV2(
+      const currentRecord = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2,
         logicalId: const DownloadLogicalId('episode-current'),
         mediaId: 'anime-1',
@@ -1100,7 +1100,7 @@ void main() {
           },
         ],
       );
-      final record = LogicalDownloadRecordV2(
+      const record = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2,
         logicalId: const DownloadLogicalId('episode-11'),
         mediaId: 'anime-1',

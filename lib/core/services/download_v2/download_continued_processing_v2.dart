@@ -330,9 +330,9 @@ final class IosDownloadContinuedProcessingObserverV2
     })? onNativeNetworkSpeed,
     NativeParallelPauseReadinessV2? pauseReadiness,
     SystemDownloadChunkUpdate? onNativeChunkUpdate,
-    List<Map<String, Object>> Function()? nativeBackgroundPlans,
-    void Function()? releaseNativeBackgroundOffers,
-    Future<void> Function()? reconcileNativeBackgroundTransfers,
+    this._nativeBackgroundPlans,
+    this._releaseNativeBackgroundOffers,
+    this._reconcileNativeBackgroundTransfers,
     DownloadDiagnosticsV2? diagnostics,
     bool forceAvailableForTesting = false,
   }) : _service =
@@ -343,9 +343,6 @@ final class IosDownloadContinuedProcessingObserverV2
              onNativeChunkUpdate,
              forceAvailableForTesting,
            ),
-       _nativeBackgroundPlans = nativeBackgroundPlans,
-       _releaseNativeBackgroundOffers = releaseNativeBackgroundOffers,
-       _reconcileNativeBackgroundTransfers = reconcileNativeBackgroundTransfers,
        _diagnostics = diagnostics ?? const NoopDownloadDiagnosticsV2() {
     // A BGContinuedProcessing lease can expire while URLSession keeps writing.
     // Do not let the old Dart _sessionActive flag suppress the new system task.
@@ -644,7 +641,9 @@ final class IosDownloadContinuedProcessingObserverV2
 
     // A lost start ACK does not prove the OS never attached its task.
     if (_outstanding.isNotEmpty ||
-        (!_sessionActive && _sessionMembers.isEmpty)) return;
+        (!_sessionActive && _sessionMembers.isEmpty)) {
+      return;
+    }
 
     await _checkpointNativeQueue(
       activeEntries: const <_ContinuedEntryV2>[],
@@ -836,7 +835,9 @@ final class IosDownloadContinuedProcessingObserverV2
         .where(_isPackageOwnedActive)
         .toList(growable: false);
     if (!active.any((entry) =>
-        entry.record.mediaKind == DownloadMediaKind.mangaChapter)) return;
+        entry.record.mediaKind == DownloadMediaKind.mangaChapter)) {
+      return;
+    }
 
     _lastMangaSpeedBytesPerSecond = _mangaBandwidth.sample();
     final totalSpeed = _lastMangaSpeedBytesPerSecond +
@@ -878,7 +879,7 @@ final class IosDownloadContinuedProcessingObserverV2
         batchTotal: _sessionMembers.isEmpty ? 1 : _sessionMembers.length,
         currentIndex: summary.currentIndex,
         speedBytesPerSecond: totalSpeed,
-      ).catchError((Object _, StackTrace __) {}));
+      ).catchError((Object _, StackTrace _) {}));
     }
   }
 

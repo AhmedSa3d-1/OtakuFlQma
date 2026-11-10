@@ -13,7 +13,7 @@ void main() {
   );
   Map<String, dynamic> semantic({String? variant = 'sub|1080p'}) => {
     'item': {'url': 'show://saved', 'title': 'A renamed title'},
-    'trackingUrl': 'episode://saved', if (variant != null) 'variantKey': variant,
+    'trackingUrl': 'episode://saved', 'variantKey': ?variant,
   };
 
   test('an explicit exact logical ID authorizes only that record', () {

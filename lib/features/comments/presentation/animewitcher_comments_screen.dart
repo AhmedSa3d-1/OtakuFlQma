@@ -449,7 +449,7 @@ class _AnimeWitcherCommentsScreenState
         itemCount:
             _pager.items.length +
             (_pager.hasMore || _pager.loadingMore ? 1 : 0),
-        separatorBuilder: (_, __) => const SizedBox(height: 8),
+        separatorBuilder: (_, _) => const SizedBox(height: 8),
         itemBuilder: (context, index) {
           if (index >= _pager.items.length) {
             return const Padding(
@@ -594,7 +594,7 @@ class _AnimeWitcherCommentsScreenState
                     setState(() => _revealedSpoilers.add(comment.path));
                   },
                   icon: const Icon(Icons.local_fire_department_rounded),
-                  label: Text('تعليق يحتوي على حرق — إظهار'),
+                  label: const Text('تعليق يحتوي على حرق — إظهار'),
                 ),
               ),
             const SizedBox(height: 8),
@@ -813,7 +813,7 @@ class _CommentsLoadError extends StatelessWidget {
             FilledButton.tonalIcon(
               onPressed: onRetry,
               icon: const Icon(Icons.refresh_rounded),
-              label: Text('إعادة المحاولة'),
+              label: const Text('إعادة المحاولة'),
             ),
           ],
         ),

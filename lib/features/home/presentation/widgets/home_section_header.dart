@@ -70,8 +70,8 @@ class HomeSectionHeader extends StatelessWidget {
               ],
             ),
           ),
-          if (middle != null) ...middle!,
-          if (action != null) action!,
+          ...?middle,
+          ?action,
         ],
       ),
     );

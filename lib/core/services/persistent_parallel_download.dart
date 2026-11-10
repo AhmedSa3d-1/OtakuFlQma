@@ -150,8 +150,9 @@ discoverParallelManifestRecoveryEvidence(
           final rawParts = snapshot['parts'];
           if (rawParts is! List ||
               rawParts.isEmpty ||
-              rawParts.length > kDownloadLegacyWorkUnitsMax)
+              rawParts.length > kDownloadLegacyWorkUnitsMax) {
             continue;
+          }
 
           ParallelDownloadTask? parentTask;
           final rawParent = snapshot['parentTask'];
@@ -161,8 +162,9 @@ discoverParallelManifestRecoveryEvidence(
               Map<String, dynamic>.from(rawParent),
             );
             if (restored is! ParallelDownloadTask ||
-                restored.taskId != parentTaskId)
+                restored.taskId != parentTaskId) {
               continue;
+            }
             final legacyManifest = p.normalize(
               '${await restored.filePath()}.parts/manifest.json',
             );
@@ -170,8 +172,9 @@ discoverParallelManifestRecoveryEvidence(
                 ? null
                 : p.normalize((await manifestFileResolver(restored)).path);
             if (canonicalPath != legacyManifest &&
-                canonicalPath != privateManifest)
+                canonicalPath != privateManifest) {
               continue;
+            }
             parentTask = restored;
           }
           final ownedPartsDirectory = parentTask == null
@@ -222,7 +225,7 @@ discoverParallelManifestRecoveryEvidence(
             }
             durableBytes += complete
                 ? size
-                : (savedDurable == null ? 0 : savedDurable);
+                : (savedDurable ?? 0);
             childTasks.add(restored);
             calculatedBytes += size;
             nextByte = to + 1;
@@ -774,7 +777,9 @@ class PersistentParallelDownload {
     final replacementEpoch = session.sourceReplacementEpoch;
     return session.serialize(() async {
       if (_disposed || session.deleted || session.active ||
-          session.sourceReplacementEpoch != replacementEpoch) return null;
+          session.sourceReplacementEpoch != replacementEpoch) {
+        return null;
+      }
       session.sourceReplacementActive = true;
       try {
         // Before retaining any visible byte from the previous signed source,
@@ -943,8 +948,9 @@ class PersistentParallelDownload {
     for (final file in files) {
       try {
         if (await FileSystemEntity.type(file.path, followLinks: false) !=
-            FileSystemEntityType.file)
+            FileSystemEntityType.file) {
           continue;
+        }
         final decoded = jsonDecode(await file.readAsString());
         if (decoded is! Map) continue;
         final snapshot = Map<String, dynamic>.from(decoded);
@@ -1003,20 +1009,23 @@ class PersistentParallelDownload {
       followLinks: false,
     );
     if (directoryType != FileSystemEntityType.notFound &&
-        directoryType != FileSystemEntityType.directory)
+        directoryType != FileSystemEntityType.directory) {
       return false;
+    }
     final ids = <String>{};
     final paths = <String>{};
     for (final part in parts) {
       final path = p.normalize(await part.task.filePath());
       if (await FileSystemEntity.type(path, followLinks: false) ==
-          FileSystemEntityType.link)
+          FileSystemEntityType.link) {
         return false;
+      }
       if (!part.task.taskId.startsWith('${task.taskId}.part.') ||
           !p.equals(p.dirname(path), directory) ||
           !ids.add(part.task.taskId) ||
-          !paths.add(path))
+          !paths.add(path)) {
         return false;
+      }
     }
     return true;
   }
@@ -1027,28 +1036,35 @@ class PersistentParallelDownload {
     for (final file in <File>[legacy, File('${legacy.path}.tmp')]) {
       try {
         if (await FileSystemEntity.type(file.path, followLinks: false) !=
-            FileSystemEntityType.file) continue;
-        final snapshot = jsonDecode(await file.readAsString());
-        if (snapshot is! Map || snapshot['parentTaskId'] != session.task.taskId)
+            FileSystemEntityType.file) {
           continue;
+        }
+        final snapshot = jsonDecode(await file.readAsString());
+        if (snapshot is! Map || snapshot['parentTaskId'] != session.task.taskId) {
+          continue;
+        }
         final rawParent = snapshot['parentTask'];
         if (rawParent is Map) {
           final parent = Task.createFromJson(Map<String, dynamic>.from(rawParent));
           if (parent is! ParallelDownloadTask ||
               parent.taskId != session.task.taskId ||
-              !p.equals(await parent.filePath(), await session.task.filePath()))
+              !p.equals(await parent.filePath(), await session.task.filePath())) {
             continue;
+          }
         } else if ((snapshot['schemaVersion'] as num? ?? 1) >= 6) {
           continue;
         }
         final rawParts = snapshot['parts'];
-        if (rawParts is! List || rawParts.length > kDownloadLegacyWorkUnitsMax)
+        if (rawParts is! List || rawParts.length > kDownloadLegacyWorkUnitsMax) {
           continue;
+        }
         final parts = rawParts.map((raw) => _DownloadPart.fromJson(
           Map<String, dynamic>.from(raw as Map),
         )).toList(growable: false);
         if (!_validRestoredLayout(parts, session.size) ||
-            !await _validRestoredOwnership(session.task, parts)) continue;
+            !await _validRestoredOwnership(session.task, parts)) {
+          continue;
+        }
         await file.delete();
       } catch (_) {
         // Unreadable or foreign legacy evidence is never ours to remove.
@@ -1171,8 +1187,9 @@ class PersistentParallelDownload {
       File('${legacy.path}.tmp'),
     ]) {
       if (await FileSystemEntity.type(file.path, followLinks: false) !=
-          FileSystemEntityType.notFound)
+          FileSystemEntityType.notFound) {
         _unresolvedCheckpointIds.add(task.taskId);
+      }
     }
     final candidates = await _orderedManifestCandidates(
       manifest,
@@ -1205,8 +1222,9 @@ class PersistentParallelDownload {
           );
           if (restoredParent is! ParallelDownloadTask ||
               restoredParent.taskId != task.taskId ||
-              !p.equals(await restoredParent.filePath(), await task.filePath()))
+              !p.equals(await restoredParent.filePath(), await task.filePath())) {
             continue;
+          }
         }
         final savedGeneration = (json['generation'] as num?)?.toInt() ?? 0;
         final checkpointSequence =
@@ -1443,8 +1461,9 @@ class PersistentParallelDownload {
         followLinks: false,
       );
       if (partsType != FileSystemEntityType.notFound &&
-          partsType != FileSystemEntityType.directory)
+          partsType != FileSystemEntityType.directory) {
         return false;
+      }
       if (totalBytes <= 0) return false;
       final requestedConnections = task.chunks
           .clamp(kDownloadPartsMin, kDownloadPartsMax)
@@ -2124,7 +2143,7 @@ class PersistentParallelDownload {
                 await _completePendingSourceRefresh(session);
               }
             })
-            .catchError((Object _, StackTrace __) {}),
+            .catchError((Object _, StackTrace _) {}),
       );
     }
   }
@@ -2135,8 +2154,9 @@ class PersistentParallelDownload {
     if (_disposed ||
         session.deleted ||
         !session.fullBodyCancellationPending ||
-        _activeConnectionsForSession(session) != 0)
+        _activeConnectionsForSession(session) != 0) {
       return;
+    }
     // Retain the full body and checkpoint until exclusive publication can retry.
     // A held fallback must not keep publishing running truth with no owners.
     await _pause(session);
@@ -2144,7 +2164,9 @@ class PersistentParallelDownload {
 
   Future<void> _completePendingSourceRefresh(_ParallelSession session) async {
     if (_disposed || session.deleted || !session.sourceRefreshPending ||
-        _activeConnectionsForSession(session) != 0) return;
+        _activeConnectionsForSession(session) != 0) {
+      return;
+    }
     if (!await _pause(session)) return;
     session.sourceRefreshPending = false;
     onSourceRefreshNeeded?.call(session.task.taskId);
@@ -2774,8 +2796,9 @@ class PersistentParallelDownload {
       if (committed.type != FileSystemEntityType.file ||
           committed.size != verifiedFileState.size ||
           committed.modified != verifiedFileState.modified ||
-          committed.changed != verifiedFileState.changed)
+          committed.changed != verifiedFileState.changed) {
         return false;
+      }
     }
 
     if (canCommit != null && !canCommit()) return false;
@@ -3243,7 +3266,7 @@ class PersistentParallelDownload {
       _writeParentRecord(
         session,
         TaskRecord(task, TaskStatus.running, progress, expectedBytes),
-      ).catchError((Object _, StackTrace __) {}),
+      ).catchError((Object _, StackTrace _) {}),
     );
   }
 
@@ -3372,8 +3395,9 @@ class PersistentParallelDownload {
     if (_disposed ||
         !session.active ||
         session.pauseRequested ||
-        session.deleted)
+        session.deleted) {
       return false;
+    }
     if (_occupiedConnectionsForSession(session) >= session.connectionCeiling) {
       return false;
     }
@@ -3413,8 +3437,9 @@ class PersistentParallelDownload {
       }
 
       final part = session.partsByTaskId[chunkTaskId];
-      if (part == null || part.complete || part.sourceVerification != null)
+      if (part == null || part.complete || part.sourceVerification != null) {
         return;
+      }
       // Native background refill tasks are created from a pre-fenced child
       // definition while Dart can be asleep. Adopt that ownership only when
       // Swift echoed the exact current attempt token. A late callback from an
@@ -3541,8 +3566,9 @@ class PersistentParallelDownload {
         try {
           if (_disposed ||
               session.deleted ||
-              !identical(_sessions[session.task.taskId], session))
+              !identical(_sessions[session.task.taskId], session)) {
             return;
+          }
           final part = session.partsByTaskId[update.task.taskId];
           if (part == null) return;
           final callbackAttempt = _taskAttemptGeneration(update.task);
@@ -3584,8 +3610,9 @@ class PersistentParallelDownload {
           // or progress must not resurrect its slot while recovery verifies it.
           if (part.sourceVerification != null &&
               !(update is TaskStatusUpdate &&
-                  update.status == TaskStatus.complete))
+                  update.status == TaskStatus.complete)) {
             return;
+          }
           if (!part.launched &&
               !(update is TaskStatusUpdate &&
                   update.status == TaskStatus.complete)) {
@@ -3602,8 +3629,9 @@ class PersistentParallelDownload {
           }
           if (generation != session.generation &&
               !(update is TaskStatusUpdate &&
-                  update.status == TaskStatus.complete))
+                  update.status == TaskStatus.complete)) {
             return;
+          }
 
           if (update is TaskProgressUpdate &&
               update.progress >= 0 &&
@@ -3986,7 +4014,9 @@ class PersistentParallelDownload {
   void _armPartRecoveryDeadline(_ParallelSession session, _DownloadPart part) {
     if (part.recoveryTimer != null || part.retryNotBefore == null ||
         part.complete || part.launched || _disposed || !session.active ||
-        session.pauseRequested || session.deleted) return;
+        session.pauseRequested || session.deleted) {
+      return;
+    }
     final remaining = part.retryNotBefore!.difference(DateTime.now());
     if (remaining <= Duration.zero) {
       part.retryNotBefore = null;
@@ -4000,8 +4030,9 @@ class PersistentParallelDownload {
       part.recoveryTimer = null;
       unawaited(session.serialize(() async {
         if (_disposed || !session.active || session.pauseRequested ||
-            session.deleted || session.generation != generation || part.complete)
+            session.deleted || session.generation != generation || part.complete) {
           return;
+        }
         _armPartRecoveryDeadline(session, part);
         _schedulePumpAll();
       }));
@@ -4015,8 +4046,9 @@ class PersistentParallelDownload {
     bool metadataResolved = false,
     bool stabilizeConnections = false,
   }) async {
-    if (part.recoveryTimer != null || part.sourceVerification != null)
+    if (part.recoveryTimer != null || part.sourceVerification != null) {
       return true;
+    }
     if (!session.active || (session.pauseRequested && !metadataResolved) || session.deleted || _disposed || part.complete) {
       return false;
     }
@@ -4443,18 +4475,21 @@ class PersistentParallelDownload {
       File('${session.manifest.path}.tmp'),
     ]) {
       if (await FileSystemEntity.type(file.path, followLinks: false) ==
-          FileSystemEntityType.file)
+          FileSystemEntityType.file) {
         await file.delete();
+      }
     }
     final bytes = await _partsDirectory(session.task);
     final directories = <Directory>[session.manifest.parent];
-    if (!p.equals(bytes.path, session.manifest.parent.path))
+    if (!p.equals(bytes.path, session.manifest.parent.path)) {
       directories.add(bytes);
+    }
     for (final directory in directories) {
       try {
         if (await FileSystemEntity.type(directory.path, followLinks: false) ==
-            FileSystemEntityType.directory)
+            FileSystemEntityType.directory) {
           await directory.delete();
+        }
       } on FileSystemException {
         // A foreign/unknown artifact never makes its directory ours to sweep.
       }
@@ -4474,7 +4509,7 @@ class PersistentParallelDownload {
     _recordDiagnostic('parallel.status', {
       'taskId': session.task.taskId,
       'status': status.name,
-      if (previousStatus != null) 'previousStatus': previousStatus,
+      'previousStatus': ?previousStatus,
       'reason': reason,
       'progress': session.progress,
     });
@@ -4498,7 +4533,7 @@ class PersistentParallelDownload {
         _writeParentRecord(
           session,
           record,
-        ).catchError((Object _, StackTrace __) {}),
+        ).catchError((Object _, StackTrace _) {}),
       );
       return;
     }
@@ -4639,8 +4674,9 @@ class PersistentParallelDownload {
   }
 
   Future<bool> _adoptCompletedTarget(_ParallelSession session) async {
-    if (session.readyToPublish != null)
+    if (session.readyToPublish != null) {
       return _recoverReadyPublication(session);
+    }
     final target = File(await session.task.filePath());
     if (await FileSystemEntity.type(target.path, followLinks: false) !=
         FileSystemEntityType.file) {
@@ -5062,8 +5098,9 @@ class PersistentParallelDownload {
         raw['expectedBytes'] != session.size ||
         raw['sourcePath'] is! String ||
         raw['sha256'] is! String ||
-        !RegExp(r'^[a-f0-9]{64}$').hasMatch(raw['sha256'] as String))
+        !RegExp(r'^[a-f0-9]{64}$').hasMatch(raw['sha256'] as String)) {
       return null;
+    }
     final sourcePath = raw['sourcePath'] as String;
     if (!await _ownedPublicationSource(session, sourcePath)) return null;
     return _ReadyPromotion(sourcePath, raw['sha256'] as String);

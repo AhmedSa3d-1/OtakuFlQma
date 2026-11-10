@@ -591,7 +591,7 @@ class _SubtitleAppearanceDialogState
             english: 'Subtitle Appearance',
             arabic: 'مظهر الترجمة',
           ),
-          style: TextStyle(
+          style: const TextStyle(
             color: HotstarPlayerStyle.primaryText,
             fontWeight: FontWeight.bold,
           ),
@@ -1008,7 +1008,7 @@ class _SubtitleAppearanceDialogState
               english: 'Select Font Size',
               arabic: 'اختر حجم الخط',
             ),
-            style: TextStyle(
+            style: const TextStyle(
               color: HotstarPlayerStyle.primaryText,
               fontWeight: FontWeight.bold,
             ),
@@ -1025,7 +1025,7 @@ class _SubtitleAppearanceDialogState
                       english: 'File Default',
                       arabic: 'الإعداد الافتراضي للملف',
                     ),
-                    style: TextStyle(color: HotstarPlayerStyle.primaryText),
+                    style: const TextStyle(color: HotstarPlayerStyle.primaryText),
                   ),
                   selected: _localSettings.subFixedTextSize == null,
                   selectedColor: Theme.of(context).colorScheme.primary,
@@ -1099,7 +1099,7 @@ class _SubtitleAppearanceDialogState
               english: 'Select Font Typeface',
               arabic: 'اختر نوع الخط',
             ),
-            style: TextStyle(
+            style: const TextStyle(
               color: HotstarPlayerStyle.primaryText,
               fontWeight: FontWeight.bold,
             ),
@@ -1141,7 +1141,7 @@ class _SubtitleAppearanceDialogState
                       english: 'Custom Font File...',
                       arabic: 'ملف خط مخصص...',
                     ),
-                    style: TextStyle(color: HotstarPlayerStyle.primaryText),
+                    style: const TextStyle(color: HotstarPlayerStyle.primaryText),
                   ),
                   selected: _localSettings.subTypefaceFilePath != null,
                   selectedColor: Theme.of(context).colorScheme.primary,
@@ -1187,16 +1187,16 @@ class _SubtitleAppearanceDialogState
                 children: [
                   Text(
                     appText(context, english: 'Bold Text Style', arabic: 'خط عريض'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.primaryText,
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
                     ),
                   ),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Text(
                     appText(context, english: 'Make subtitle text bold', arabic: 'اجعل نص الترجمة عريضًا'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.mutedText,
                       fontSize: 12,
                     ),
@@ -1234,16 +1234,16 @@ class _SubtitleAppearanceDialogState
                 children: [
                   Text(
                     appText(context, english: 'Italic Text Style', arabic: 'خط مائل'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.primaryText,
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
                     ),
                   ),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Text(
                     appText(context, english: 'Make subtitle text slanted', arabic: 'اجعل نص الترجمة مائلًا'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.mutedText,
                       fontSize: 12,
                     ),
@@ -1303,7 +1303,7 @@ class _SubtitleAppearanceDialogState
           backgroundColor: const Color(0xFF161720),
           title: Text(
             appText(context, english: 'Select Edge Type', arabic: 'اختر نوع الحواف'),
-            style: TextStyle(
+            style: const TextStyle(
               color: HotstarPlayerStyle.primaryText,
               fontWeight: FontWeight.bold,
             ),
@@ -1375,16 +1375,16 @@ class _SubtitleAppearanceDialogState
                     children: [
                       Text(
                         appText(context, english: 'Edge Stroke Size', arabic: 'سُمك حواف النص'),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: HotstarPlayerStyle.primaryText,
                           fontWeight: FontWeight.bold,
                           fontSize: 15,
                         ),
                       ),
-                      SizedBox(height: 2),
+                      const SizedBox(height: 2),
                       Text(
                         appText(context, english: 'Thicker outline borders (1px-60px)', arabic: 'حدود مخطط أكثر سماكة (1px–60px)'),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: HotstarPlayerStyle.mutedText,
                           fontSize: 12,
                         ),
@@ -1467,7 +1467,7 @@ class _SubtitleAppearanceDialogState
           children: [
             Text(
               appText(context, english: 'Background Opacity', arabic: 'عتامة الخلفية'),
-              style: TextStyle(
+              style: const TextStyle(
                 color: HotstarPlayerStyle.primaryText,
                 fontWeight: FontWeight.bold,
                 fontSize: 15,
@@ -1476,7 +1476,7 @@ class _SubtitleAppearanceDialogState
             const SizedBox(height: 2),
             Text(
               appText(context, english: 'Pill opacity level (0% to 100%)', arabic: 'مستوى عتامة الخلفية (0% إلى 100%)'),
-              style: TextStyle(
+              style: const TextStyle(
                 color: HotstarPlayerStyle.mutedText,
                 fontSize: 12,
               ),
@@ -1512,7 +1512,7 @@ class _SubtitleAppearanceDialogState
           backgroundColor: const Color(0xFF161720),
           title: Text(
             appText(context, english: 'Select Corner Radius', arabic: 'اختر استدارة الزوايا'),
-            style: TextStyle(
+            style: const TextStyle(
               color: HotstarPlayerStyle.primaryText,
               fontWeight: FontWeight.bold,
             ),
@@ -1525,7 +1525,7 @@ class _SubtitleAppearanceDialogState
                 ListTile(
                   title: Text(
                     appText(context, english: 'None (Sharp)', arabic: 'بلا (حادة)'),
-                    style: TextStyle(color: HotstarPlayerStyle.primaryText),
+                    style: const TextStyle(color: HotstarPlayerStyle.primaryText),
                   ),
                   selected: _localSettings.subBackgroundRadius == null,
                   selectedColor: Theme.of(context).colorScheme.primary,
@@ -1596,7 +1596,7 @@ class _SubtitleAppearanceDialogState
           children: [
             Text(
               appText(context, english: 'Elevation (Bottom padding)', arabic: 'الارتفاع (الهامش السفلي)'),
-              style: TextStyle(
+              style: const TextStyle(
                 color: HotstarPlayerStyle.primaryText,
                 fontWeight: FontWeight.bold,
                 fontSize: 15,
@@ -1605,7 +1605,7 @@ class _SubtitleAppearanceDialogState
             const SizedBox(height: 2),
             Text(
               appText(context, english: 'Push subtitles higher (0dp-400dp)', arabic: 'ارفع الترجمة لأعلى (0dp–400dp)'),
-              style: TextStyle(
+              style: const TextStyle(
                 color: HotstarPlayerStyle.mutedText,
                 fontSize: 12,
               ),
@@ -1651,7 +1651,7 @@ class _SubtitleAppearanceDialogState
           backgroundColor: const Color(0xFF161720),
           title: Text(
             appText(context, english: 'Select Alignment', arabic: 'اختر المحاذاة'),
-            style: TextStyle(
+            style: const TextStyle(
               color: HotstarPlayerStyle.primaryText,
               fontWeight: FontWeight.bold,
             ),
@@ -1668,7 +1668,7 @@ class _SubtitleAppearanceDialogState
                       english: 'Auto (Exo/ASS default)',
                       arabic: 'تلقائي (افتراضي Exo/ASS)',
                     ),
-                    style: TextStyle(color: HotstarPlayerStyle.primaryText),
+                    style: const TextStyle(color: HotstarPlayerStyle.primaryText),
                   ),
                   selected: _localSettings.subAlignment == null,
                   selectedColor: Theme.of(context).colorScheme.primary,
@@ -1737,16 +1737,16 @@ class _SubtitleAppearanceDialogState
                 children: [
                   Text(
                     appText(context, english: 'Remove Bloat', arabic: 'إزالة الزوائد'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.primaryText,
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
                     ),
                   ),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Text(
                     appText(context, english: 'Strip OpenSubtitles ads/promos (re-parses stream)', arabic: 'إزالة إعلانات وترويج OpenSubtitles (إعادة تحليل البث)'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.mutedText,
                       fontSize: 12,
                     ),
@@ -1784,16 +1784,16 @@ class _SubtitleAppearanceDialogState
                 children: [
                   Text(
                     appText(context, english: 'Remove Captions', arabic: 'إزالة النصوص الوصفية'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.primaryText,
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
                     ),
                   ),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Text(
                     appText(context, english: 'Strips bracketed text like [Music] or (cough)', arabic: 'إزالة النصوص بين الأقواس مثل [موسيقى] أو (سعال)'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.mutedText,
                       fontSize: 12,
                     ),
@@ -1833,16 +1833,16 @@ class _SubtitleAppearanceDialogState
                 children: [
                   Text(
                     appText(context, english: 'Force Uppercase', arabic: 'فرض الأحرف الكبيرة'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.primaryText,
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
                     ),
                   ),
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Text(
                     appText(context, english: 'Display all subtitle cues in capital letters', arabic: 'عرض جميع أسطر الترجمة بأحرف كبيرة'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.mutedText,
                       fontSize: 12,
                     ),
@@ -1900,7 +1900,7 @@ class _SubtitleAppearanceDialogState
                   const SizedBox(height: 2),
                   Text(
                     appText(context, english: 'Navigate and select color', arabic: 'تنقّل واختر لونًا'),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: HotstarPlayerStyle.mutedText,
                       fontSize: 12,
                     ),

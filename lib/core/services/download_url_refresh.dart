@@ -53,8 +53,9 @@ class DownloadUrlRefreshDescriptor {
     final trackingUrl = _string(map['trackingUrl']);
     final providerId = _string(map['providerId']);
     final source = _string(map['source']);
-    if (trackingUrl == null || providerId == null || source == null)
+    if (trackingUrl == null || providerId == null || source == null) {
       return null;
+    }
     return DownloadUrlRefreshDescriptor(
       trackingUrl: trackingUrl,
       providerId: providerId,
@@ -308,8 +309,9 @@ class DownloadUrlRefresher {
     final refreshed = _bestStreamMatch(candidates, descriptor);
     if (refreshed == null ||
         refreshed.requiresResolution ||
-        refreshed.url.trim().isEmpty)
+        refreshed.url.trim().isEmpty) {
       return null;
+    }
     return RefreshedDownloadUrl(
       url: refreshed.url.trim(),
       headers: Map<String, String>.from(refreshed.headers ?? const {}),

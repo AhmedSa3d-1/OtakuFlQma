@@ -23,14 +23,13 @@ import 'firestore_rest_client.dart';
 
 class AnimeWitcherAccountService {
   AnimeWitcherAccountService({
-    required StorageService storage,
+    required this._storage,
     required SecureTokenStorage secureStorage,
     FirebaseAuthRestClient? auth,
     FirestoreRestClient? firestore,
     FirebaseStorageRestClient? cloudStorage,
     FirebaseFunctionsRestClient? functions,
-  }) : _storage = storage,
-       _secureStorage = secureStorage,
+  }) : _secureStorage = secureStorage,
        _auth = auth ?? FirebaseAuthRestClient(),
        _firestore = firestore ?? FirestoreRestClient(),
        _cloudStorage = cloudStorage ?? FirebaseStorageRestClient(),
@@ -1136,8 +1135,9 @@ class AnimeWitcherAccountService {
     List<AnimeWitcherComment> comments,
   ) async {
     final profile = _profile;
-    if (comments.isEmpty || profile == null || _session == null)
+    if (comments.isEmpty || profile == null || _session == null) {
       return comments;
+    }
     try {
       return await _authenticated((token) async {
         return Future.wait<AnimeWitcherComment>(
@@ -2258,7 +2258,7 @@ class AnimeWitcherAccountService {
 
     final operation = _pendingStorageWrite.then<void>(
       (_) => run(),
-      onError: (Object _, StackTrace __) => run(),
+      onError: (Object _, StackTrace _) => run(),
     );
     _pendingStorageWrite = operation.catchError((Object _) {});
     return operation;
@@ -2871,7 +2871,7 @@ class AnimeWitcherAccountService {
     late final Future<void> operation;
     operation = previous.then<void>(
       (_) => write(),
-      onError: (Object _, StackTrace __) => write(),
+      onError: (Object _, StackTrace _) => write(),
     );
     _libraryWriteQueues[animeId] = operation;
     return operation.whenComplete(() {
@@ -3051,7 +3051,7 @@ class AnimeWitcherAccountService {
     late final Future<void> operation;
     operation = previous.then<void>(
       (_) => write(),
-      onError: (Object _, StackTrace __) => write(),
+      onError: (Object _, StackTrace _) => write(),
     );
     _mangaWatchedWriteQueues[mangaId] = operation;
     return operation.whenComplete(() {
@@ -3237,7 +3237,7 @@ class AnimeWitcherAccountService {
     late final Future<void> operation;
     operation = previous.then<void>(
       (_) => write(),
-      onError: (Object _, StackTrace __) => write(),
+      onError: (Object _, StackTrace _) => write(),
     );
     _watchedWriteQueues[animeId] = operation;
     return operation.whenComplete(() {
@@ -3636,7 +3636,7 @@ class AnimeWitcherAccountService {
     late final Future<void> operation;
     operation = previous.then<void>(
       (_) => write(),
-      onError: (Object _, StackTrace __) => write(),
+      onError: (Object _, StackTrace _) => write(),
     );
     _progressWriteQueues[animeId] = operation;
     return operation.whenComplete(() {

@@ -286,7 +286,7 @@ class _RankingPageState extends State<_RankingPage>
           children: [
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.55,
-              child: Center(child: Text('لا توجد نتائج في هذا التصنيف حاليًا')),
+              child: const Center(child: const Text('لا توجد نتائج في هذا التصنيف حاليًا')),
             ),
           ],
         ),
@@ -388,7 +388,7 @@ class _RankingGrid extends StatelessWidget {
                 child: TextButton.icon(
                   onPressed: () => onLoadMoreRetry(),
                   icon: const Icon(Icons.refresh_rounded),
-                  label: Text('إعادة المحاولة'),
+                  label: const Text('إعادة المحاولة'),
                 ),
               );
             }
@@ -426,12 +426,12 @@ class _RankingError extends StatelessWidget {
           children: [
             const Icon(Icons.cloud_off_rounded, size: 42),
             const SizedBox(height: 12),
-            Text('تعذر تحميل هذا التصنيف', textAlign: TextAlign.center),
+            const Text('تعذر تحميل هذا التصنيف', textAlign: TextAlign.center),
             const SizedBox(height: 12),
             FilledButton.tonalIcon(
               onPressed: () => onRetry(),
               icon: const Icon(Icons.refresh_rounded),
-              label: Text('إعادة المحاولة'),
+              label: const Text('إعادة المحاولة'),
             ),
           ],
         ),

@@ -160,10 +160,10 @@ void main() {
             body: TextButton(
               onPressed: () => showDialog<ProviderSearchFilters>(
                 context: context,
-                builder: (_) => ProviderSearchFilterDialog(
-                  options: const ProviderSearchFilterOptions(),
-                  initialValue: const ProviderSearchFilters(),
-                  categories: const <ProviderSearchFilterCategory>[
+                builder: (_) => const ProviderSearchFilterDialog(
+                  options: ProviderSearchFilterOptions(),
+                  initialValue: ProviderSearchFilters(),
+                  categories: <ProviderSearchFilterCategory>[
                     ProviderSearchFilterCategory(
                       value: 'characters',
                       label: 'Characters',

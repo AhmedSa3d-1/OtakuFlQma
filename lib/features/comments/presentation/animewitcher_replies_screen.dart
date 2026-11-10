@@ -302,12 +302,12 @@ class _AnimeWitcherRepliesScreenState
             children: [
               const Icon(Icons.cloud_off_rounded, size: 40),
               const SizedBox(height: 10),
-              Text('تعذر تحميل الردود.'),
+              const Text('تعذر تحميل الردود.'),
               const SizedBox(height: 10),
               FilledButton.tonalIcon(
                 onPressed: _loadInitial,
                 icon: const Icon(Icons.refresh_rounded),
-                label: Text('إعادة المحاولة'),
+                label: const Text('إعادة المحاولة'),
               ),
             ],
           ),
@@ -348,7 +348,7 @@ class _AnimeWitcherRepliesScreenState
         itemCount:
             _pager.items.length +
             (_pager.hasMore || _pager.loadingMore ? 1 : 0),
-        separatorBuilder: (_, __) => const SizedBox(height: 8),
+        separatorBuilder: (_, _) => const SizedBox(height: 8),
         itemBuilder: (context, index) {
           if (index >= _pager.items.length) {
             return const Padding(

@@ -209,12 +209,12 @@ class MetadataBar extends ConsumerWidget {
           );
 
     final firstRow = <Widget>[
-      ...[if (seasonEntry != null) seasonEntry, statusEntry],
+      ...[?seasonEntry, statusEntry],
     ];
     final secondRow = <Widget>[
       ...[
-        if (ageEntry != null) ageEntry,
-        if (episodeEntry != null) episodeEntry,
+        ?ageEntry,
+        ?episodeEntry,
         typeEntry,
       ],
     ];
@@ -420,7 +420,7 @@ class _NextAiringWidgetState extends State<NextAiringWidget> {
       return const SizedBox.shrink();
     }
 
-    final heading = 'الحلقة القادمة بعد';
+    const heading = 'الحلقة القادمة بعد';
 
     return Container(
       width: double.infinity,

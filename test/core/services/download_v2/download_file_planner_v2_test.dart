@@ -42,7 +42,7 @@ void main() {
       } else {
         await target.create(recursive: true);
         if (occupation == 'foreign manifest') {
-          await MangaChapterManifestV2(version: 1, mangaId: 'other', chapterId: 'other',
+          await const MangaChapterManifestV2(version: 1, mangaId: 'other', chapterId: 'other',
             pageCount: 1, completedIndexes: {}, isComplete: false).writeTo(target);
         } else {
           await File(p.join(target.path, 'notes.txt')).writeAsString('keep');
@@ -63,7 +63,7 @@ void main() {
     const chapter = MangaChapter(id: 'c357', mangaId: 'm1', url: '/chapter', name: 'Chapter', number: 357);
     final suffix = logicalDownloadIdForMangaChapter(mangaId: 'm1', chapterId: 'c357').value.substring(6, 18);
     final oldPath = p.join(temp.path, 'manga', '_CON', 'الفصل 357-$suffix');
-    await MangaChapterManifestV2(version: 1, mangaId: 'm1', chapterId: 'c357',
+    await const MangaChapterManifestV2(version: 1, mangaId: 'm1', chapterId: 'c357',
       pageCount: 1, completedIndexes: {}, isComplete: false).writeTo(Directory(oldPath));
     expect(await mangaChapterDestinationDirectoryV2(
       MultimediaItem(title: 'CON', url: '/manga', posterUrl: ''), chapter,
@@ -212,10 +212,10 @@ void main() {
         const chapter = MangaChapter(id: 'c1', mangaId: 'm1', url: '/chapter', name: 'Chapter');
         final chapterName = hasIdentitySuffix ? 'Chapter-${logicalDownloadIdForMangaChapter(mangaId: 'm1', chapterId: 'c1').value.substring('manga_'.length, 'manga_'.length + 12)}' : 'Chapter';
         final oldPath = p.join(temp.path, 'manga', oldTitle, chapterName);
-        await MangaChapterManifestV2(
+        await const MangaChapterManifestV2(
           version: MangaChapterManifestV2.currentVersion,
           mangaId: 'm1', chapterId: 'c1', pageCount: 1,
-          completedIndexes: const <int>{0}, isComplete: true,
+          completedIndexes: <int>{0}, isComplete: true,
         ).writeTo(Directory(oldPath));
         final planned = await mangaChapterDestinationDirectoryV2(
           MultimediaItem(title: oldTitle, url: '/manga', posterUrl: ''), chapter,
@@ -235,10 +235,10 @@ void main() {
     final page = File(p.join(oldPath, '0001.webp'));
     await page.create(recursive: true);
     await page.writeAsBytes(<int>[1, 2, 3]);
-    await MangaChapterManifestV2(
+    await const MangaChapterManifestV2(
       version: MangaChapterManifestV2.currentVersion,
       mangaId: 'm1', chapterId: 'c1', pageCount: 1,
-      completedIndexes: const <int>{0}, isComplete: true,
+      completedIndexes: <int>{0}, isComplete: true,
     ).writeTo(Directory(oldPath));
     expect(await mangaChapterDestinationDirectoryV2(
       MultimediaItem(title: 'Example', url: '/manga', posterUrl: ''), chapter,
@@ -259,10 +259,10 @@ void main() {
     final page = File(p.join(actualPath, '0001.webp'));
     await page.create(recursive: true);
     await page.writeAsBytes(<int>[1, 2, 3], flush: true);
-    await MangaChapterManifestV2(
+    await const MangaChapterManifestV2(
       version: MangaChapterManifestV2.currentVersion,
       mangaId: 'm1', chapterId: 'c1', pageCount: 1,
-      completedIndexes: const <int>{0}, isComplete: true,
+      completedIndexes: <int>{0}, isComplete: true,
     ).writeTo(Directory(actualPath));
     expect(await Directory(actualPath).exists(), isTrue);
     final planned = await mangaChapterDestinationDirectoryV2(
@@ -276,10 +276,10 @@ void main() {
   test('legacy path lookup never adopts a dot-title manifest outside manga', () async {
     final temp = await _useTestDownloads();
     final unsafeLegacy = Directory(p.join(temp.path, 'Chapter'));
-    await MangaChapterManifestV2(
+    await const MangaChapterManifestV2(
       version: MangaChapterManifestV2.currentVersion,
       mangaId: 'm1', chapterId: 'c1', pageCount: 1,
-      completedIndexes: const <int>{0}, isComplete: true,
+      completedIndexes: <int>{0}, isComplete: true,
     ).writeTo(unsafeLegacy);
     final planned = await mangaChapterDestinationDirectoryV2(
       MultimediaItem(title: '..', url: '/manga', posterUrl: ''),
@@ -327,12 +327,12 @@ void main() {
       name: 'Chapter one', number: 1,
     );
     final oldPath = p.join(temp.path, 'manga', 'Example', 'الفصل 1');
-    await MangaChapterManifestV2(
+    await const MangaChapterManifestV2(
       version: MangaChapterManifestV2.currentVersion,
       mangaId: 'm1',
       chapterId: 'chapter-first',
       pageCount: 1,
-      completedIndexes: const <int>{0},
+      completedIndexes: <int>{0},
       isComplete: true,
     ).writeTo(Directory(oldPath));
 

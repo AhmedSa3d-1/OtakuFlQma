@@ -166,7 +166,7 @@ class EpisodeBrowseBar extends StatelessWidget {
           runSpacing: 8,
           crossAxisAlignment: WrapCrossAlignment.center,
           children: <Widget>[
-            if (leading != null) leading!,
+            ?leading,
             if (ranges.isNotEmpty)
               PopupMenuButton<int>(
                 key: const ValueKey<String>('episode-range-menu'),

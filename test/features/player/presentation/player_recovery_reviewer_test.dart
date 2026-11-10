@@ -516,7 +516,7 @@ void main() {
           duration: const Duration(minutes: 24),
         );
         player.advance(const Duration(seconds: 90));
-        final fallback = StreamResult(
+        const fallback = StreamResult(
           url: 'https://video.test/fallback.mp4',
           source: 'Fallback',
           refreshUrl: 'https://video.test/fallback-refresh',
@@ -554,7 +554,7 @@ void main() {
     () async {
       await startSource(live: true);
       await controller.playNextEpisode(
-        selectedSource: StreamResult(
+        selectedSource: const StreamResult(
           url: 'https://video.test/episode-2.mp4',
           source: 'Selected',
         ),
@@ -581,7 +581,7 @@ void main() {
     await startSource();
     player.value = player.value.copyWith(duration: const Duration(minutes: 24));
     player.advance(const Duration(seconds: 90));
-    final fallback = StreamResult(
+    const fallback = StreamResult(
       url: 'https://video.test/fallback.mp4',
       source: 'Fallback',
     );
@@ -701,7 +701,7 @@ void main() {
         duration: const Duration(minutes: 24),
       );
       player.advance(const Duration(seconds: 90));
-      final fallback = StreamResult(
+      const fallback = StreamResult(
         url: 'https://video.test/fallback.mp4',
         source: 'Fallback',
       );

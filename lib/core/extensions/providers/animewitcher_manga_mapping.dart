@@ -190,7 +190,7 @@ MultimediaItem mapAnimeWitcherMangaHit(Map<String, Object?> source) {
 
   return MultimediaItem(
     title: title,
-    url: 'https://animewitcher.com/manga/' + Uri.encodeComponent(id),
+    url: 'https://animewitcher.com/manga/${Uri.encodeComponent(id)}',
     posterUrl: _posterUrl(source),
     description: _optional(
       _stripHtml(source['story'] ?? source['story_ar'] ?? details['story']),
@@ -386,7 +386,7 @@ double? _archiveChapterNumber(String label, String url, String slug) {
       ? ''
       : uri.pathSegments.last.toLowerCase();
   final normalizedSlug = slug.toLowerCase();
-  final prefix = normalizedSlug + '-';
+  final prefix = '$normalizedSlug-';
   final tail = segment.startsWith(prefix)
       ? segment.substring(prefix.length)
       : segment;
@@ -431,7 +431,7 @@ List<MangaChapter> parseMangaLekArchiveChapters({
   final slug = _archiveSlug(base);
   if (slug.isEmpty) return const <MangaChapter>[];
 
-  final expectedPrefix = '/' + slug + '-';
+  final expectedPrefix = '/$slug-';
   final chapters = <MangaChapter>[];
   final seenNumbers = <String>{};
   final anchors = RegExp(

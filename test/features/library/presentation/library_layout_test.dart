@@ -441,11 +441,11 @@ void main() {
           animeWitcherAccountServiceProvider.overrideWithValue(account),
           watchHistoryProvider.overrideWith(() => _History(const [])),
         ],
-        child: MaterialApp(
-          locale: const Locale('ar'),
+        child: const MaterialApp(
+          locale: Locale('ar'),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
-          home: const LibraryScreen(),
+          home: LibraryScreen(),
         ),
       ),
     );

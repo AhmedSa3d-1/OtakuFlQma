@@ -336,8 +336,9 @@ bool isDownloadedEpisodeFileName(
   );
   if (label.isEmpty) return false;
   final normalizedLabel = label.toLowerCase();
-  if (sanitizeDownloadFileName(rawStem).toLowerCase() == normalizedLabel)
+  if (sanitizeDownloadFileName(rawStem).toLowerCase() == normalizedLabel) {
     return true;
+  }
   final quality = RegExp(
     r' \(\d{3,4}p\)$',
     caseSensitive: false,

@@ -313,12 +313,12 @@ class _CharacterDetailsScreenState
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('لا يوجد بيانات', textAlign: TextAlign.center),
+                      const Text('لا يوجد بيانات', textAlign: TextAlign.center),
                       const SizedBox(height: 12),
                       FilledButton.tonalIcon(
                         onPressed: _load,
                         icon: const Icon(Icons.refresh_rounded),
-                        label: Text('إعادة المحاولة'),
+                        label: const Text('إعادة المحاولة'),
                       ),
                     ],
                   ),
@@ -427,7 +427,7 @@ class _CharacterDetailsScreenState
                             unawaited(_loadAnimes(provider, current));
                           },
                           icon: const Icon(Icons.refresh_rounded),
-                          label: Text('إعادة المحاولة'),
+                          label: const Text('إعادة المحاولة'),
                         ),
                       ],
                     )

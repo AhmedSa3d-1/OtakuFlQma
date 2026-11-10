@@ -224,12 +224,12 @@ Map<String, String> _ratedSync({
 }) {
   return <String, String>{
     'awScore': score,
-    if (scoreCount != null) 'awScoreCount': scoreCount,
+    'awScoreCount': ?scoreCount,
     'awMalScore': mal,
     'awMalScoringUsers': users,
     'malId': malId,
     if (reviewsClosed) 'awReviewsClosed': 'true',
-    if (state != null) 'awState': state,
+    'awState': ?state,
   };
 }
 

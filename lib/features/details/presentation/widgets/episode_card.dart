@@ -743,9 +743,9 @@ class EpisodeCard extends HookConsumerWidget {
         color: const Color(0xFFD32F2F),
         borderRadius: BorderRadius.circular(4),
       ),
-      child: Text(
+      child: const Text(
         'فلر',
-        style: const TextStyle(
+        style: TextStyle(
           color: Colors.white,
           fontSize: 10,
           fontWeight: FontWeight.w800,

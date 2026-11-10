@@ -507,8 +507,9 @@ final class _RenewableHandle extends _Handle
 Future<void> _until(bool Function() condition) async {
   final deadline = DateTime.now().add(const Duration(seconds: 3));
   while (!condition()) {
-    if (DateTime.now().isAfter(deadline))
+    if (DateTime.now().isAfter(deadline)) {
       throw TimeoutException('Condition not reached');
+    }
     await Future<void>.delayed(const Duration(milliseconds: 10));
   }
 }
