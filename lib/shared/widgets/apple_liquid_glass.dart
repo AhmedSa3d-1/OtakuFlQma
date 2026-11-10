@@ -10,14 +10,14 @@ import 'package:flutter/services.dart';
 
 import 'app_back_button.dart';
 
-const _appleLiquidGlassViewType = 'com.animewitcher.app/liquid_glass';
+const _appleLiquidGlassViewType = 'com.otakuflqma.app/liquid_glass';
 const _appleNativeGlassButtonViewType =
-    'com.animewitcher.app/native_glass_button';
-const _appleNativeToolbarViewType = 'com.animewitcher.app/native_toolbar';
+    'com.otakuflqma.app/native_glass_button';
+const _appleNativeToolbarViewType = 'com.otakuflqma.app/native_toolbar';
 const _appleNativeSearchFieldViewType =
-    'com.animewitcher.app/native_search_field';
+    'com.otakuflqma.app/native_search_field';
 const _appleNativeMenuButtonViewType =
-    'com.animewitcher.app/native_menu_button';
+    'com.otakuflqma.app/native_menu_button';
 
 /// Off everywhere: iOS draws the same plain controls as every other
 /// platform. The native glass buttons, and the header overlay that carried
@@ -369,7 +369,7 @@ class ApplePersistentGlassHeaderOverlay extends StatefulWidget {
 class _ApplePersistentGlassHeaderOverlayState
     extends State<ApplePersistentGlassHeaderOverlay> {
   static const MethodChannel _nativeHeaderChannel = MethodChannel(
-    'com.animewitcher.app/persistent_glass_header',
+    'com.otakuflqma.app/persistent_glass_header',
   );
 
   bool _syncScheduled = false;
@@ -1029,7 +1029,7 @@ class _AppleNativeGlassIconButtonState
 
   void _onPlatformViewCreated(int id) {
     final channel = MethodChannel(
-      'com.animewitcher.app/native_glass_button/$id',
+      'com.otakuflqma.app/native_glass_button/$id',
     );
     channel.setMethodCallHandler((call) async {
       if (call.method == 'pressed') widget.onPressed?.call();
@@ -1133,7 +1133,7 @@ class _AppleNativeToolbarState extends State<_AppleNativeToolbar> {
   }
 
   void _onPlatformViewCreated(int id) {
-    final channel = MethodChannel('com.animewitcher.app/native_toolbar/$id');
+    final channel = MethodChannel('com.otakuflqma.app/native_toolbar/$id');
     channel.setMethodCallHandler((call) async {
       if (call.method == 'pressed') {
         final index = call.arguments as int?;
@@ -1292,7 +1292,7 @@ class _AppleNativeGlassSearchFieldState
 
   void _onPlatformViewCreated(int id) {
     final channel = MethodChannel(
-      'com.animewitcher.app/native_search_field/$id',
+      'com.otakuflqma.app/native_search_field/$id',
     );
     channel.setMethodCallHandler((call) async {
       if (call.method == 'changed' && call.arguments is String) {
@@ -1458,7 +1458,7 @@ class _AppleNativeMenuButtonState extends State<AppleNativeMenuButton> {
 
   void _onPlatformViewCreated(int id) {
     final channel = MethodChannel(
-      'com.animewitcher.app/native_menu_button/$id',
+      'com.otakuflqma.app/native_menu_button/$id',
     );
     channel.setMethodCallHandler((call) async {
       switch (call.method) {
@@ -1565,9 +1565,9 @@ class _AppleNativeMenuButtonState extends State<AppleNativeMenuButton> {
 }
 
 const _appleSearchGlassActionsViewType =
-    'com.animewitcher.app/search_glass_actions';
+    'com.otakuflqma.app/search_glass_actions';
 const _appleLiquidGlassPresenterChannel = MethodChannel(
-  'com.animewitcher.app/liquid_glass_presenter',
+  'com.otakuflqma.app/liquid_glass_presenter',
 );
 
 /// Returns true only when iOS is using Apple's iOS 26+ Liquid Glass APIs.
@@ -1700,7 +1700,7 @@ class _AppleSearchGlassActionsState extends State<AppleSearchGlassActions> {
 
   void _onPlatformViewCreated(int id) {
     final channel = MethodChannel(
-      'com.animewitcher.app/search_glass_actions/$id',
+      'com.otakuflqma.app/search_glass_actions/$id',
     );
     channel.setMethodCallHandler((call) async {
       switch (call.method) {

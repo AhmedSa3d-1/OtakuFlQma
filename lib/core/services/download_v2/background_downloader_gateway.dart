@@ -175,7 +175,7 @@ Future<TaskStatusUpdate> resolveNativeRangeFailureV2(
     throw StateError('Invalid retry metadata identity');
   }
   final row = await const MethodChannel(
-    'com.animewitcher.app/download_continued_processing',
+    'com.otakuflqma.app/download_continued_processing',
   ).invokeMapMethod<String, dynamic>('retryMetadataForRange', {
     'taskId': task.taskId,
     'parentTaskId': parent,
@@ -227,7 +227,7 @@ Future<bool> claimNativeRangeForDartV2(
   try {
     final granted =
         await const MethodChannel(
-          'com.animewitcher.app/download_continued_processing',
+          'com.otakuflqma.app/download_continued_processing',
         ).invokeMethod<bool>('claimRangeForDart', <String, Object>{
           'taskId': task.taskId,
           'parentTaskId': parentId,
@@ -253,7 +253,7 @@ Future<void> withdrawNativeRangeParentV2(
   DownloadContinuedProcessingService.invalidateNativeQueueCheckpoint();
   try {
     final withdrawn = await const MethodChannel(
-      'com.animewitcher.app/download_continued_processing',
+      'com.otakuflqma.app/download_continued_processing',
     ).invokeMethod<bool>('withdrawRangeParent', {
       'parentTaskId': parentTaskId,
     }).timeout(_nativeControlAckTimeoutV2);
@@ -920,7 +920,7 @@ final class PackageBackgroundDownloaderGateway
     if (_isIOS()) {
       try {
         await const MethodChannel(
-          'com.animewitcher.app/download_continued_processing',
+          'com.otakuflqma.app/download_continued_processing',
         ).invokeMethod<void>('forgetRangeRetryMetadata', {
           'parentTaskId': parentTaskId,
         }).timeout(_nativeControlAckTimeoutV2);
@@ -1606,7 +1606,7 @@ Future<bool> promoteCompletedDownloadFileV2(
   try {
     final promoted =
         await const MethodChannel(
-          'com.animewitcher.app/download_continued_processing',
+          'com.otakuflqma.app/download_continued_processing',
         ).invokeMethod<bool>('promoteCompletedFile', <String, Object>{
           'sourcePath': source.path,
           'targetPath': target.path,
@@ -1852,7 +1852,7 @@ Future<({bool matches, String? validator})> verifySavedRangeSourceV2(
 Future<int?> availableDownloadStorageBytesV2(String path) async {
   try {
     return await const MethodChannel(
-      'com.animewitcher.app/download_continued_processing',
+      'com.otakuflqma.app/download_continued_processing',
     ).invokeMethod<int>('availableDiskBytes', <String, Object>{'path': path})
         .timeout(_nativeControlAckTimeoutV2);
   } on MissingPluginException {

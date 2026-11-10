@@ -231,7 +231,7 @@ class ExternalPlayerService {
   // -- Android: Native Intent via platform channel --
 
   static const _playerChannel = MethodChannel(
-    'com.animewitcher.app/external_player',
+    'com.otakuflqma.app/external_player',
   );
 
   Future<bool> _launchAndroid(

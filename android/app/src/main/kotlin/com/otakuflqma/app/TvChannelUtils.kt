@@ -1,4 +1,4 @@
-package com.animewitcher.app
+package com.otakuflqma.app
 
 import android.annotation.SuppressLint
 import android.content.ComponentName
@@ -152,7 +152,7 @@ object TvChannelUtils {
             .setDisplayName(context.getString(R.string.app_name))
             .setAppLinkIntent(Intent(Intent.ACTION_VIEW).apply {
                 // Adjust to match your app's deep link if needed
-                data = "animewitcherapp://open".toUri()
+                data = "otakuflqma://open".toUri()
             })
             .setInputId(inputId)
             .build()

@@ -248,7 +248,7 @@ class _NavTabCellState extends State<_NavTabCell> {
   }
 }
 
-const _appleNativeTabBarViewType = 'com.animewitcher.app/native_tab_bar';
+const _appleNativeTabBarViewType = 'com.otakuflqma.app/native_tab_bar';
 
 String _appleTabSymbol(
   TaskbarDestination destination, {
@@ -319,7 +319,7 @@ class _AppleNativeTabBarState extends State<_AppleNativeTabBar> {
   }
 
   void _onPlatformViewCreated(int id) {
-    final channel = MethodChannel('com.animewitcher.app/native_tab_bar/$id');
+    final channel = MethodChannel('com.otakuflqma.app/native_tab_bar/$id');
     channel.setMethodCallHandler((call) async {
       if (call.method != 'selected') return;
       final selectedId = call.arguments as String?;

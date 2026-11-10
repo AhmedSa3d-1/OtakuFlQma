@@ -59,7 +59,7 @@ Future<void> configureNativeDownloadDiagnosticLog(
   if (!forceAvailableForTesting && (kIsWeb || !Platform.isIOS)) return;
   try {
     await const MethodChannel(
-      'com.animewitcher.app/download_continued_processing',
+      'com.otakuflqma.app/download_continued_processing',
     ).invokeMethod<void>('configureDiagnosticLog', {'enabled': enabled})
         .timeout(const Duration(seconds: 5));
   } on MissingPluginException {
@@ -97,7 +97,7 @@ class DownloadContinuedProcessingService {
   }
 
   static const MethodChannel _channel = MethodChannel(
-    'com.animewitcher.app/download_continued_processing',
+    'com.otakuflqma.app/download_continued_processing',
   );
 
   final SystemDownloadCancellation onSystemCancel;
