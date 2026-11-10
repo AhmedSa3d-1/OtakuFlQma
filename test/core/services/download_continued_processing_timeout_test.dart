@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  const channel = MethodChannel('com.animewitcher.app/download_continued_processing');
+  const channel = MethodChannel('com.otakuflqma.app/download_continued_processing');
   late DownloadContinuedProcessingService service;
   void createService() {
     service = DownloadContinuedProcessingService(

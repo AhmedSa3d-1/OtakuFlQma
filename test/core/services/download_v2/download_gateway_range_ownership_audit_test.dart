@@ -553,7 +553,7 @@ void main() {
   test('natural completion waits for internal pause checkpoint writes before tracking cleanup', () async {
     final f = await _Fixture.create();
     addTearDown(f.dispose);
-    const channel = MethodChannel('com.animewitcher.app/download_continued_processing');
+    const channel = MethodChannel('com.otakuflqma.app/download_continued_processing');
     final messenger = TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
     messenger.setMockMethodCallHandler(channel, (call) async {
       if (call.method == 'availableDiskBytes') return 1024 * 1024 * 1024;
@@ -885,7 +885,7 @@ void main() {
       final root = await Directory.systemTemp.createTemp('aw-native-promotion-contract-');
       final source = await File(p.join(root.path, 'verified.tmp')).writeAsBytes([1, 2, 3]);
       final target = await File(p.join(root.path, 'foreign.mp4')).writeAsBytes([]);
-      const channel = MethodChannel('com.animewitcher.app/download_continued_processing');
+      const channel = MethodChannel('com.otakuflqma.app/download_continued_processing');
       final messenger = TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
       var invoked = false;
       messenger.setMockMethodCallHandler(channel, (call) async {

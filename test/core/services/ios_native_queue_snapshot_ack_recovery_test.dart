@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:animewitcher/core/services/download_continued_processing_service.dart';
 
 const _channel = MethodChannel(
-  'com.animewitcher.app/download_continued_processing',
+  'com.otakuflqma.app/download_continued_processing',
 );
 
 Map<String, Object> _queueArgs() => <String, Object>{

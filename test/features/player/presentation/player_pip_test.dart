@@ -219,7 +219,7 @@ void main() {
   });
 
   group('PlayerPlatformService PiP channel', () {
-    const channel = MethodChannel('com.animewitcher.app.player/pip.test');
+    const channel = MethodChannel('com.otakuflqma.app.player/pip.test');
     late PlayerPlatformService service;
     late List<MethodCall> calls;
 

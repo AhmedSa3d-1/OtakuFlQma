@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   const channel = MethodChannel(
-    'com.animewitcher.app/download_continued_processing',
+    'com.otakuflqma.app/download_continued_processing',
   );
 
   tearDown(() async {
@@ -61,7 +61,7 @@ void main() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (call) async {
           if (call.method == 'start') {
-            return 'com.animewitcher.app.download.session';
+            return 'com.otakuflqma.app.download.session';
           }
           return true;
         });
@@ -86,7 +86,7 @@ void main() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (call) async {
           if (call.method == 'start') {
-            return 'com.animewitcher.app.download.session';
+            return 'com.otakuflqma.app.download.session';
           }
           if (call.method == 'update') return false;
           return true;

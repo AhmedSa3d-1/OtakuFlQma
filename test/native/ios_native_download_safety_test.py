@@ -23,8 +23,8 @@ manager = (root / "ios/Runner/DownloadContinuedProcessingManager.swift").read_te
 encryption = queue[queue.index("private enum DownloadNativeQueueEncryption"):queue.index("/// Full waiter payloads")]
 gate = manager[manager.index("private final class DownloadContinuedProcessingCompletion"):manager.index("/// Owns the **one**")]
 # An isolated service avoids touching real app secrets when run locally.
-service = "com.animewitcher.native-safety-test." + str(uuid.uuid4())
-encryption = encryption.replace("com.animewitcher.download.nativeQueueEncryption", service)
+service = "com.otakuflqma.native-safety-test." + str(uuid.uuid4())
+encryption = encryption.replace("com.otakuflqma.download.nativeQueueEncryption", service)
 checks = r'''
 assert(DownloadPageProgress.acceptsDartUpdate(inForeground: false, incomingPages: 12, currentPages: nil))
 assert(DownloadPageProgress.acceptsDartUpdate(inForeground: false, incomingPages: nil, currentPages: 23), "Manga to video must switch out of page mode while background")

@@ -26,7 +26,7 @@ import 'package:flutter/services.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   test('tracking cleanup failure stays visible and retry deletes without restarting iOS', () async {
-    const channel = MethodChannel('com.animewitcher.app/download_continued_processing');
+    const channel = MethodChannel('com.otakuflqma.app/download_continued_processing');
     final calls = <MethodCall>[];
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (call) async {

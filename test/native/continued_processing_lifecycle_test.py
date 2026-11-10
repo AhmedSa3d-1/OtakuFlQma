@@ -38,9 +38,9 @@ enum TestTimers { static var current: Timer? }
 
 struct TestBundle {
   static let main = TestBundle()
-  var bundleIdentifier: String? { "com.animewitcher.test" }
+  var bundleIdentifier: String? { "com.otakuflqma.test" }
   func object(forInfoDictionaryKey key: String) -> Any? {
-    ["com.animewitcher.test.download.*"]
+    ["com.otakuflqma.test.download.*"]
   }
 }
 class BGTask {

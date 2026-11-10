@@ -23,11 +23,11 @@ void main() {
     expect(runner.existsSync(), isTrue);
 
     final cmakeText = cmake.readAsStringSync();
-    expect(cmakeText, contains('set(BINARY_NAME "animewitcher")'));
-    expect(cmakeText, contains('set(APPLICATION_ID "com.animewitcher.app")'));
+    expect(cmakeText, contains('set(BINARY_NAME "otakuflqma")'));
+    expect(cmakeText, contains('set(APPLICATION_ID "com.otakuflqma.app")'));
 
     final runnerText = runner.readAsStringSync();
-    expect(runnerText, contains('"AnimeWitcher"'));
+    expect(runnerText, contains('"OtakuFlQma"'));
   });
 
   test('release and preview workflows build Linux packages', () {

@@ -166,7 +166,7 @@ import background_downloader
 /// response before that message can reach Dart, including across app relaunch.
 enum DownloadNativeRetryMetadata {
   private static let lock = NSLock()
-  private static let key = "com.animewitcher.download.retryMetadata.v1"
+  private static let key = "com.otakuflqma.download.retryMetadata.v1"
 
   static func record(identity: DownloadRangeIdentity, httpStatus: Int?, headers: [String: String]?) {
     guard let httpStatus, (100...599).contains(httpStatus) else { return }
@@ -234,7 +234,7 @@ private enum DownloadNativeQueueEncryption {
   // All callers hold DownloadNativeWaitingQueue.lock.
   private static var cachedKey: SymmetricKey?
   private(set) static var keyMissing = false
-  private static let service = "com.animewitcher.download.nativeQueueEncryption"
+  private static let service = "com.otakuflqma.download.nativeQueueEncryption"
 
   private static func key(createIfMissing: Bool) -> SymmetricKey? {
     if let cachedKey { return cachedKey }
@@ -289,7 +289,7 @@ private enum DownloadNativeQueueEncryption {
 /// Flutter method channels are a no-op while the engine is asleep, so this
 /// store holds url/headers/filename/directory/task JSON for the plugin session.
 enum DownloadNativeWaitingQueue {
-  static let stateKey = "com.animewitcher.download.nativeWaitingQueue.v2"
+  static let stateKey = "com.otakuflqma.download.nativeWaitingQueue.v2"
   private static let encryptedStateKey = stateKey + ".encrypted"
   // A locked/corrupt store must never be overwritten by an empty native load.
   private static var stateReadFailed = false

@@ -24,7 +24,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   HttpOverrides.global = null;
   const bridge = MethodChannel(
-    'com.animewitcher.app/download_continued_processing',
+    'com.otakuflqma.app/download_continued_processing',
   );
   final messenger =
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;

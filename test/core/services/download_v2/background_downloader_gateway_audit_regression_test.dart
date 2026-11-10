@@ -134,7 +134,7 @@ void main() {
         TaskRecord(parent, TaskStatus.paused, 1, 8),
       );
       const channel = MethodChannel(
-        'com.animewitcher.app/download_continued_processing',
+        'com.otakuflqma.app/download_continued_processing',
       );
       MethodCall? storageProbe;
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
@@ -177,7 +177,7 @@ void main() {
     'storage probe reads free bytes for the actual destination volume',
     () async {
       const channel = MethodChannel(
-        'com.animewitcher.app/download_continued_processing',
+        'com.otakuflqma.app/download_continued_processing',
       );
       MethodCall? received;
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger

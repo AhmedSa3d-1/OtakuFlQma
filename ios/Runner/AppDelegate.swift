@@ -67,7 +67,7 @@ import UserNotifications
     let messenger = engineBridge.applicationRegistrar.messenger()
 
     let persistentHeaderChannel = FlutterMethodChannel(
-      name: "com.animewitcher.app/persistent_glass_header",
+      name: "com.otakuflqma.app/persistent_glass_header",
       binaryMessenger: messenger
     )
     // With Flutter's UIScene lifecycle, AppDelegate.window can stay nil because
@@ -101,36 +101,36 @@ import UserNotifications
     ) {
       glassRegistrar.register(
         AppleLiquidGlassViewFactory(),
-        withId: "com.animewitcher.app/liquid_glass"
+        withId: "com.otakuflqma.app/liquid_glass"
       )
       glassRegistrar.register(
         AppleSearchGlassActionsViewFactory(messenger: messenger),
-        withId: "com.animewitcher.app/search_glass_actions"
+        withId: "com.otakuflqma.app/search_glass_actions"
       )
       glassRegistrar.register(
         AppleNativeTabBarViewFactory(messenger: messenger),
-        withId: "com.animewitcher.app/native_tab_bar"
+        withId: "com.otakuflqma.app/native_tab_bar"
       )
       glassRegistrar.register(
         AppleNativeGlassButtonViewFactory(messenger: messenger),
-        withId: "com.animewitcher.app/native_glass_button"
+        withId: "com.otakuflqma.app/native_glass_button"
       )
       glassRegistrar.register(
         AppleNativeToolbarViewFactory(messenger: messenger),
-        withId: "com.animewitcher.app/native_toolbar"
+        withId: "com.otakuflqma.app/native_toolbar"
       )
       glassRegistrar.register(
         AppleNativeSearchFieldViewFactory(messenger: messenger),
-        withId: "com.animewitcher.app/native_search_field"
+        withId: "com.otakuflqma.app/native_search_field"
       )
       glassRegistrar.register(
         AppleNativeMenuButtonViewFactory(messenger: messenger),
-        withId: "com.animewitcher.app/native_menu_button"
+        withId: "com.otakuflqma.app/native_menu_button"
       )
     }
 
     let glassPresenter = FlutterMethodChannel(
-      name: "com.animewitcher.app/liquid_glass_presenter",
+      name: "com.otakuflqma.app/liquid_glass_presenter",
       binaryMessenger: messenger
     )
     glassPresenter.setMethodCallHandler { call, result in
@@ -189,7 +189,7 @@ import UserNotifications
     liquidGlassPresenterChannel = glassPresenter
 
     let channel = FlutterMethodChannel(
-      name: "com.animewitcher.app/download_continued_processing",
+      name: "com.otakuflqma.app/download_continued_processing",
       binaryMessenger: messenger
     )
 
@@ -559,7 +559,7 @@ private final class AppleNativeTabBarPlatformView: NSObject, FlutterPlatformView
   ) {
     rootView = UIView(frame: frame)
     channel = FlutterMethodChannel(
-      name: "com.animewitcher.app/native_tab_bar/\(viewId)",
+      name: "com.otakuflqma.app/native_tab_bar/\(viewId)",
       binaryMessenger: messenger
     )
     super.init()
@@ -1255,7 +1255,7 @@ private final class AppleNativeGlassButtonPlatformView: NSObject, FlutterPlatfor
   ) {
     rootView = UIView(frame: frame)
     channel = FlutterMethodChannel(
-      name: "com.animewitcher.app/native_glass_button/\(viewId)",
+      name: "com.otakuflqma.app/native_glass_button/\(viewId)",
       binaryMessenger: messenger
     )
     super.init()
@@ -1361,7 +1361,7 @@ private final class AppleNativeSearchFieldPlatformView: NSObject, FlutterPlatfor
       effectView = UIVisualEffectView(effect: UIBlurEffect(style: .systemMaterial))
     }
     channel = FlutterMethodChannel(
-      name: "com.animewitcher.app/native_search_field/\(viewId)",
+      name: "com.otakuflqma.app/native_search_field/\(viewId)",
       binaryMessenger: messenger
     )
     super.init()
@@ -1638,7 +1638,7 @@ private final class AppleNativeToolbarPlatformView: NSObject, FlutterPlatformVie
     rootView = AnimeWitcherPassthroughView(frame: frame)
     toolbar = AnimeWitcherPassthroughToolbar(frame: .zero)
     channel = FlutterMethodChannel(
-      name: "com.animewitcher.app/native_toolbar/\(viewId)",
+      name: "com.otakuflqma.app/native_toolbar/\(viewId)",
       binaryMessenger: messenger
     )
     super.init()
@@ -1951,7 +1951,7 @@ private final class AppleNativeMenuButtonPlatformView: NSObject, FlutterPlatform
   ) {
     rootView = UIView(frame: frame)
     channel = FlutterMethodChannel(
-      name: "com.animewitcher.app/native_menu_button/\(viewId)",
+      name: "com.otakuflqma.app/native_menu_button/\(viewId)",
       binaryMessenger: messenger
     )
     super.init()
@@ -2211,7 +2211,7 @@ private final class AppleSearchGlassActionsPlatformView: NSObject, FlutterPlatfo
   ) {
     rootView = AppleSearchActionsHitView(frame: frame)
     channel = FlutterMethodChannel(
-      name: "com.animewitcher.app/search_glass_actions/\(viewId)",
+      name: "com.otakuflqma.app/search_glass_actions/\(viewId)",
       binaryMessenger: messenger
     )
     super.init()

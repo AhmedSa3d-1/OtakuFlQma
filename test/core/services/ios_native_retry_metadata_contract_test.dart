@@ -30,7 +30,7 @@ void main() {
   test('retry metadata lookup is available before iOS 26 overlay checks', () {
     final delegate = File('ios/Runner/AppDelegate.swift').readAsStringSync();
     final channel = delegate.indexOf(
-      'name: "com.animewitcher.app/download_continued_processing"',
+      'name: "com.otakuflqma.app/download_continued_processing"',
     );
     final bridge = delegate.indexOf(
       'if call.method == "retryMetadataForRange"',

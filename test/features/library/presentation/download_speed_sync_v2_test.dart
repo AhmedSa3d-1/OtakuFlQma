@@ -45,7 +45,7 @@ void main() {
 
   test('app strip and iOS receive the same total speed sample without another timer', () async {
     const channel = MethodChannel(
-      'com.animewitcher.app/download_continued_processing',
+      'com.otakuflqma.app/download_continued_processing',
     );
     final calls = <MethodCall>[];
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger

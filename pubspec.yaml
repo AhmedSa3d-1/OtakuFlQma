@@ -93,6 +93,7 @@ dev_dependencies:
   # 2.17.0 is retracted; 2.17.1 requires build 5, unsupported by our builders.
   build_runner: ^2.16.2
   go_router_builder: ^4.5.0
+  flutter_launcher_icons: ^0.14.2
 
 flutter:
   config:
@@ -121,3 +122,11 @@ flutter:
           weight: 600
         - asset: assets/fonts/readex_pro/ReadexPro-Bold.ttf
           weight: 700
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "Logo/Logo.png"
+  adaptive_icon_background: "#E60066"
+  adaptive_icon_foreground: "Logo/Logo.png"
+  remove_alpha_ios: true

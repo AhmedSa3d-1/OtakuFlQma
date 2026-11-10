@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- OtakuFlQma color palette -->
+    <color name="otakuflqma_primary">#E60066</color>
+    <color name="otakuflqma_primary_transparent">#AE E60066</color>
+    <color name="otakuflqma_secondary">#FF1A75</color>
+    <color name="otakuflqma_gold">#D4AF65</color>
+    <color name="otakuflqma_background">#101318</color>
+    <color name="otakuflqma_surface">#181B22</color>
+    <color name="otakuflqma_surface_highlight">#1E222B</color>
+    <color name="otakuflqma_on_surface">#FFFFFF</color>
+    <color name="otakuflqma_text_secondary">#BEBBB5</color>
+    <color name="otakuflqma_error">#EF4444</color>
+	<color name="ic_launcher_background">#E60066</color>
+</resources>

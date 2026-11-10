@@ -118,7 +118,7 @@ void main() {
     final start = delegate.indexOf('if call.method == "availableDiskBytes"');
     expect(start, greaterThanOrEqualTo(0));
     final channel = delegate.indexOf(
-      'name: "com.animewitcher.app/download_continued_processing"',
+      'name: "com.otakuflqma.app/download_continued_processing"',
     );
     expect(
       start,

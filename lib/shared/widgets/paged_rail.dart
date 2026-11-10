@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 // [ScrollDirection] is defined in the rendering layer and is not re-exported
 // by material.dart, so it must be imported explicitly.
-import 'package:flutter/rendering.dart' show ScrollDirection;
+import 'package:flutter/rendering.dart' show ScrollDirection, ScrollCacheExtent;
 
 /// A horizontal list whose cards snap into view whenever the user lifts
 /// their finger.

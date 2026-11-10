@@ -17,7 +17,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   const channel = MethodChannel('com.bbflight.background_downloader');
   const bridge = MethodChannel(
-    'com.animewitcher.app/download_continued_processing',
+    'com.otakuflqma.app/download_continued_processing',
   );
   const connectivity = MethodChannel('dev.fluttercommunity.plus/connectivity');
   const connectivityStatus = MethodChannel(

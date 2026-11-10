@@ -9,7 +9,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   const channel = MethodChannel(
-    'com.animewitcher.app/download_continued_processing',
+    'com.otakuflqma.app/download_continued_processing',
   );
   const parentId = 'aw_v2_claim_g1';
   DownloadTask task({int generation = 2, String parent = parentId}) =>
