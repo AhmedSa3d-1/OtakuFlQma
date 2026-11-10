@@ -77,7 +77,7 @@ class _ScaleRatingBarState extends State<ScaleRatingBar>
 
   @override
   Widget build(BuildContext context) {
-    const gold = AppTheme.animeWitcherAccent;
+    const gold = AppTheme.otakuFlQmaGold;
     return Directionality(
       textDirection: TextDirection.ltr,
       child: AnimatedBuilder(

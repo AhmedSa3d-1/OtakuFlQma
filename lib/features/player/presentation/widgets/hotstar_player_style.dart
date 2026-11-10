@@ -12,9 +12,9 @@ class HotstarPlayerStyle {
   static const Color background = Color(0xFF000000);
   static const Color panel = Color(0xFF05070B);
   static const Color panelElevated = Color(0xFF090D14);
-  static const Color accent = AppTheme.animeWitcherAccent;
-  static const Color hotstar = AppTheme.animeWitcherAccent;
-  static const Color accentAlt = AppTheme.animeWitcherAccent;
+  static const Color accent = AppTheme.otakuFlQmaPrimary;
+  static const Color hotstar = AppTheme.otakuFlQmaPrimary;
+  static const Color accentAlt = AppTheme.otakuFlQmaPrimary;
   static const Color primaryText = Color(0xF2FFFFFF);
   static const Color secondaryText = Color(0xA6FFFFFF);
   static const Color mutedText = Color(0x73FFFFFF);
@@ -33,7 +33,7 @@ class HotstarPlayerStyle {
 
   /// Marker on the scrubber for skip segments (intro / recap / outro). A warm
   /// amber so it reads clearly against the blue progress and grey track.
-  static const Color skipSegment = AppTheme.animeWitcherAccent;
+  static const Color skipSegment = AppTheme.otakuFlQmaPrimary;
 
   // --- Motion ---
   static const Duration controlFadeDuration = Duration(milliseconds: 220);

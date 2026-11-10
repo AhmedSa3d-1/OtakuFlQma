@@ -545,7 +545,7 @@ class MultimediaCard extends StatelessWidget {
             Icons.star_rounded,
             key: const Key('catalog-rating-witcher-source'),
             size: (subtitleTextStyle.fontSize ?? 11) + 3,
-            color: AppTheme.animeWitcherAccent,
+            color: AppTheme.otakuFlQmaPrimary,
           ),
           const SizedBox(width: 3),
           score,

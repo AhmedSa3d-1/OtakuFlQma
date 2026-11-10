@@ -103,7 +103,7 @@ class DetailsRatingsSummary extends StatelessWidget {
                         Icon(
                           Icons.star_rounded,
                           size: scoreFontSize + 3,
-                          color: AppTheme.animeWitcherAccent,
+color: AppTheme.otakuFlQmaPrimary,
                         ),
                         const SizedBox(width: 4),
                         Text(
@@ -390,7 +390,7 @@ class _DetailsRatingsRowState extends ConsumerState<DetailsRatingsRow> {
                             ? Icons.star_rounded
                             : Icons.star_outline_rounded,
                         iconColor: (_userRating ?? 0) > 0
-                            ? AppTheme.animeWitcherAccent
+                            ? AppTheme.otakuFlQmaPrimary
                             : null,
                         label: (_userRating ?? 0) > 0
                             ? '${_userRating!}/10'
@@ -430,7 +430,7 @@ class _DetailsRatingsRowState extends ConsumerState<DetailsRatingsRow> {
               'تقييم انمي ويتشر',
               textAlign: TextAlign.center,
               style: theme.textTheme.labelLarge?.copyWith(
-                color: AppTheme.animeWitcherAccent,
+                color: AppTheme.otakuFlQmaPrimary,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -442,7 +442,7 @@ class _DetailsRatingsRowState extends ConsumerState<DetailsRatingsRow> {
                 const Icon(
                   Icons.star_rounded,
                   size: 26,
-                  color: AppTheme.animeWitcherAccent,
+color: AppTheme.otakuFlQmaPrimary,
                 ),
                 const SizedBox(width: 6),
                 Text(

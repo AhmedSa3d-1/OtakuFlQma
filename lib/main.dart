@@ -262,7 +262,7 @@ class _AppRootState extends State<AppRoot> {
         textDirection: TextDirection.rtl,
         child: DynamicColorBuilder(
           builder: (lightDynamic, darkDynamic) {
-            const color = AppTheme.animeWitcherAccent;
+            const color = AppTheme.otakuFlQmaPrimary;
             return ColoredBox(
               color: Colors.black,
               child: Center(child: AppLoadingIndicator(color: color)),

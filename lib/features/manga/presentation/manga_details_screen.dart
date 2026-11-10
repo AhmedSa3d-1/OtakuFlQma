@@ -637,7 +637,7 @@ class _MangaDetailsScreenState extends ConsumerState<MangaDetailsScreen>
               : Icons.star_outline_rounded,
           tooltip: appText(context, english: 'Rate this', arabic: 'قيّم'),
           foregroundColor: (_userRating ?? 0) > 0
-              ? AppTheme.animeWitcherAccent
+              ? AppTheme.otakuFlQmaPrimary
               : colors.onSurface,
           fallbackColor: fallback,
           ratingCaption: _userRating == null ? null : '${_userRating!}/10',

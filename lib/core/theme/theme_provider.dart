@@ -113,7 +113,7 @@ enum AppThemeStyle {
 
   /// The theme's accent, for a dot beside its name in the pickers.
   Color get swatch => switch (this) {
-    AppThemeStyle.dark => AppTheme.animeWitcherAccent,
+    AppThemeStyle.dark => AppTheme.otakuFlQmaPrimary,
     AppThemeStyle.light => AppTheme.lightBackground,
     _ => AppTheme.paletteFor(this)!.accent,
   };
