@@ -48,7 +48,7 @@ Future<void> showTaskbarCustomizationDialog(
                   child: ReorderableListView.builder(
                     buildDefaultDragHandles: false,
                     itemCount: order.length,
-                    onReorder: (oldIndex, newIndex) {
+                    onReorderItem: (oldIndex, newIndex) {
                       setState(() {
                         if (newIndex > oldIndex) newIndex -= 1;
                         final item = order.removeAt(oldIndex);

@@ -1594,7 +1594,7 @@ class _DetailsScreenState extends ConsumerState<DetailsScreen>
         children: [
           AppLoadingIndicator(),
           SizedBox(height: 12),
-          const Text('يتم تحميل الحلقات…', textAlign: TextAlign.center),
+          Text('يتم تحميل الحلقات…', textAlign: TextAlign.center),
         ],
       );
     }

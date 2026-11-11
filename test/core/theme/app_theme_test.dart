@@ -24,16 +24,16 @@ void main() {
       expect(theme.contentTextStyle?.color, colorScheme.onSurface);
     },
   );
-  test('AnimeWitcher accent is the fixed app accent in dark and light themes', () {
+  test('OtakuFlQma primary is the fixed app accent in dark and light themes', () {
     const dynamicBlue = ColorScheme.dark(primary: Color(0xFF448AFF));
     final darkTheme = AppTheme.createDarkTheme(dynamicBlue);
     final lightTheme = AppTheme.createLightTheme(null);
 
-    expect(AppTheme.animeWitcherAccent, const Color(0xFFEEC60A));
-    expect(darkTheme.colorScheme.primary, AppTheme.animeWitcherAccent);
-    expect(darkTheme.colorScheme.secondary, AppTheme.animeWitcherAccent);
-    expect(lightTheme.colorScheme.primary, AppTheme.animeWitcherAccent);
-    expect(lightTheme.colorScheme.secondary, AppTheme.animeWitcherAccent);
+    expect(AppTheme.otakuFlQmaPrimary, const Color(0xFFE60066));
+    expect(darkTheme.colorScheme.primary, AppTheme.otakuFlQmaPrimary);
+    expect(darkTheme.colorScheme.secondary, AppTheme.otakuFlQmaSecondary);
+    expect(lightTheme.colorScheme.primary, AppTheme.otakuFlQmaPrimary);
+    expect(lightTheme.colorScheme.secondary, AppTheme.otakuFlQmaSecondary);
   });
 
 }

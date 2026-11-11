@@ -225,13 +225,13 @@ String _newsTimeAgo(BuildContext context, DateTime? date) {
   if (elapsed.inMinutes < 1) return 'الآن';
   if (elapsed.inHours < 1) {
     final value = elapsed.inMinutes;
-    return ('منذ ${value == 1 ? 'دقيقة' : value.toString() + ' دقيقة'}');
+    return ('منذ ${value == 1 ? 'دقيقة' : '$value دقيقة'}');
   }
   if (elapsed.inDays < 1) {
     final value = elapsed.inHours;
-    return ('منذ ${value == 1 ? 'ساعة' : value.toString() + ' ساعة'}');
+    return ('منذ ${value == 1 ? 'ساعة' : '$value ساعة'}');
   }
 
   final value = elapsed.inDays;
-  return ('منذ ${value == 1 ? 'يوم' : value.toString() + ' يوم'}');
+  return ('منذ ${value == 1 ? 'يوم' : '$value يوم'}');
 }

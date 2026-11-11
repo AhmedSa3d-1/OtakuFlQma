@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_test/flutter_test.dart';
 
 /// Wait for the operation under test, rather than unrelated infinite animations.
@@ -26,14 +28,16 @@ Future<T> pumpUntilFuture<T>(
   late T result;
   Object? error;
   StackTrace? stackTrace;
-  future.then((value) {
-    result = value;
-    completed = true;
-  }, onError: (Object caught, StackTrace stack) {
-    error = caught;
-    stackTrace = stack;
-    completed = true;
-  });
+  unawaited(
+    future.then((value) {
+      result = value;
+      completed = true;
+    }, onError: (Object caught, StackTrace stack) {
+      error = caught;
+      stackTrace = stack;
+      completed = true;
+    }),
+  );
   await pumpUntil(tester, () => completed, description);
   if (error != null) Error.throwWithStackTrace(error!, stackTrace!);
   return result;

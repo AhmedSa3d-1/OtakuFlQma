@@ -2406,7 +2406,7 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
       if (cancelToken?.isCancelled == true) rethrow;
     }
 
-    return _firestoreAnimeListPage(
+    return await _firestoreAnimeListPage(
       fieldPath: 'show_time',
       equalTo: normalizedDay,
       offset: safeOffset,
@@ -6047,7 +6047,7 @@ class AnimeWitcherNativeProvider extends AnimeWitcherProvider {
         );
         if (direct.isNotEmpty) return direct;
         if (_isMediaFireSharePage(absolute)) {
-          return _extractMediaFire(
+          return await _extractMediaFire(
             _ServerRecord(
               name: server.name,
               link: absolute,

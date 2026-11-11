@@ -265,7 +265,7 @@ class _AppRootState extends State<AppRoot> {
             const color = AppTheme.otakuFlQmaPrimary;
             return const ColoredBox(
               color: Colors.black,
-              child: const Center(child: const AppLoadingIndicator(color: color)),
+              child: Center(child: AppLoadingIndicator(color: color)),
             );
           },
         ),
@@ -587,33 +587,33 @@ class _MyAppState extends ConsumerState<MyApp>
                   ),
                   const PlatformMenuItemGroup(
                     members: <PlatformMenuItem>[
-                      const PlatformMenuItem(
+                      PlatformMenuItem(
                         label: 'قص',
-                        shortcut: const SingleActivator(
+                        shortcut: SingleActivator(
                           LogicalKeyboardKey.keyX,
                           meta: true,
                         ),
                         onSelected: null,
                       ),
-                      const PlatformMenuItem(
+                      PlatformMenuItem(
                         label: 'نسخ',
-                        shortcut: const SingleActivator(
+                        shortcut: SingleActivator(
                           LogicalKeyboardKey.keyC,
                           meta: true,
                         ),
                         onSelected: null,
                       ),
-                      const PlatformMenuItem(
+                      PlatformMenuItem(
                         label: 'لصق',
-                        shortcut: const SingleActivator(
+                        shortcut: SingleActivator(
                           LogicalKeyboardKey.keyV,
                           meta: true,
                         ),
                         onSelected: null,
                       ),
-                      const PlatformMenuItem(
+                      PlatformMenuItem(
                         label: 'تحديد الكل',
-                        shortcut: const SingleActivator(
+                        shortcut: SingleActivator(
                           LogicalKeyboardKey.keyA,
                           meta: true,
                         ),

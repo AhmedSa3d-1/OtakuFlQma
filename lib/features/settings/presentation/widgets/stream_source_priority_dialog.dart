@@ -75,7 +75,7 @@ Future<void> _showStreamPriorityDialog(
                   child: ReorderableListView.builder(
                     buildDefaultDragHandles: false,
                     itemCount: order.length,
-                    onReorder: (oldIndex, newIndex) {
+                    onReorderItem: (oldIndex, newIndex) {
                       setState(() {
                         if (newIndex > oldIndex) newIndex -= 1;
                         final value = order.removeAt(oldIndex);

@@ -388,14 +388,16 @@ class _MangaDetailsScreenState extends ConsumerState<MangaDetailsScreen>
     if (!mounted) return;
 
     final completedDownload = completedMangaChapterDownload(downloads, chapter);
-    MangaReaderRoute(
-      $extra: MangaReaderRouteExtra(
-        manga: item,
-        chapter: chapter,
-        chapters: chapters,
-        localChapterDirectory: completedDownload?.destinationPath,
-      ),
-    ).push<void>(context);
+    unawaited(
+      MangaReaderRoute(
+        $extra: MangaReaderRouteExtra(
+          manga: item,
+          chapter: chapter,
+          chapters: chapters,
+          localChapterDirectory: completedDownload?.destinationPath,
+        ),
+      ).push<void>(context),
+    );
   }
 
   Future<void> _showPoster(MultimediaItem item) async {

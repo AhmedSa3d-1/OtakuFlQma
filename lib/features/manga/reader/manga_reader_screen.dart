@@ -1010,11 +1010,11 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
           .setCover(widget.manga.url, file.uri.toString());
       if (!mounted) return;
       ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: const Text('تم تحديث الغلاف')));
+          .showSnackBar(const SnackBar(content: Text('تم تحديث الغلاف')));
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: const Text('تعذر تحديث الغلاف')));
+          .showSnackBar(const SnackBar(content: Text('تعذر تحديث الغلاف')));
     }
   }
 
@@ -1030,7 +1030,7 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: const Text('تعذرت مشاركة الصورة')));
+          .showSnackBar(const SnackBar(content: Text('تعذرت مشاركة الصورة')));
     }
   }
 
@@ -1049,7 +1049,7 @@ class _MangaReaderScreenState extends ConsumerState<MangaReaderScreen>
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: const Text('تعذر حفظ الصورة')));
+          .showSnackBar(const SnackBar(content: Text('تعذر حفظ الصورة')));
     }
   }
 

@@ -67,7 +67,7 @@ final class DownloadStartRequestV2 {
 final class DownloadManagerV2 {
   DownloadManagerV2({
     required this._store,
-    required BackgroundDownloaderGateway gateway,
+    required this._gateway,
     required this._sourceResolver,
     DownloadIntegrityVerifierV2? integrityVerifier,
     this._mangaChapterPageResolver,
@@ -77,8 +77,7 @@ final class DownloadManagerV2 {
     this._parallelPauseReadiness,
     int Function()? maxConcurrentDownloads,
     int Function()? nowMillis,
-  }) : _gateway = gateway,
-       _integrityVerifier =
+  }) : _integrityVerifier =
            integrityVerifier ?? const DownloadIntegrityVerifierV2(),
        _diagnostics = diagnostics ?? const NoopDownloadDiagnosticsV2(),
        _presentationObservers =

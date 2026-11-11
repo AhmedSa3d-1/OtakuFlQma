@@ -1258,6 +1258,7 @@ class DetailsController extends _$DetailsController {
     details = state.details.asData?.value ?? details;
 
     if (overrideUrl != null) {
+      if (!context.mounted) return;
       await ref
           .read(playbackLauncherProvider)
           .play(context, overrideUrl, baseItem: details);
@@ -1265,6 +1266,7 @@ class DetailsController extends _$DetailsController {
     }
 
     if (state.isMovie) {
+      if (!context.mounted) return;
       await ref
           .read(playbackLauncherProvider)
           .play(context, details.episodes!.first.url, baseItem: details);
@@ -1272,6 +1274,7 @@ class DetailsController extends _$DetailsController {
     }
 
     if (state.targetEpisode != null) {
+      if (!context.mounted) return;
       await ref
           .read(playbackLauncherProvider)
           .play(context, state.targetEpisode!.url, baseItem: details);
@@ -1282,6 +1285,7 @@ class DetailsController extends _$DetailsController {
     if (firstSeason.isNotEmpty) {
       final ep = state.seasonMap[firstSeason.first]?.first;
       if (ep != null) {
+        if (!context.mounted) return;
         await ref
             .read(playbackLauncherProvider)
             .play(context, ep.url, baseItem: details);

@@ -86,9 +86,9 @@ class MangaReadingRepository {
   MangaReadingRepository(
     this._storage, {
     this._isCloudRead,
-    MangaCloudReadSync? syncReadStates,
+    this._syncReadStates,
     this._onChanged,
-  }) : _syncReadStates = syncReadStates;
+  });
 
   final StorageService _storage;
   final MangaCloudReadLookup? _isCloudRead;

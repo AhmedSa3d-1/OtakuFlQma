@@ -207,7 +207,7 @@ class _MangaChapterListState extends ConsumerState<MangaChapterList> {
       onSelected: (value) =>
           setState(() => _rangeIndex = value < 0 ? null : value),
       itemBuilder: (_) => <PopupMenuEntry<int>>[
-        PopupMenuItem<int>(value: -1, child: Text(all)),
+        const PopupMenuItem<int>(value: -1, child: Text(all)),
         for (var i = 0; i < ranges.length; i++)
           PopupMenuItem<int>(
             value: i,

@@ -316,7 +316,7 @@ query ($search: String) {
         // is how the id is reached while AniList's own API is refusing.
         final aniListId = MalIdParsers.kitsuAniListId(mappings.data);
         if (aniListId == null) return null;
-        return _fromAniZip(aniListId);
+        return await _fromAniZip(aniListId);
       } on DioException catch (e) {
         _noteFailure(_kitsuEndpoint, e, 'Kitsu');
         final status = e.response?.statusCode ?? 0;

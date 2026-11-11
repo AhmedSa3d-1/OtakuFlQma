@@ -168,7 +168,7 @@ void main() {
       logicalId: logical, mediaId: 'show', unitKey: 'episode://1',
       variantKey: '480p', generation: 1, taskId: 'paused-live-task',
       intent: DownloadUserIntent.paused, destinationPath: '/tmp/live-writer.mp4',
-      sourceDescriptor: const {}, updatedAtMillis: 1,
+      sourceDescriptor: {}, updatedAtMillis: 1,
     );
     await store.put(record);
     final gateway = _ReaddGateway();
@@ -215,7 +215,7 @@ void main() {
         schemaVersion: kLogicalDownloadSchemaVersionV2, logicalId: logical,
         mediaId: 'show', unitKey: 'episode://paused', variantKey: '480p',
         generation: 1, taskId: 'genuinely-paused-task', intent: DownloadUserIntent.paused,
-        destinationPath: '/tmp/ui-genuinely-paused.mp4', sourceDescriptor: const {}, updatedAtMillis: 1,
+        destinationPath: '/tmp/ui-genuinely-paused.mp4', sourceDescriptor: {}, updatedAtMillis: 1,
       );
       await store.put(record);
       final gateway = _ReaddGateway();
@@ -387,7 +387,7 @@ void main() {
       schemaVersion: kLogicalDownloadSchemaVersionV2, logicalId: logical,
       mediaId: 'show', unitKey: 'episode://metadata', variantKey: '480p',
       generation: 1, taskId: 'reused-metadata-task', intent: DownloadUserIntent.paused,
-      destinationPath: '/tmp/ui-exact-metadata.mp4', sourceDescriptor: const {}, updatedAtMillis: 1,
+      destinationPath: '/tmp/ui-exact-metadata.mp4', sourceDescriptor: {}, updatedAtMillis: 1,
     );
     await store.put(record);
     final manager = DownloadManagerV2(store: store, gateway: _ReaddGateway(), sourceResolver: StaticSourceResolverV2());
@@ -427,7 +427,7 @@ void main() {
         schemaVersion: kLogicalDownloadSchemaVersionV2, logicalId: logical,
         mediaId: 'show', unitKey: 'episode://legacy', variantKey: '480p',
         generation: 1, taskId: 'legacy-visible-task', intent: DownloadUserIntent.paused,
-        destinationPath: '/tmp/ui-legacy-visible.mp4', sourceDescriptor: const {}, updatedAtMillis: 1,
+        destinationPath: '/tmp/ui-legacy-visible.mp4', sourceDescriptor: {}, updatedAtMillis: 1,
       );
       await store.put(record);
       final manager = DownloadManagerV2(store: store, gateway: _ReaddGateway(), sourceResolver: StaticSourceResolverV2());

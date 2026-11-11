@@ -1,6 +1,5 @@
 import 'package:animewitcher/shared/widgets/underline_segment_tabs.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

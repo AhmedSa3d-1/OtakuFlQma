@@ -252,8 +252,8 @@ Widget _downloadsApp(
         ? const SizedBox(height: 80, child: ColoredBox(color: Colors.purple))
         : null,
     body: const RepaintBoundary(
-      key: const ValueKey('downloads-tab-root'),
-      child: const DownloadsTab(),
+      key: ValueKey('downloads-tab-root'),
+      child: DownloadsTab(),
     ),
   );
   if (shellDirection != null) {

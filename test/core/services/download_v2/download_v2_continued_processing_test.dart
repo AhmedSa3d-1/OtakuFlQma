@@ -805,7 +805,7 @@ void main() {
     final observer = IosDownloadContinuedProcessingObserverV2(service: service);
     const record = LogicalDownloadRecordV2(
       schemaVersion: kLogicalDownloadSchemaVersionV2,
-      logicalId: const DownloadLogicalId('recovered-episode'),
+      logicalId: DownloadLogicalId('recovered-episode'),
       mediaId: 'anime-1',
       unitKey: 'episode-1',
       variantKey: 'sub|480p',
@@ -813,7 +813,7 @@ void main() {
       taskId: 'aw_v2_recovered_episode_g2',
       intent: DownloadUserIntent.active,
       destinationPath: 'downloads/Episode 1.mp4',
-      sourceDescriptor: const <String, Object?>{'providerId': 'provider'},
+      sourceDescriptor: <String, Object?>{'providerId': 'provider'},
       expectedBytes: 1000,
       updatedAtMillis: 1,
     );
@@ -877,7 +877,7 @@ void main() {
       );
       const record = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2,
-        logicalId: const DownloadLogicalId('episode-queued'),
+        logicalId: DownloadLogicalId('episode-queued'),
         mediaId: 'anime-1',
         unitKey: 'queued',
         variantKey: 'sub|1080p',
@@ -885,7 +885,7 @@ void main() {
         taskId: 'aw_v2_episode_queued_g1',
         intent: DownloadUserIntent.active,
         destinationPath: 'downloads/Queued/Episode.mp4',
-        sourceDescriptor: const <String, Object?>{'providerId': 'provider'},
+        sourceDescriptor: <String, Object?>{'providerId': 'provider'},
         expectedBytes: 400,
         updatedAtMillis: 1,
       );
@@ -935,7 +935,7 @@ void main() {
       );
       const record = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2,
-        logicalId: const DownloadLogicalId('episode-waiting'),
+        logicalId: DownloadLogicalId('episode-waiting'),
         mediaId: 'anime-1',
         unitKey: 'waiting',
         variantKey: 'sub|1080p',
@@ -943,7 +943,7 @@ void main() {
         taskId: 'aw_v2_episode_waiting_g1',
         intent: DownloadUserIntent.active,
         destinationPath: 'downloads/Waiting/Episode.mp4',
-        sourceDescriptor: const <String, Object?>{'providerId': 'provider'},
+        sourceDescriptor: <String, Object?>{'providerId': 'provider'},
         expectedBytes: 400,
         awaitingAdmission: true,
         updatedAtMillis: 1,
@@ -990,7 +990,7 @@ void main() {
       );
       const oldRecord = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2,
-        logicalId: const DownloadLogicalId('episode-old'),
+        logicalId: DownloadLogicalId('episode-old'),
         mediaId: 'anime-1',
         unitKey: 'old',
         variantKey: 'sub|1080p',
@@ -998,14 +998,14 @@ void main() {
         taskId: 'aw_v2_episode_old_g1',
         intent: DownloadUserIntent.active,
         destinationPath: 'downloads/Old/Episode.mp4',
-        sourceDescriptor: const <String, Object?>{'providerId': 'provider'},
+        sourceDescriptor: <String, Object?>{'providerId': 'provider'},
         expectedBytes: 400,
         completedAtMillis: 1,
         updatedAtMillis: 1,
       );
       const currentRecord = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2,
-        logicalId: const DownloadLogicalId('episode-current'),
+        logicalId: DownloadLogicalId('episode-current'),
         mediaId: 'anime-1',
         unitKey: 'current',
         variantKey: 'sub|1080p',
@@ -1013,7 +1013,7 @@ void main() {
         taskId: 'aw_v2_episode_current_g1',
         intent: DownloadUserIntent.active,
         destinationPath: 'downloads/Current/Episode.mp4',
-        sourceDescriptor: const <String, Object?>{'providerId': 'provider'},
+        sourceDescriptor: <String, Object?>{'providerId': 'provider'},
         expectedBytes: 400,
         updatedAtMillis: 2,
       );
@@ -1102,7 +1102,7 @@ void main() {
       );
       const record = LogicalDownloadRecordV2(
         schemaVersion: kLogicalDownloadSchemaVersionV2,
-        logicalId: const DownloadLogicalId('episode-11'),
+        logicalId: DownloadLogicalId('episode-11'),
         mediaId: 'anime-1',
         unitKey: '11',
         variantKey: 'sub|1080p',
@@ -1110,7 +1110,7 @@ void main() {
         taskId: 'aw_v2_episode_11_g1',
         intent: DownloadUserIntent.active,
         destinationPath: 'downloads/Yani Neko/Episode 11.mp4',
-        sourceDescriptor: const <String, Object?>{'providerId': 'provider'},
+        sourceDescriptor: <String, Object?>{'providerId': 'provider'},
         expectedBytes: 400,
         updatedAtMillis: 1,
       );

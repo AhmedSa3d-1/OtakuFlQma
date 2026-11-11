@@ -90,7 +90,7 @@ class MoreScreen extends ConsumerWidget {
         size.shortestSide >= twoPaneMinimumShortestSide) {
       return Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppPageAppBar(title: pageTitle, canPop: false),
+        appBar: const AppPageAppBar(title: pageTitle, canPop: false),
         body: Padding(
           padding: EdgeInsets.only(top: headerTop),
           child: MoreSidebarShell(
@@ -166,11 +166,11 @@ class MoreScreen extends ConsumerWidget {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppPageAppBar(
+      appBar: const AppPageAppBar(
         title: pageTitle,
         canPop: false,
-        actions: const <Widget>[
-          AppSideMenuButton(padding: const EdgeInsetsDirectional.only(end: 12)),
+        actions: <Widget>[
+          AppSideMenuButton(padding: EdgeInsetsDirectional.only(end: 12)),
         ],
       ),
       body: ListView(

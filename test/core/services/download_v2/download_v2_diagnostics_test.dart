@@ -206,7 +206,7 @@ void main() {
 
   test('diagnostic event serializes only allowlisted non-secret fields', () {
     const event = DownloadDiagnosticEventV2(
-      logicalId: const DownloadLogicalId('logical-episode'),
+      logicalId: DownloadLogicalId('logical-episode'),
       generation: 2,
       taskId: 'aw_v2_parent_g2',
       status: DownloadTransportStatus.failed,
@@ -267,7 +267,7 @@ void main() {
   test('in-memory diagnostics records structured events without free-form data', () {
     final diagnostics = InMemoryDownloadDiagnosticsV2();
     const event = DownloadDiagnosticEventV2(
-      logicalId: const DownloadLogicalId('logical-episode'),
+      logicalId: DownloadLogicalId('logical-episode'),
       generation: 1,
       taskId: 'aw_v2_parent_g1',
       status: DownloadTransportStatus.running,

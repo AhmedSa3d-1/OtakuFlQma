@@ -18,9 +18,9 @@ class OpenSubtitlesProvider extends SubtitleProvider {
   OpenSubtitlesProvider(
     this._dio, {
     this._username,
-    String? password,
+    this._password,
     this._apiKey,
-  }) : _password = password;
+  });
 
   String get _effectiveApiKey =>
       (_apiKey != null && _apiKey!.isNotEmpty) ? _apiKey! : _defaultApiKey;
@@ -327,8 +327,7 @@ class SubDLProvider extends SubtitleProvider {
   String? _email;
   String? _password;
 
-  SubDLProvider(this._dio, {this._apiKey, String? email, this._password})
-    : _email = email;
+  SubDLProvider(this._dio, {this._apiKey, this._email, this._password});
 
   String? get searchApiKey => _apiKey;
 

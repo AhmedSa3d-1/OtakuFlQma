@@ -193,7 +193,9 @@ class _DetailsCommentsPreviewState
     );
     // The count on the row is part of the comment as it was read, so it is
     // re-read rather than guessed at after a reply is left.
-    if (mounted) _load();
+    if (mounted) {
+      unawaited(_load());
+    }
   }
 
   Future<void> _openAll() async {
@@ -204,7 +206,9 @@ class _DetailsCommentsPreviewState
         builder: (_) => AnimeWitcherCommentsScreen(target: target),
       ),
     );
-    if (mounted) _load();
+    if (mounted) {
+      unawaited(_load());
+    }
   }
 
   @override

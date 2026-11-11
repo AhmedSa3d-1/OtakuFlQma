@@ -450,7 +450,7 @@ void main() {
       id: '40882',
       name: 'Eren Yeager',
       likes: 40870,
-      animes: const <AnimeWitcherCharacterAnimeRef>[
+      animes: <AnimeWitcherCharacterAnimeRef>[
         AnimeWitcherCharacterAnimeRef(malId: '16498', role: 'Main'),
       ],
     );

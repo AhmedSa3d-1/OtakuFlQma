@@ -1,4 +1,3 @@
-import 'package:animewitcher/core/storage/download_persistence_worker.dart';
 import 'package:animewitcher/core/services/download_concurrency.dart';
 import 'package:animewitcher/core/services/download_parallel.dart';
 import 'package:animewitcher/core/storage/storage_service.dart';

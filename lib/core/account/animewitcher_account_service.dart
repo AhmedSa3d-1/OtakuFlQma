@@ -24,13 +24,12 @@ import 'firestore_rest_client.dart';
 class AnimeWitcherAccountService {
   AnimeWitcherAccountService({
     required this._storage,
-    required SecureTokenStorage secureStorage,
+    required this._secureStorage,
     FirebaseAuthRestClient? auth,
     FirestoreRestClient? firestore,
     FirebaseStorageRestClient? cloudStorage,
     FirebaseFunctionsRestClient? functions,
-  }) : _secureStorage = secureStorage,
-       _auth = auth ?? FirebaseAuthRestClient(),
+  }) : _auth = auth ?? FirebaseAuthRestClient(),
        _firestore = firestore ?? FirestoreRestClient(),
        _cloudStorage = cloudStorage ?? FirebaseStorageRestClient(),
        _functions = functions ?? FirebaseFunctionsRestClient();

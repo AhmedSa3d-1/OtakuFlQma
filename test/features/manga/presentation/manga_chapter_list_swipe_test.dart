@@ -916,7 +916,7 @@ void main() {
                     Text(
                       'ascending:${ref.watch(episodeSortAscendingProvider)}',
                     ),
-                    const Expanded(child: const MangaChapterList(chapters: chapters)),
+                    const Expanded(child: MangaChapterList(chapters: chapters)),
                   ],
                 ),
               ),

@@ -182,11 +182,11 @@ class _ProgressiveHeaderBlurLayer extends SingleChildRenderObjectWidget {
 class _RenderProgressiveHeaderBlur extends RenderProxyBox {
   _RenderProgressiveHeaderBlur({
     required this._horizontalShader,
-    required ui.FragmentShader verticalShader,
+    required this._verticalShader,
     required this._maxSigma,
     required this._falloff,
     required this._devicePixelRatio,
-  }) : _verticalShader = verticalShader;
+  });
 
   ui.FragmentShader _horizontalShader;
   ui.FragmentShader _verticalShader;

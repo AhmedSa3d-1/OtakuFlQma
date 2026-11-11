@@ -353,7 +353,7 @@ void main() {
     );
     expect(
       buttonFill(kDetailsRatingsReviewsButtonKey),
-      isNot(AppTheme.animeWitcherAccent.withValues(alpha: 0.16)),
+      isNot(AppTheme.otakuFlQmaPrimary.withValues(alpha: 0.16)),
     );
     final star1 = tester.getRect(
       find.descendant(
@@ -656,7 +656,7 @@ void main() {
         matching: find.byIcon(Icons.star_rounded),
       ),
     );
-    expect(rateIcon.color, AppTheme.animeWitcherAccent);
+    expect(rateIcon.color, AppTheme.otakuFlQmaPrimary);
   });
 
   testWidgets('dialog stars stay LTR with 1 on the left', (tester) async {

@@ -286,7 +286,7 @@ class _RankingPageState extends State<_RankingPage>
           children: [
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.55,
-              child: const Center(child: const Text('لا توجد نتائج في هذا التصنيف حاليًا')),
+              child: const Center(child: Text('لا توجد نتائج في هذا التصنيف حاليًا')),
             ),
           ],
         ),

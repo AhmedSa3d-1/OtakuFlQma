@@ -307,8 +307,8 @@ Future<String> downloadDestinationPathV2(
   return _pathBelowDownloadDirectoryV2(directory, <String>[filename]);
 }
 
-/// Produces a readable chapter directory:
-/// Downloads/manga/<manga title>/<chapter label>.
+/// Produces a readable chapter directory.
+/// Example path: Downloads/manga/Manga Title/Chapter Label.
 Future<String> mangaChapterDestinationDirectoryV2(
   MultimediaItem manga,
   MangaChapter chapter,

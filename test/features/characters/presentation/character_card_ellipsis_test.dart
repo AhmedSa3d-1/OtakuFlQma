@@ -10,14 +10,14 @@ void main() {
     const name = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
     await tester.pumpWidget(
       const MaterialApp(
-        home: const Directionality(
+        home: Directionality(
           textDirection: TextDirection.rtl,
-          child: const Center(
-            child: const SizedBox(
+          child: Center(
+            child: SizedBox(
               width: 160,
               height: 280,
-              child: const CharacterPosterCard(
-                character: const AnimeWitcherCharacterHit(id: '1', name: name),
+              child: CharacterPosterCard(
+                character: AnimeWitcherCharacterHit(id: '1', name: name),
                 onTap: _noop,
               ),
             ),

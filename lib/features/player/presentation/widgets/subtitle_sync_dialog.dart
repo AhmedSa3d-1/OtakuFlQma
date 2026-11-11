@@ -698,7 +698,7 @@ class _SubtitleSyncDialogState extends ConsumerState<SubtitleSyncDialog> {
                                       vertical: 8,
                                     ),
                                     enabledBorder: const UnderlineInputBorder(
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.white38,
                                       ),
                                     ),
