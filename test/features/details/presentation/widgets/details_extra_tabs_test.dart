@@ -1,14 +1,14 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/account/animewitcher_character_models.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/details/presentation/widgets/details_character_rails.dart';
-import 'package:animewitcher/features/details/presentation/widgets/details_extra_tabs.dart';
-import 'package:animewitcher/features/details/presentation/widgets/details_poster_grid.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/paged_rail.dart';
-import 'package:animewitcher/shared/widgets/underline_segment_tabs.dart';
+import 'package:otakuflqma/core/account/animewitcher_character_models.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/details_character_rails.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/details_extra_tabs.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/details_poster_grid.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/paged_rail.dart';
+import 'package:otakuflqma/shared/widgets/underline_segment_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

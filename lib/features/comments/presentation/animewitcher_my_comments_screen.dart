@@ -5,10 +5,10 @@ import 'comment_pager.dart';
 import '../../../core/utils/relative_time.dart';
 import '../../../shared/widgets/confirm_dialog.dart';
 
-import 'package:animewitcher/shared/widgets/mouse_drag_refresh_indicator.dart';
+import 'package:otakuflqma/shared/widgets/mouse_drag_refresh_indicator.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:animewitcher/shared/widgets/apple_liquid_glass.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/shared/widgets/apple_liquid_glass.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
 
 import '../../../core/account/account_providers.dart';
 import '../../../core/account/animewitcher_account_models.dart';

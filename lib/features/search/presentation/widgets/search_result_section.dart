@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:animewitcher/core/utils/responsive_breakpoints.dart';
+import 'package:otakuflqma/core/utils/responsive_breakpoints.dart';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/router/app_router.dart';
-import 'package:animewitcher/shared/widgets/desktop_scroll_wrapper.dart';
-import 'package:animewitcher/shared/widgets/multimedia_card.dart';
-import 'package:animewitcher/shared/widgets/paged_rail.dart';
-import 'package:animewitcher/shared/widgets/anime_catalog_shimmer.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/router/app_router.dart';
+import 'package:otakuflqma/shared/widgets/desktop_scroll_wrapper.dart';
+import 'package:otakuflqma/shared/widgets/multimedia_card.dart';
+import 'package:otakuflqma/shared/widgets/paged_rail.dart';
+import 'package:otakuflqma/shared/widgets/anime_catalog_shimmer.dart';
 
 class SearchResultSection extends ConsumerStatefulWidget {
   final String providerName;

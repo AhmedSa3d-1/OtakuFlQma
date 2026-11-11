@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/utils/factory_reset.dart';
+import 'package:otakuflqma/core/utils/factory_reset.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

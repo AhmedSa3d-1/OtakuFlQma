@@ -1,4 +1,4 @@
-import 'package:animewitcher/l10n/generated/app_localizations_ar.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations_ar.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

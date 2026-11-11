@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/account/animewitcher_account_models.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_models.dart';
 
 void main() {
   test('account session survives secure-storage serialization', () {

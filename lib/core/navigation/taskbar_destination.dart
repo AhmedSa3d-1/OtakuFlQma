@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 
 enum TaskbarDestination {
   home,

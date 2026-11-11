@@ -1,29 +1,29 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/extensions/extension_manager.dart';
-import 'package:animewitcher/core/router/app_router.dart';
-import 'package:animewitcher/core/providers/episode_sort_provider.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/extensions/extension_manager.dart';
+import 'package:otakuflqma/core/router/app_router.dart';
+import 'package:otakuflqma/core/providers/episode_sort_provider.dart';
 
 import '../../../support/widget_completion.dart';
 
-import 'package:animewitcher/core/services/notification_service.dart';
-import 'package:animewitcher/features/details/presentation/downloaded_file_provider.dart';
-import 'package:animewitcher/features/details/presentation/details_controller.dart';
-import 'package:animewitcher/features/details/presentation/playback_launcher.dart';
-import 'package:animewitcher/features/library/presentation/history_provider.dart';
-import 'package:animewitcher/features/library/presentation/downloads_provider.dart';
-import 'package:animewitcher/features/library/presentation/download_progress_v2_provider.dart';
-import 'package:animewitcher/features/library/presentation/widgets/downloads_tab.dart';
-import 'package:animewitcher/features/library/presentation/widgets/completed_download_episode_card.dart';
-import 'package:animewitcher/features/settings/presentation/general_settings_provider.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/loading_dialog.dart';
+import 'package:otakuflqma/core/services/notification_service.dart';
+import 'package:otakuflqma/features/details/presentation/downloaded_file_provider.dart';
+import 'package:otakuflqma/features/details/presentation/details_controller.dart';
+import 'package:otakuflqma/features/details/presentation/playback_launcher.dart';
+import 'package:otakuflqma/features/library/presentation/history_provider.dart';
+import 'package:otakuflqma/features/library/presentation/downloads_provider.dart';
+import 'package:otakuflqma/features/library/presentation/download_progress_v2_provider.dart';
+import 'package:otakuflqma/features/library/presentation/widgets/downloads_tab.dart';
+import 'package:otakuflqma/features/library/presentation/widgets/completed_download_episode_card.dart';
+import 'package:otakuflqma/features/settings/presentation/general_settings_provider.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/loading_dialog.dart';
 import 'package:background_downloader/background_downloader.dart';
 import 'package:dio/dio.dart';
-import 'package:animewitcher/features/settings/presentation/player_settings_provider.dart';
+import 'package:otakuflqma/features/settings/presentation/player_settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';

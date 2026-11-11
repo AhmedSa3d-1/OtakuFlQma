@@ -1,6 +1,6 @@
-import 'package:animewitcher/core/storage/settings_repository.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/features/manga/reader/manga_reader_cover_provider.dart';
+import 'package:otakuflqma/core/storage/settings_repository.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/features/manga/reader/manga_reader_cover_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 

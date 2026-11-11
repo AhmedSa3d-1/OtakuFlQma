@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:animewitcher/core/account/animewitcher_character_models.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/extensions/extension_manager.dart';
-import 'package:animewitcher/core/extensions/providers/animewitcher_native_provider.dart';
-import 'package:animewitcher/core/storage/settings_repository.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/features/search/presentation/search_domain.dart';
-import 'package:animewitcher/features/search/presentation/search_provider.dart';
+import 'package:otakuflqma/core/account/animewitcher_character_models.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/extensions/extension_manager.dart';
+import 'package:otakuflqma/core/extensions/providers/animewitcher_native_provider.dart';
+import 'package:otakuflqma/core/storage/settings_repository.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/features/search/presentation/search_domain.dart';
+import 'package:otakuflqma/features/search/presentation/search_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

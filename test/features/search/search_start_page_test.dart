@@ -1,6 +1,6 @@
-import 'package:animewitcher/features/search/data/mal_rankings.dart';
-import 'package:animewitcher/features/search/presentation/widgets/search_start_page.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/features/search/data/mal_rankings.dart';
+import 'package:otakuflqma/features/search/presentation/widgets/search_start_page.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/extensions/extension_manager.dart';
-import 'package:animewitcher/features/home/presentation/home_provider.dart';
-import 'package:animewitcher/features/home/presentation/home_state.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/extensions/extension_manager.dart';
+import 'package:otakuflqma/features/home/presentation/home_provider.dart';
+import 'package:otakuflqma/features/home/presentation/home_state.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

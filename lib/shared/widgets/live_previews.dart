@@ -10,15 +10,15 @@ import 'dart:ui' show ImageFilter;
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons_200.dart';
 
-import 'package:animewitcher/core/navigation/app_layout_style.dart';
-import 'package:animewitcher/core/theme/app_theme.dart';
-import 'package:animewitcher/core/theme/theme_provider.dart';
-import 'package:animewitcher/features/details/presentation/widgets/details_seasons_bar.dart';
-import 'package:animewitcher/features/player/data/anime4k.dart';
-import 'package:animewitcher/features/player/presentation/widgets/player_control_components.dart';
-import 'package:animewitcher/features/player/presentation/widgets/player_settings_panel.dart';
-import 'package:animewitcher/features/player/presentation/widgets/skip_segment_overlay.dart';
-import 'package:animewitcher/features/settings/presentation/player_settings_provider.dart';
+import 'package:otakuflqma/core/navigation/app_layout_style.dart';
+import 'package:otakuflqma/core/theme/app_theme.dart';
+import 'package:otakuflqma/core/theme/theme_provider.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/details_seasons_bar.dart';
+import 'package:otakuflqma/features/player/data/anime4k.dart';
+import 'package:otakuflqma/features/player/presentation/widgets/player_control_components.dart';
+import 'package:otakuflqma/features/player/presentation/widgets/player_settings_panel.dart';
+import 'package:otakuflqma/features/player/presentation/widgets/skip_segment_overlay.dart';
+import 'package:otakuflqma/features/settings/presentation/player_settings_provider.dart';
 
 class LivePreviewFrame extends StatelessWidget {
   const LivePreviewFrame({

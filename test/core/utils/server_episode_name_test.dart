@@ -1,7 +1,7 @@
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/providers/animewitcher_native_provider.dart';
-import 'package:animewitcher/core/storage/settings_repository.dart';
-import 'package:animewitcher/core/utils/episode_label.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/providers/animewitcher_native_provider.dart';
+import 'package:otakuflqma/core/storage/settings_repository.dart';
+import 'package:otakuflqma/core/utils/episode_label.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 

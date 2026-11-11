@@ -1,6 +1,6 @@
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/core/storage/manga_reading_repository.dart';
-import 'package:animewitcher/features/manga/presentation/manga_resume_chapter.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/core/storage/manga_reading_repository.dart';
+import 'package:otakuflqma/features/manga/presentation/manga_resume_chapter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 MangaChapter _chapter(String id, double? number) => MangaChapter(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/utils/layout_constants.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 
 /// A run of settings under a quiet heading, each setting a rounded tile of
 /// its own with a little space between them.

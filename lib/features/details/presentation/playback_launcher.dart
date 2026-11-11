@@ -23,7 +23,7 @@ import '../../../core/utils/app_utils.dart';
 import '../../../core/utils/episode_label.dart';
 import '../../../core/utils/resume_episode.dart';
 
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 
 import '../../../core/services/notification_service.dart';
 import '../../library/presentation/history_provider.dart';

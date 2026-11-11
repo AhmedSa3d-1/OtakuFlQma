@@ -1,6 +1,6 @@
-import 'package:animewitcher/shared/widgets/anime_catalog_shimmer.dart';
-import 'package:animewitcher/shared/widgets/multimedia_card.dart';
-import 'package:animewitcher/shared/widgets/shimmer_placeholder.dart';
+import 'package:otakuflqma/shared/widgets/anime_catalog_shimmer.dart';
+import 'package:otakuflqma/shared/widgets/multimedia_card.dart';
+import 'package:otakuflqma/shared/widgets/shimmer_placeholder.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'widgets/download_log_dialog.dart';
 
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
 
 import '../../../core/utils/layout_constants.dart';
 import '../../../core/utils/responsive_breakpoints.dart';
@@ -24,11 +24,11 @@ import 'general_settings_provider.dart';
 import '../../manga/reader/manga_reader_settings_screen.dart';
 import 'app_version_provider.dart';
 
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 
 import 'cache_provider.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 
 import '../../../core/navigation/app_layout_style.dart';
 import '../../details/presentation/widgets/details_seasons_bar.dart';

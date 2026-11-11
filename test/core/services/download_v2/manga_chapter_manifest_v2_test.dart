@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:animewitcher/core/services/download_v2/manga_chapter_manifest_v2.dart';
+import 'package:otakuflqma/core/services/download_v2/manga_chapter_manifest_v2.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 

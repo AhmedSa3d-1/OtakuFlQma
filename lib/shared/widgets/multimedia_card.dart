@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'poster_plate.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 
 import '../../core/domain/entity/multimedia_item.dart';
 import '../../core/theme/app_theme.dart';

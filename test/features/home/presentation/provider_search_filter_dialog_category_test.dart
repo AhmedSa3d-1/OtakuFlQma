@@ -1,6 +1,6 @@
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/features/home/presentation/widgets/provider_search_filter_dialog.dart';
-import 'package:animewitcher/shared/widgets/app_back_button.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/features/home/presentation/widgets/provider_search_filter_dialog.dart';
+import 'package:otakuflqma/shared/widgets/app_back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';

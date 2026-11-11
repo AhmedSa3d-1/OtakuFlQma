@@ -1,7 +1,7 @@
-import 'package:animewitcher/core/account/animewitcher_character_models.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/search/presentation/widgets/search_instant_results.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/account/animewitcher_character_models.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/search/presentation/widgets/search_instant_results.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -3,10 +3,10 @@ import 'more_sidebar_shell.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:animewitcher/shared/widgets/mouse_drag_refresh_indicator.dart';
+import 'package:otakuflqma/shared/widgets/mouse_drag_refresh_indicator.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
-import 'package:animewitcher/shared/widgets/underline_segment_tabs.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/shared/widgets/underline_segment_tabs.dart';
 
 import '../../../core/account/account_providers.dart';
 import '../../../core/domain/entity/multimedia_item.dart';

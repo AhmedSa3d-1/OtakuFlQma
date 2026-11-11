@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/skip/data/mal_id_resolver.dart';
+import 'package:otakuflqma/features/skip/data/mal_id_resolver.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

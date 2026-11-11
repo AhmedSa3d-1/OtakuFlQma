@@ -4,7 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 
 import '../../../../shared/widgets/glass_dialog.dart';
 import '../../../player/data/anime4k.dart';

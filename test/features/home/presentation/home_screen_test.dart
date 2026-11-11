@@ -1,16 +1,16 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/extensions/extension_manager.dart';
-import 'package:animewitcher/core/providers/device_info_provider.dart';
-import 'package:animewitcher/features/home/presentation/home_screen.dart';
-import 'package:animewitcher/features/home/presentation/widgets/media_horizontal_list.dart';
-import 'package:animewitcher/features/library/presentation/history_provider.dart';
-import 'package:animewitcher/features/search/data/mal_rankings.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/extensions/extension_manager.dart';
+import 'package:otakuflqma/core/providers/device_info_provider.dart';
+import 'package:otakuflqma/features/home/presentation/home_screen.dart';
+import 'package:otakuflqma/features/home/presentation/widgets/media_horizontal_list.dart';
+import 'package:otakuflqma/features/library/presentation/history_provider.dart';
+import 'package:otakuflqma/features/search/data/mal_rankings.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/account/account_providers.dart';

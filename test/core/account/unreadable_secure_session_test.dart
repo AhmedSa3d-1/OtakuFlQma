@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/account/animewitcher_account_service.dart';
-import 'package:animewitcher/core/storage/secure_token_storage.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_service.dart';
+import 'package:otakuflqma/core/storage/secure_token_storage.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 

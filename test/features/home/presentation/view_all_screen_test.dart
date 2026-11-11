@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/router/app_router.dart';
-import 'package:animewitcher/features/home/presentation/view_all_screen.dart';
-import 'package:animewitcher/features/home/presentation/widgets/media_horizontal_list.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
-import 'package:animewitcher/shared/widgets/multimedia_card.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/router/app_router.dart';
+import 'package:otakuflqma/features/home/presentation/view_all_screen.dart';
+import 'package:otakuflqma/features/home/presentation/widgets/media_horizontal_list.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/shared/widgets/multimedia_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';

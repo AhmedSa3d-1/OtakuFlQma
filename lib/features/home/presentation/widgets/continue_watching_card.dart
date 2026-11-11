@@ -3,27 +3,27 @@ import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:animewitcher/features/details/presentation/playback_launcher.dart';
-import 'package:animewitcher/features/library/presentation/history_provider.dart';
+import 'package:otakuflqma/features/details/presentation/playback_launcher.dart';
+import 'package:otakuflqma/features/library/presentation/history_provider.dart';
 
 import '../../../../core/domain/entity/multimedia_item.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:animewitcher/core/router/app_router.dart';
-import 'package:animewitcher/core/utils/image_fallbacks.dart';
-import 'package:animewitcher/core/utils/layout_constants.dart';
+import 'package:otakuflqma/core/router/app_router.dart';
+import 'package:otakuflqma/core/utils/image_fallbacks.dart';
+import 'package:otakuflqma/core/utils/layout_constants.dart';
 
 import '../../../../core/extensions/extension_manager.dart';
 import '../../../../shared/widgets/cards_wrapper.dart';
 import '../../../../shared/widgets/loading_dialog.dart';
 
-import 'package:animewitcher/shared/widgets/taskbar_visibility.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/core/services/notification_service.dart';
+import 'package:otakuflqma/shared/widgets/taskbar_visibility.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/services/notification_service.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
-import 'package:animewitcher/core/utils/artwork_quality.dart';
-import 'package:animewitcher/core/utils/episode_label.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/utils/artwork_quality.dart';
+import 'package:otakuflqma/core/utils/episode_label.dart';
 
 class ContinueWatchingCard extends ConsumerStatefulWidget {
   final HistoryItem historyItem;

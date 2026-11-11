@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 import '../../data/anime4k.dart';
 import 'hotstar_player_style.dart';
 import 'player_ltr.dart';

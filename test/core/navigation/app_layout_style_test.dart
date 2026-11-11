@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/navigation/app_layout_style.dart';
-import 'package:animewitcher/shared/widgets/app_layout_picker.dart';
+import 'package:otakuflqma/core/navigation/app_layout_style.dart';
+import 'package:otakuflqma/shared/widgets/app_layout_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

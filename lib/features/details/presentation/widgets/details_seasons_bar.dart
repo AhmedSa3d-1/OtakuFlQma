@@ -3,14 +3,14 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/extension_manager.dart';
-import 'package:animewitcher/core/extensions/providers/animewitcher_native_provider.dart';
-import 'package:animewitcher/core/services/anilist_franchise_service.dart';
-import 'package:animewitcher/core/services/anizip_service.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/core/utils/catalog_label.dart';
-import 'package:animewitcher/shared/widgets/fallback_poster_image.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/extension_manager.dart';
+import 'package:otakuflqma/core/extensions/providers/animewitcher_native_provider.dart';
+import 'package:otakuflqma/core/services/anilist_franchise_service.dart';
+import 'package:otakuflqma/core/services/anizip_service.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/core/utils/catalog_label.dart';
+import 'package:otakuflqma/shared/widgets/fallback_poster_image.dart';
 
 /// Relations that are part of the same story: the seasons before and after,
 /// the work they branch from, and its side stories. Spin-offs, alternative

@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/network/bounded_batch_scheduler.dart';
+import 'package:otakuflqma/core/network/bounded_batch_scheduler.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

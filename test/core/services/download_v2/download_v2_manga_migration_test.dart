@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/services/download_v2/download_v2_models.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_models.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

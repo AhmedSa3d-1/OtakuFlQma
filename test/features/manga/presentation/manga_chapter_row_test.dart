@@ -1,6 +1,6 @@
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/core/storage/manga_reading_repository.dart';
-import 'package:animewitcher/features/manga/presentation/widgets/manga_chapter_row.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/core/storage/manga_reading_repository.dart';
+import 'package:otakuflqma/features/manga/presentation/widgets/manga_chapter_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

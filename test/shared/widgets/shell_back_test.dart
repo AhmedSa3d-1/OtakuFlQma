@@ -1,4 +1,4 @@
-import 'package:animewitcher/shared/widgets/app_scaffold.dart';
+import 'package:otakuflqma/shared/widgets/app_scaffold.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

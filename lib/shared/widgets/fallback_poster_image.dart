@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:animewitcher/core/network/poster_cache.dart';
-import 'package:animewitcher/core/network/queued_poster_image_provider.dart';
-import 'package:animewitcher/shared/widgets/poster_plate.dart';
+import 'package:otakuflqma/core/network/poster_cache.dart';
+import 'package:otakuflqma/core/network/queued_poster_image_provider.dart';
+import 'package:otakuflqma/shared/widgets/poster_plate.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

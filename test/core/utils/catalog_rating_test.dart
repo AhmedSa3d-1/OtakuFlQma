@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/utils/catalog_rating.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/utils/catalog_rating.dart';
 
 MultimediaItem _item(Map<String, String> syncData, {String? episodeBadge}) {
   return MultimediaItem(

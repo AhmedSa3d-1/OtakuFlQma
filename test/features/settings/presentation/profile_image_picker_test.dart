@@ -1,9 +1,9 @@
 import 'dart:typed_data';
 
-import 'package:animewitcher/core/account/animewitcher_account_models.dart';
-import 'package:animewitcher/features/settings/presentation/account_management_screens.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/core/services/notification_service.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_models.dart';
+import 'package:otakuflqma/features/settings/presentation/account_management_screens.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/services/notification_service.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

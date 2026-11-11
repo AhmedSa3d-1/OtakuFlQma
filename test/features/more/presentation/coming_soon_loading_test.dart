@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/extensions/extension_manager.dart';
-import 'package:animewitcher/core/extensions/providers/animewitcher_native_provider.dart';
-import 'package:animewitcher/core/storage/settings_repository.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/features/more/presentation/coming_soon_screen.dart';
-import 'package:animewitcher/shared/widgets/anime_catalog_shimmer.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/extensions/extension_manager.dart';
+import 'package:otakuflqma/core/extensions/providers/animewitcher_native_provider.dart';
+import 'package:otakuflqma/core/storage/settings_repository.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/features/more/presentation/coming_soon_screen.dart';
+import 'package:otakuflqma/shared/widgets/anime_catalog_shimmer.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -27,7 +27,7 @@ class _HangingProvider extends AnimeWitcherNativeProvider {
   final Completer<ProviderMediaPage> gate = Completer<ProviderMediaPage>();
 
   @override
-  Future<ProviderMediaPage> getUpcomingPage({int offset = 0}) => gate.future;
+  Future<ProviderMediaPage> getUpcomingPage({int offset = 0, int limit = 30}) => gate.future;
 }
 
 void main() {

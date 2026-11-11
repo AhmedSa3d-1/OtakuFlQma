@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:animewitcher/shared/widgets/mouse_drag_refresh_indicator.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/shared/widgets/mouse_drag_refresh_indicator.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
 
 import '../../../core/extensions/base_provider.dart';
 import '../../../core/domain/entity/multimedia_item.dart';

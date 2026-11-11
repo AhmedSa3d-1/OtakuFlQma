@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/storage/manga_reading_repository.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
+import 'package:otakuflqma/core/storage/manga_reading_repository.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 final class _MemoryStorage extends StorageService {

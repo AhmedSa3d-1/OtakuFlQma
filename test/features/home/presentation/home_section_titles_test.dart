@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/home/presentation/home_section_titles.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/home/presentation/home_section_titles.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 MultimediaItem _item(String title) {

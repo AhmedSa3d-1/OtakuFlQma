@@ -5,8 +5,8 @@ library;
 
 import 'package:flutter/material.dart';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/storage/episode_watch_repository.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/storage/episode_watch_repository.dart';
 
 import '../../../library/presentation/downloads_provider.dart';
 

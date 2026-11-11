@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/services/download_telemetry.dart';
+import 'package:otakuflqma/core/services/download_telemetry.dart';
 
 void main() {
   group('DownloadTelemetryEstimator', () {

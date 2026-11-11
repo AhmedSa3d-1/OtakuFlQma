@@ -2,15 +2,15 @@ import 'dart:io';
 import '../../../../shared/widgets/confirm_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_provider.dart';
-import 'package:animewitcher/shared/widgets/custom_widgets.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_provider.dart';
+import 'package:otakuflqma/shared/widgets/custom_widgets.dart';
 import '../../../library/presentation/downloads_provider.dart';
 import '../playback_launcher.dart';
 import '../source_picker.dart';
 import '../details_controller.dart';
 import '../downloaded_file_provider.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 
 class DownloadManagementDialog extends HookConsumerWidget {
   final MultimediaItem item;

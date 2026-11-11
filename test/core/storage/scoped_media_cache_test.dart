@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:animewitcher/core/network/poster_cache.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
+import 'package:otakuflqma/core/network/poster_cache.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';

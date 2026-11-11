@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'comment_pager.dart';
 import '../../../core/utils/relative_time.dart';
 
-import 'package:animewitcher/shared/widgets/mouse_drag_refresh_indicator.dart';
-import 'package:animewitcher/shared/widgets/apple_liquid_glass.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/shared/widgets/mouse_drag_refresh_indicator.dart';
+import 'package:otakuflqma/shared/widgets/apple_liquid_glass.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:animewitcher/core/account/account_providers.dart';
-import 'package:animewitcher/core/account/animewitcher_account_models.dart';
-import 'package:animewitcher/core/account/animewitcher_comment_models.dart';
-import 'package:animewitcher/core/account/animewitcher_reply_mention.dart';
-import 'package:animewitcher/core/account/firestore_rest_client.dart';
-import 'package:animewitcher/core/services/notification_service.dart';
+import 'package:otakuflqma/core/account/account_providers.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_models.dart';
+import 'package:otakuflqma/core/account/animewitcher_comment_models.dart';
+import 'package:otakuflqma/core/account/animewitcher_reply_mention.dart';
+import 'package:otakuflqma/core/account/firestore_rest_client.dart';
+import 'package:otakuflqma/core/services/notification_service.dart';
 
 import 'widgets/animewitcher_comment_sort_control.dart';
 import '../../../core/utils/avatar_image.dart';

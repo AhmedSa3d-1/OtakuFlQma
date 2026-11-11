@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/storage/history_repository.dart';
-import 'package:animewitcher/features/player/presentation/player_controller_base.dart';
-import 'package:animewitcher/features/settings/presentation/player_settings_provider.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/storage/history_repository.dart';
+import 'package:otakuflqma/features/player/presentation/player_controller_base.dart';
+import 'package:otakuflqma/features/settings/presentation/player_settings_provider.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

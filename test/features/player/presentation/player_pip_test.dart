@@ -1,8 +1,8 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/features/player/presentation/player_chrome_actions.dart';
-import 'package:animewitcher/features/player/presentation/player_pip.dart';
-import 'package:animewitcher/features/player/presentation/player_platform_service.dart';
+import 'package:otakuflqma/features/player/presentation/player_chrome_actions.dart';
+import 'package:otakuflqma/features/player/presentation/player_pip.dart';
+import 'package:otakuflqma/features/player/presentation/player_platform_service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

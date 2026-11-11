@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:animewitcher/core/services/download_v2/background_downloader_gateway.dart';
-import 'package:animewitcher/core/services/download_source_verification.dart';
+import 'package:otakuflqma/core/services/download_v2/background_downloader_gateway.dart';
+import 'package:otakuflqma/core/services/download_source_verification.dart';
 import 'package:background_downloader/background_downloader.dart';
 import 'package:fake_async/fake_async.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:animewitcher/features/player/presentation/player_platform_service.dart';
+import 'package:otakuflqma/features/player/presentation/player_platform_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/services/download_concurrency.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
+import 'package:otakuflqma/core/services/download_concurrency.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

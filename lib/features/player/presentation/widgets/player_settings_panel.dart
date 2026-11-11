@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
-import 'package:animewitcher/features/player/data/anime4k.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
+import 'package:otakuflqma/features/player/data/anime4k.dart';
 
 /// The desktop player's settings panel: one ⚙ button opens it above the
 /// bar, and the picture and speed choices live in it as tabs instead of as a

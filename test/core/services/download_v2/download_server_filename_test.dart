@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:animewitcher/core/services/download_v2/download_file_planner_v2.dart';
+import 'package:otakuflqma/core/services/download_v2/download_file_planner_v2.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 

@@ -1,5 +1,5 @@
-import 'package:animewitcher/shared/widgets/app_back_button.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/shared/widgets/app_back_button.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/rendering.dart' show RenderParagraph;

@@ -4,31 +4,31 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/storage/episode_watch_repository.dart';
-import 'package:animewitcher/core/storage/history_repository.dart';
-import 'package:animewitcher/core/utils/episode_label.dart';
-import 'package:animewitcher/core/utils/episode_order.dart';
-import 'package:animewitcher/core/utils/layout_constants.dart';
-import 'package:animewitcher/shared/widgets/custom_widgets.dart';
-import 'package:animewitcher/shared/widgets/paged_rail.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/storage/episode_watch_repository.dart';
+import 'package:otakuflqma/core/storage/history_repository.dart';
+import 'package:otakuflqma/core/utils/episode_label.dart';
+import 'package:otakuflqma/core/utils/episode_order.dart';
+import 'package:otakuflqma/core/utils/layout_constants.dart';
+import 'package:otakuflqma/shared/widgets/custom_widgets.dart';
+import 'package:otakuflqma/shared/widgets/paged_rail.dart';
 
 import '../details_controller.dart';
 import '../../../library/presentation/downloads_provider.dart';
 
-import 'package:animewitcher/core/extensions/extension_manager.dart';
+import 'package:otakuflqma/core/extensions/extension_manager.dart';
 
 import 'episode_card.dart';
 import 'episode_browse.dart';
 import 'episode_search.dart';
 import 'episode_view_mode.dart';
 import 'details_hero_actions.dart';
-import 'package:animewitcher/shared/widgets/apple_liquid_glass.dart';
+import 'package:otakuflqma/shared/widgets/apple_liquid_glass.dart';
 
-import 'package:animewitcher/core/providers/device_info_provider.dart';
-import 'package:animewitcher/core/utils/responsive_breakpoints.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/providers/device_info_provider.dart';
+import 'package:otakuflqma/core/utils/responsive_breakpoints.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 
 bool _shouldFilterEpisodesByDub(
   DetailsState detailsState,

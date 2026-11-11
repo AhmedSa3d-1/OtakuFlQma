@@ -1,23 +1,23 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/account/account_providers.dart';
-import 'package:animewitcher/core/account/animewitcher_account_models.dart';
-import 'package:animewitcher/core/account/animewitcher_account_service.dart';
-import 'package:animewitcher/core/account/animewitcher_comment_models.dart';
-import 'package:animewitcher/core/account/firestore_rest_client.dart';
-import 'package:animewitcher/core/services/notification_service.dart';
-import 'package:animewitcher/core/storage/secure_token_storage.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/features/comments/presentation/animewitcher_comments_screen.dart';
-import 'package:animewitcher/features/comments/presentation/animewitcher_my_comments_screen.dart';
-import 'package:animewitcher/features/comments/presentation/animewitcher_replies_screen.dart';
-import 'package:animewitcher/features/comments/presentation/widgets/animewitcher_comment_sort_control.dart';
-import 'package:animewitcher/shared/widgets/apple_liquid_glass.dart';
-import 'package:animewitcher/shared/widgets/animated_sort_menu_button.dart';
-import 'package:animewitcher/shared/widgets/app_back_button.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/account/account_providers.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_models.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_service.dart';
+import 'package:otakuflqma/core/account/animewitcher_comment_models.dart';
+import 'package:otakuflqma/core/account/firestore_rest_client.dart';
+import 'package:otakuflqma/core/services/notification_service.dart';
+import 'package:otakuflqma/core/storage/secure_token_storage.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/features/comments/presentation/animewitcher_comments_screen.dart';
+import 'package:otakuflqma/features/comments/presentation/animewitcher_my_comments_screen.dart';
+import 'package:otakuflqma/features/comments/presentation/animewitcher_replies_screen.dart';
+import 'package:otakuflqma/features/comments/presentation/widgets/animewitcher_comment_sort_control.dart';
+import 'package:otakuflqma/shared/widgets/apple_liquid_glass.dart';
+import 'package:otakuflqma/shared/widgets/animated_sort_menu_button.dart';
+import 'package:otakuflqma/shared/widgets/app_back_button.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,7 +25,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import '../../../support/test_fonts.dart';
 
-import 'package:animewitcher/core/utils/window_controls_inset.dart';
+import 'package:otakuflqma/core/utils/window_controls_inset.dart';
 
 import '../../../support/debug_shots.dart';
 

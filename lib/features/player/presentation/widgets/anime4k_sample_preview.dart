@@ -8,7 +8,7 @@ import 'package:media_kit_video/media_kit_video.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 
 import '../../data/anime4k.dart';
 import '../../data/anime4k_metal_ffi.dart';

@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/settings/presentation/widgets/settings_widgets.dart';
+import 'package:otakuflqma/features/settings/presentation/widgets/settings_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

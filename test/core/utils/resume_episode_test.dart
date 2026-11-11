@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/utils/resume_episode.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/utils/resume_episode.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 Episode _episode({required String url, required int number, int season = 1}) {

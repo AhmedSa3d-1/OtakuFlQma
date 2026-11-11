@@ -10,8 +10,8 @@ import '../../../../shared/widgets/app_search_field.dart';
 import 'search_action_buttons.dart';
 import 'search_glass_surface.dart';
 
-import 'package:animewitcher/core/utils/window_controls_inset.dart';
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/utils/window_controls_inset.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 
 /// Redesigned static widescreen/desktop search control bar.
 class SearchHeaderBar extends ConsumerStatefulWidget {

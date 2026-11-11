@@ -3,19 +3,19 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:animewitcher/core/account/account_providers.dart';
-import 'package:animewitcher/core/account/animewitcher_account_config.dart';
-import 'package:animewitcher/core/navigation/app_layout_style.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/core/theme/theme_provider.dart';
-import 'package:animewitcher/features/details/presentation/widgets/details_seasons_bar.dart';
-import 'package:animewitcher/features/player/data/anime4k.dart';
-import 'package:animewitcher/features/player/data/anime4k_download.dart';
-import 'package:animewitcher/features/player/presentation/widgets/anime4k_player_sheet.dart';
-import 'package:animewitcher/features/settings/presentation/account_screen.dart';
-import 'package:animewitcher/features/settings/presentation/general_settings_provider.dart';
-import 'package:animewitcher/features/settings/presentation/player_settings_provider.dart';
-import 'package:animewitcher/shared/widgets/live_previews.dart';
+import 'package:otakuflqma/core/account/account_providers.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_config.dart';
+import 'package:otakuflqma/core/navigation/app_layout_style.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/core/theme/theme_provider.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/details_seasons_bar.dart';
+import 'package:otakuflqma/features/player/data/anime4k.dart';
+import 'package:otakuflqma/features/player/data/anime4k_download.dart';
+import 'package:otakuflqma/features/player/presentation/widgets/anime4k_player_sheet.dart';
+import 'package:otakuflqma/features/settings/presentation/account_screen.dart';
+import 'package:otakuflqma/features/settings/presentation/general_settings_provider.dart';
+import 'package:otakuflqma/features/settings/presentation/player_settings_provider.dart';
+import 'package:otakuflqma/shared/widgets/live_previews.dart';
 
 /// Whether the first-launch setup has been completed on this install.
 ///

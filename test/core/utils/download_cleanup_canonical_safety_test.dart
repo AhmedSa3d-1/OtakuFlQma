@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/utils/download_cleanup.dart';
+import 'package:otakuflqma/core/utils/download_cleanup.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';

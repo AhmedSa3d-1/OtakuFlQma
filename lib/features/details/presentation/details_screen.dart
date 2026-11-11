@@ -24,10 +24,10 @@ import '../../../core/theme/app_theme.dart';
 import 'details_item_merge.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:animewitcher/core/utils/responsive_breakpoints.dart';
+import 'package:otakuflqma/core/utils/responsive_breakpoints.dart';
 
-import 'package:animewitcher/shared/widgets/apple_liquid_glass.dart';
-import 'package:animewitcher/shared/widgets/multimedia_card.dart';
+import 'package:otakuflqma/shared/widgets/apple_liquid_glass.dart';
+import 'package:otakuflqma/shared/widgets/multimedia_card.dart';
 
 import '../../library/presentation/library_provider.dart';
 import '../../library/presentation/library_auth.dart';
@@ -46,10 +46,10 @@ import "adult_content_warning.dart";
 import "../../../shared/widgets/expandable_text.dart";
 import "../../../shared/widgets/loading_indicator.dart";
 
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
-import 'package:animewitcher/core/services/notification_service.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/services/notification_service.dart';
 
 import 'widgets/details_seasons_bar.dart';
 import 'widgets/details_hero_actions.dart';

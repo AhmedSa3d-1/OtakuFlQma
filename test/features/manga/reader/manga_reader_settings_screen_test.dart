@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:animewitcher/features/manga/reader/manga_reader_settings.dart';
-import 'package:animewitcher/features/manga/reader/manga_reader_settings_provider.dart';
-import 'package:animewitcher/features/manga/reader/manga_reader_settings_screen.dart';
+import 'package:otakuflqma/features/manga/reader/manga_reader_settings.dart';
+import 'package:otakuflqma/features/manga/reader/manga_reader_settings_provider.dart';
+import 'package:otakuflqma/features/manga/reader/manga_reader_settings_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 

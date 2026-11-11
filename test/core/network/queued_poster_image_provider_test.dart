@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/network/queued_poster_image_provider.dart';
-import 'package:animewitcher/core/network/poster_decode_queue.dart';
+import 'package:otakuflqma/core/network/queued_poster_image_provider.dart';
+import 'package:otakuflqma/core/network/poster_decode_queue.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:file/memory.dart';
 import 'package:flutter/painting.dart';

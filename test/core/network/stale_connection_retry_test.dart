@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:animewitcher/core/network/stale_connection_retry.dart';
+import 'package:otakuflqma/core/network/stale_connection_retry.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 

@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/account/animewitcher_comment_models.dart';
-import 'package:animewitcher/core/account/animewitcher_reply_mention.dart';
+import 'package:otakuflqma/core/account/animewitcher_comment_models.dart';
+import 'package:otakuflqma/core/account/animewitcher_reply_mention.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

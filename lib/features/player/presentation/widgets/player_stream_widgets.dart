@@ -16,7 +16,7 @@ import 'hotstar_player_style.dart';
 import 'player_control_components.dart';
 import '../../../skip/data/skip_service.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 
 /// A self-contained progress bar widget that uses StreamBuilder to avoid
 /// rebuilding the parent widget on every position update.

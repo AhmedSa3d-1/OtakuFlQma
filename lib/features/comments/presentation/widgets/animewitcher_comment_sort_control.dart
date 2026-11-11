@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:animewitcher/core/account/animewitcher_comment_models.dart';
-import 'package:animewitcher/shared/widgets/apple_liquid_glass.dart';
-import 'package:animewitcher/shared/widgets/animated_sort_menu_button.dart';
+import 'package:otakuflqma/core/account/animewitcher_comment_models.dart';
+import 'package:otakuflqma/shared/widgets/apple_liquid_glass.dart';
+import 'package:otakuflqma/shared/widgets/animated_sort_menu_button.dart';
 
 import '../../../../core/utils/window_controls_inset.dart';
 

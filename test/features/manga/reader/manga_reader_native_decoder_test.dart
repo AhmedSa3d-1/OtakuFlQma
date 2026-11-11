@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:animewitcher/features/manga/reader/subsampling/ffi_image_decoder.dart';
+import 'package:otakuflqma/features/manga/reader/subsampling/ffi_image_decoder.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

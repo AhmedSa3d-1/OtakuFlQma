@@ -1,15 +1,15 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/providers/device_info_provider.dart';
-import 'package:animewitcher/core/services/download_concurrency.dart';
-import 'package:animewitcher/core/services/download_parallel.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/features/settings/presentation/app_version_provider.dart';
-import 'package:animewitcher/features/settings/presentation/settings_screen.dart';
-import 'package:animewitcher/features/settings/presentation/widgets/settings_dialogs.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/custom_widgets.dart';
+import 'package:otakuflqma/core/providers/device_info_provider.dart';
+import 'package:otakuflqma/core/services/download_concurrency.dart';
+import 'package:otakuflqma/core/services/download_parallel.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/features/settings/presentation/app_version_provider.dart';
+import 'package:otakuflqma/features/settings/presentation/settings_screen.dart';
+import 'package:otakuflqma/features/settings/presentation/widgets/settings_dialogs.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/custom_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

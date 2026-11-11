@@ -4,8 +4,8 @@ import 'dart:io';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:flutter/gestures.dart' show kDoubleTapSlop, kDoubleTapTimeout;
 import 'package:flutter/material.dart';
-import 'package:animewitcher/shared/widgets/apple_liquid_glass.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/shared/widgets/apple_liquid_glass.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
 import 'package:flutter/services.dart'; // LogicalKeyboardKey, KeyDownEvent
 import 'package:flutter/foundation.dart'; // For kReleaseMode
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -33,7 +33,7 @@ import 'core/services/notification_service.dart';
 import 'core/widgets/m3_toast_overlay.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 
 import 'core/providers/locale_provider.dart';
 import 'core/providers/device_info_provider.dart';

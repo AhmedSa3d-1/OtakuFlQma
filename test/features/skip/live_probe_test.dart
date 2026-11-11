@@ -1,11 +1,11 @@
 @Tags(['live'])
 library;
 
-import 'package:animewitcher/core/network/stale_connection_retry.dart';
-import 'package:animewitcher/features/skip/data/anime_id_mappings.dart';
-import 'package:animewitcher/features/skip/data/aniskip_service.dart';
-import 'package:animewitcher/features/skip/data/intro_db_service.dart';
-import 'package:animewitcher/features/skip/data/mal_id_resolver.dart';
+import 'package:otakuflqma/core/network/stale_connection_retry.dart';
+import 'package:otakuflqma/features/skip/data/anime_id_mappings.dart';
+import 'package:otakuflqma/features/skip/data/aniskip_service.dart';
+import 'package:otakuflqma/features/skip/data/intro_db_service.dart';
+import 'package:otakuflqma/features/skip/data/mal_id_resolver.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Hits the real services, so it is not part of the normal suite.

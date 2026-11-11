@@ -1,11 +1,11 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/details/presentation/playback_launcher.dart';
-import 'package:animewitcher/features/home/presentation/widgets/continue_watching_card.dart';
-import 'package:animewitcher/features/library/presentation/history_provider.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/details/presentation/playback_launcher.dart';
+import 'package:otakuflqma/features/home/presentation/widgets/continue_watching_card.dart';
+import 'package:otakuflqma/features/library/presentation/history_provider.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

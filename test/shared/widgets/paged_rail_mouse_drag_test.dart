@@ -1,4 +1,4 @@
-import 'package:animewitcher/shared/widgets/paged_rail.dart';
+import 'package:otakuflqma/shared/widgets/paged_rail.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

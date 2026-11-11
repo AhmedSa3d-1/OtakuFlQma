@@ -531,4 +531,155 @@ query ($id: Int) {
 
   @override
   void prepareForNetworkRetry() {}
+
+
+  ({String season, int year}) _currentSeason() {
+    final now = DateTime.now();
+    final season = switch (now.month) {
+      1 || 2 || 3 => 'WINTER',
+      4 || 5 || 6 => 'SPRING',
+      7 || 8 || 9 => 'SUMMER',
+      _ => 'FALL',
+    };
+    return (season: season, year: now.year);
+  }
+
+  // --- Rankings / seasons / coming soon (AniList-backed compatibility) ---
+
+  Future<ProviderMediaPage> _queryAnimePage({
+    required String sort,
+    String? season,
+    int? seasonYear,
+    String? status,
+    int offset = 0,
+    int limit = 30,
+  }) async {
+    final safeLimit = limit.clamp(1, 50).toInt();
+    final page = (offset < 0 ? 0 : offset) ~/ safeLimit + 1;
+    final varDecls = <String>[r'$page: Int', r'$perPage: Int'];
+    final mediaArgs = <String>['type: ANIME', 'sort: $sort', 'isAdult: false'];
+    final vars = <String, dynamic>{'page': page, 'perPage': safeLimit};
+    if (season != null) {
+      varDecls.add(r'$season: MediaSeason');
+      mediaArgs.add(r'season: $season');
+      vars['season'] = season;
+    }
+    if (seasonYear != null) {
+      varDecls.add(r'$seasonYear: Int');
+      mediaArgs.add(r'seasonYear: $seasonYear');
+      vars['seasonYear'] = seasonYear;
+    }
+    if (status != null) {
+      varDecls.add(r'$status: MediaStatus');
+      mediaArgs.add(r'status: $status');
+      vars['status'] = status;
+    }
+    final q = 'query(${varDecls.join(', ')}) {\n'
+        '  Page(page: \$page, perPage: \$perPage) {\n'
+        '    pageInfo { hasNextPage }\n'
+        '    media(${mediaArgs.join(', ')}) {\n'
+        '      id idMal title { romaji english native userPreferred }\n'
+        '      coverImage { extraLarge large medium }\n'
+        '      format status averageScore episodes startDate { year } genres\n'
+        '    }\n'
+        '  }\n'
+        '}\n';
+    final data = await _client.query(q, variables: vars);
+    final pageData = data['Page'] as Map<dynamic, dynamic>? ?? const {};
+    final media = pageData['media'] as List? ?? const [];
+    final info = pageData['pageInfo'] as Map<dynamic, dynamic>? ?? const {};
+    final items = media
+        .whereType<Map<dynamic, dynamic>>()
+        .map((m) => _mediaToItem(Map<String, dynamic>.from(m)))
+        .toList();
+    return ProviderMediaPage(
+      items: items,
+      nextOffset: offset + items.length,
+      hasMore: info['hasNextPage'] == true,
+    );
+  }
+
+  Future<ProviderMediaPage> getGlobalRankingPage(
+    dynamic ranking, {
+    int offset = 0,
+    int page = 0,
+    int limit = 30,
+  }) async {
+    final effectiveOffset = offset > 0 ? offset : (page > 0 ? page * limit : 0);
+    final queryType = (ranking is Enum) ? ranking.name : ranking?.toString() ?? 'topRated';
+    final sort = switch (queryType) {
+      'popular' => 'POPULARITY_DESC',
+      'trending' => 'TRENDING_DESC',
+      _ => 'SCORE_DESC',
+    };
+    return _queryAnimePage(sort: sort, offset: effectiveOffset, limit: limit);
+  }
+
+  Future<ProviderMediaPage> getComingSoonPage({
+    int offset = 0,
+    int limit = 30,
+  }) async {
+    return _queryAnimePage(
+      sort: 'POPULARITY_DESC',
+      status: 'NOT_YET_RELEASED',
+      offset: offset,
+      limit: limit,
+    );
+  }
+
+  Future<ProviderMediaPage> getUpcomingPage({
+    int offset = 0,
+    int limit = 30,
+  }) async => getComingSoonPage(offset: offset, limit: limit);
+
+  (String, int)? _parseSeasonKey(String key) {
+    final raw = key.trim();
+    if (raw.isEmpty) return null;
+    final map = <String, String>{
+      'شتاء': 'WINTER',
+      'ربيع': 'SPRING',
+      'صيف': 'SUMMER',
+      'خريف': 'FALL',
+      'winter': 'WINTER',
+      'spring': 'SPRING',
+      'summer': 'SUMMER',
+      'fall': 'FALL',
+      'autumn': 'FALL',
+    };
+    final yearMatch = RegExp(r'(20\d{2})').firstMatch(raw);
+    final int year = yearMatch != null
+        ? (int.tryParse(yearMatch.group(1)!) ?? _currentSeason().year)
+        : _currentSeason().year;
+    String season = _currentSeason().season;
+    for (final e in map.entries) {
+      if (raw.toLowerCase().contains(e.key.toLowerCase())) {
+        season = e.value;
+        break;
+      }
+    }
+    return (season, year);
+  }
+
+  Future<ProviderMediaPage> getSeasonPage(
+    String key, {
+    int offset = 0,
+  }) async {
+    final parsed = _parseSeasonKey(key);
+    if (parsed == null) {
+      return const ProviderMediaPage(items: <MultimediaItem>[], nextOffset: 0, hasMore: false);
+    }
+    return _queryAnimePage(
+      sort: 'POPULARITY_DESC',
+      season: parsed.$1,
+      seasonYear: parsed.$2,
+      offset: offset,
+      limit: 30,
+    );
+  }
+
+  Future<List<MultimediaItem>> getSeasonAnime(String seasonKey) async {
+    final page = await getSeasonPage(seasonKey);
+    return page.items;
+  }
+
 }

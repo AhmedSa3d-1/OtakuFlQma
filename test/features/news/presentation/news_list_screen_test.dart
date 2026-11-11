@@ -1,13 +1,13 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/features/home/presentation/widgets/news_card.dart';
-import 'package:animewitcher/features/news/presentation/news_list_screen.dart';
-import 'package:animewitcher/features/news/presentation/news_utils.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/app_page_header.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/features/home/presentation/widgets/news_card.dart';
+import 'package:otakuflqma/features/news/presentation/news_list_screen.dart';
+import 'package:otakuflqma/features/news/presentation/news_utils.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/app_page_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -1,5 +1,5 @@
-import 'package:animewitcher/features/player/data/anime4k.dart';
-import 'package:animewitcher/features/player/presentation/widgets/player_settings_panel.dart';
+import 'package:otakuflqma/features/player/data/anime4k.dart';
+import 'package:otakuflqma/features/player/presentation/widgets/player_settings_panel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

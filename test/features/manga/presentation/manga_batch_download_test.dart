@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/features/manga/presentation/manga_details_controller.dart';
-import 'package:animewitcher/features/manga/presentation/manga_details_state.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/features/manga/presentation/manga_details_controller.dart';
+import 'package:otakuflqma/features/manga/presentation/manga_details_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 

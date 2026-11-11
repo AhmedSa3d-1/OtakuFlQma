@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/navigation/taskbar_destination.dart';
+import 'package:otakuflqma/core/navigation/taskbar_destination.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

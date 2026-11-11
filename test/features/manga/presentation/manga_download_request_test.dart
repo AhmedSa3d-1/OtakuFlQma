@@ -1,24 +1,24 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/services/download_v2/download_file_planner_v2.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_models.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_identity.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_provider.dart';
-import 'package:animewitcher/core/services/download_v2/download_manager_v2.dart';
-import 'package:animewitcher/core/services/download_v2/background_downloader_gateway.dart';
-import 'package:animewitcher/core/services/download_v2/logical_download_store_v2.dart';
-import 'package:animewitcher/core/services/download_v2/manga_chapter_manifest_v2.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/core/storage/download_persistence_worker.dart';
-import 'package:animewitcher/features/manga/presentation/manga_details_state.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/services/download_v2/download_file_planner_v2.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_models.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_identity.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_provider.dart';
+import 'package:otakuflqma/core/services/download_v2/download_manager_v2.dart';
+import 'package:otakuflqma/core/services/download_v2/background_downloader_gateway.dart';
+import 'package:otakuflqma/core/services/download_v2/logical_download_store_v2.dart';
+import 'package:otakuflqma/core/services/download_v2/manga_chapter_manifest_v2.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/core/storage/download_persistence_worker.dart';
+import 'package:otakuflqma/features/manga/presentation/manga_details_state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/services/download_v2/download_v2_test_support.dart';
 import '../../../support/memory_storage_service.dart';
 
-import 'package:animewitcher/features/manga/presentation/manga_details_controller.dart';
+import 'package:otakuflqma/features/manga/presentation/manga_details_controller.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';

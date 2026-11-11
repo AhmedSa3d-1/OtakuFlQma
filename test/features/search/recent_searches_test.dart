@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:animewitcher/features/search/data/recent_searches.dart';
+import 'package:otakuflqma/features/search/data/recent_searches.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

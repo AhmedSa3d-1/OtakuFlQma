@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:animewitcher/features/player/data/anime4k_reference.dart';
+import 'package:otakuflqma/features/player/data/anime4k_reference.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// The grid the project publishes, at its real size.

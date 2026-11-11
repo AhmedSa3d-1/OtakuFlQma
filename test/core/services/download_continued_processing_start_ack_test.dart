@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:animewitcher/core/services/download_continued_processing_service.dart';
+import 'package:otakuflqma/core/services/download_continued_processing_service.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 

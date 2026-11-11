@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/account/animewitcher_comment_models.dart';
-import 'package:animewitcher/core/utils/window_controls_inset.dart';
-import 'package:animewitcher/features/comments/presentation/widgets/animewitcher_comment_sort_control.dart';
-import 'package:animewitcher/shared/widgets/apple_liquid_glass.dart';
+import 'package:otakuflqma/core/account/animewitcher_comment_models.dart';
+import 'package:otakuflqma/core/utils/window_controls_inset.dart';
+import 'package:otakuflqma/features/comments/presentation/widgets/animewitcher_comment_sort_control.dart';
+import 'package:otakuflqma/shared/widgets/apple_liquid_glass.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

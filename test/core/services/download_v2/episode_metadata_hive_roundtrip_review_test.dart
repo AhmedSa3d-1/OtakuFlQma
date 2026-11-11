@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/storage/download_persistence_worker.dart';
-import 'package:animewitcher/core/storage/history_repository.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/core/utils/episode_label.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/storage/download_persistence_worker.dart';
+import 'package:otakuflqma/core/storage/history_repository.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/core/utils/episode_label.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';

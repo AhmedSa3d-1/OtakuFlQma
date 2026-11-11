@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/utils/offset_pager.dart';
+import 'package:otakuflqma/core/utils/offset_pager.dart';
 
 void main() {
   OffsetPager<String> pager({bool stopOnEmptyPage = false}) =>

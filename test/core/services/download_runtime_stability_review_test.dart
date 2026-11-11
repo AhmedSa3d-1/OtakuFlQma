@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/services/download_concurrency.dart';
-import 'package:animewitcher/core/services/download_telemetry.dart';
+import 'package:otakuflqma/core/services/download_concurrency.dart';
+import 'package:otakuflqma/core/services/download_telemetry.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

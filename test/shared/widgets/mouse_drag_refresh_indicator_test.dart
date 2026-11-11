@@ -1,4 +1,4 @@
-import 'package:animewitcher/shared/widgets/mouse_drag_refresh_indicator.dart';
+import 'package:otakuflqma/shared/widgets/mouse_drag_refresh_indicator.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

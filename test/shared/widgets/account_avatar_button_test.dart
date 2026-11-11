@@ -1,6 +1,6 @@
-import 'package:animewitcher/core/account/account_providers.dart';
-import 'package:animewitcher/core/account/animewitcher_account_models.dart';
-import 'package:animewitcher/shared/widgets/account_avatar_button.dart';
+import 'package:otakuflqma/core/account/account_providers.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_models.dart';
+import 'package:otakuflqma/shared/widgets/account_avatar_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -1,10 +1,10 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/features/manga/reader/manga_reader_settings.dart';
-import 'package:animewitcher/features/manga/reader/subsampling/subsampling_scale_image_view.dart' as ssiv;
-import 'package:animewitcher/features/manga/reader/widgets/manga_page_image.dart';
-import 'package:animewitcher/features/manga/reader/widgets/manga_reader_page_loading.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/features/manga/reader/manga_reader_settings.dart';
+import 'package:otakuflqma/features/manga/reader/subsampling/subsampling_scale_image_view.dart' as ssiv;
+import 'package:otakuflqma/features/manga/reader/widgets/manga_page_image.dart';
+import 'package:otakuflqma/features/manga/reader/widgets/manga_reader_page_loading.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/account/animewitcher_comment_models.dart';
-import 'package:animewitcher/core/account/firestore_rest_client.dart';
+import 'package:otakuflqma/core/account/animewitcher_comment_models.dart';
+import 'package:otakuflqma/core/account/firestore_rest_client.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 

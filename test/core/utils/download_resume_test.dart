@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/services/download_concurrency.dart';
-import 'package:animewitcher/core/utils/download_resume.dart';
+import 'package:otakuflqma/core/services/download_concurrency.dart';
+import 'package:otakuflqma/core/utils/download_resume.dart';
 import 'package:background_downloader/background_downloader.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;

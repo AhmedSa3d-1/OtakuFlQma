@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:animewitcher/core/utils/episode_label.dart';
+import 'package:otakuflqma/core/utils/episode_label.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../core/domain/entity/multimedia_item.dart';
@@ -28,10 +28,10 @@ import '../../../shared/widgets/custom_widgets.dart';
 import '../../../shared/widgets/loading_indicator.dart';
 import '../../settings/presentation/general_settings_provider.dart';
 
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
-import 'package:animewitcher/core/services/notification_service.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/services/notification_service.dart';
 
 import 'download_start_preflight_v2.dart';
 import 'source_picker.dart';

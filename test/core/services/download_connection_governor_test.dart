@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/services/download_connection_governor.dart';
+import 'package:otakuflqma/core/services/download_connection_governor.dart';
 import 'package:background_downloader/background_downloader.dart';
 import 'package:flutter_test/flutter_test.dart';
 

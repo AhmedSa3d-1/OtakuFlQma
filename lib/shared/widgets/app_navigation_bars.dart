@@ -237,7 +237,7 @@ class AppTopBar extends StatelessWidget {
                 const SizedBox(width: 8),
                 if (width >= 1000) ...[
                   Text(
-                    'AnimeWitcher',
+                    'OtakuFlQma',
                     style: TextStyle(
                       color: accent,
                       fontSize: 17,

@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:animewitcher/core/services/download_v2/download_integrity_verifier_v2.dart';
-import 'package:animewitcher/core/utils/local_video_payload_probe.dart';
+import 'package:otakuflqma/core/services/download_v2/download_integrity_verifier_v2.dart';
+import 'package:otakuflqma/core/utils/local_video_payload_probe.dart';
 
 Future<void> main(List<String> args) async {
   final root = args.single;

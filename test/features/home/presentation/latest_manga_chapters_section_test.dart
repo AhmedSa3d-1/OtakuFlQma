@@ -1,7 +1,7 @@
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/home/presentation/widgets/latest_manga_chapters_section.dart';
-import 'package:animewitcher/shared/widgets/multimedia_card.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/home/presentation/widgets/latest_manga_chapters_section.dart';
+import 'package:otakuflqma/shared/widgets/multimedia_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

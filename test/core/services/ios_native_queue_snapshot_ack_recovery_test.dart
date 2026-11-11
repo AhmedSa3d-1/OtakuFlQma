@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/services/download_continued_processing_service.dart';
+import 'package:otakuflqma/core/services/download_continued_processing_service.dart';
 
 const _channel = MethodChannel(
   'com.otakuflqma.app/download_continued_processing',

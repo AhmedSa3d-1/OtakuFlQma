@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/features/manga/reader/manga_reader_settings.dart';
-import 'package:animewitcher/features/manga/reader/widgets/manga_continuous_reader.dart';
-import 'package:animewitcher/features/manga/reader/widgets/manga_webtoon_reader.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/features/manga/reader/manga_reader_settings.dart';
+import 'package:otakuflqma/features/manga/reader/widgets/manga_continuous_reader.dart';
+import 'package:otakuflqma/features/manga/reader/widgets/manga_webtoon_reader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:visibility_detector/visibility_detector.dart';

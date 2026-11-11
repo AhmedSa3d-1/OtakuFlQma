@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/details/presentation/widgets/episode_search.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/episode_search.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 bool _matches(int number, String query, {String name = ''}) =>

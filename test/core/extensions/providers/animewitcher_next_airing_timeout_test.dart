@@ -1,7 +1,7 @@
-import 'package:animewitcher/core/extensions/providers/animewitcher_native_provider.dart';
-import 'package:animewitcher/core/network/next_airing_timeout.dart';
-import 'package:animewitcher/core/storage/settings_repository.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
+import 'package:otakuflqma/core/extensions/providers/animewitcher_native_provider.dart';
+import 'package:otakuflqma/core/network/next_airing_timeout.dart';
+import 'package:otakuflqma/core/storage/settings_repository.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 

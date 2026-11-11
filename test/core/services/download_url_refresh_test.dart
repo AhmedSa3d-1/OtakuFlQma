@@ -1,6 +1,6 @@
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/services/download_url_refresh.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/services/download_url_refresh.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 class _MemoryBackend implements DownloadUrlRefreshBackend {

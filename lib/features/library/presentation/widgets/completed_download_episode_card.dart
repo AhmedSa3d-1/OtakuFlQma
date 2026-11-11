@@ -4,18 +4,18 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:animewitcher/core/account/account_providers.dart';
-import 'package:animewitcher/core/storage/episode_watch_repository.dart';
-import 'package:animewitcher/core/storage/history_repository.dart';
-import 'package:animewitcher/core/utils/artwork_quality.dart';
-import 'package:animewitcher/core/utils/episode_label.dart';
-import 'package:animewitcher/core/utils/image_fallbacks.dart';
-import 'package:animewitcher/core/utils/layout_constants.dart';
-import 'package:animewitcher/features/details/presentation/widgets/episode_action_chip.dart';
-import 'package:animewitcher/features/library/presentation/history_provider.dart'
+import 'package:otakuflqma/core/account/account_providers.dart';
+import 'package:otakuflqma/core/storage/episode_watch_repository.dart';
+import 'package:otakuflqma/core/storage/history_repository.dart';
+import 'package:otakuflqma/core/utils/artwork_quality.dart';
+import 'package:otakuflqma/core/utils/episode_label.dart';
+import 'package:otakuflqma/core/utils/image_fallbacks.dart';
+import 'package:otakuflqma/core/utils/layout_constants.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/episode_action_chip.dart';
+import 'package:otakuflqma/features/library/presentation/history_provider.dart'
     show watchHistoryProvider;
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/thumbnail_error_placeholder.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/thumbnail_error_placeholder.dart';
 
 import '../download_episode_artwork.dart';
 import '../downloads_provider.dart';

@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/details/presentation/adult_content_warning.dart';
-import 'package:animewitcher/features/details/presentation/widgets/premium_details_widgets.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/details/presentation/adult_content_warning.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/premium_details_widgets.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';

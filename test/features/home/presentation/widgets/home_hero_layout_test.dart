@@ -1,6 +1,6 @@
-import 'package:animewitcher/core/providers/device_info_provider.dart';
-import 'package:animewitcher/core/utils/layout_constants.dart';
-import 'package:animewitcher/features/home/presentation/widgets/home_hero_layout.dart';
+import 'package:otakuflqma/core/providers/device_info_provider.dart';
+import 'package:otakuflqma/core/utils/layout_constants.dart';
+import 'package:otakuflqma/features/home/presentation/widgets/home_hero_layout.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

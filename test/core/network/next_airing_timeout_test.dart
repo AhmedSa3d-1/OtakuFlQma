@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/network/next_airing_timeout.dart';
-import 'package:animewitcher/features/details/presentation/details_controller.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/network/next_airing_timeout.dart';
+import 'package:otakuflqma/features/details/presentation/details_controller.dart';
 
 void main() {
   test('next-airing fetch timeout is two seconds', () {

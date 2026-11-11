@@ -1,5 +1,5 @@
-import 'package:animewitcher/features/skip/data/aniskip_service.dart';
-import 'package:animewitcher/features/skip/data/intro_db_service.dart';
+import 'package:otakuflqma/features/skip/data/aniskip_service.dart';
+import 'package:otakuflqma/features/skip/data/intro_db_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 

@@ -1,6 +1,6 @@
-import 'package:animewitcher/features/skip/data/anime_id_mappings.dart';
-import 'package:animewitcher/features/skip/data/intro_db_service.dart';
-import 'package:animewitcher/features/skip/data/skip_service.dart';
+import 'package:otakuflqma/features/skip/data/anime_id_mappings.dart';
+import 'package:otakuflqma/features/skip/data/intro_db_service.dart';
+import 'package:otakuflqma/features/skip/data/skip_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

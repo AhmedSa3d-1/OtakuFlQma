@@ -1,16 +1,16 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/utils/responsive_breakpoints.dart';
-import 'package:animewitcher/features/details/presentation/widgets/details_layout_widgets.dart';
-import 'package:animewitcher/features/home/presentation/view_all_screen.dart';
-import 'package:animewitcher/features/home/presentation/widgets/media_horizontal_list.dart';
-import 'package:animewitcher/features/home/presentation/widgets/provider_search_filter_dialog.dart';
-import 'package:animewitcher/features/search/presentation/widgets/search_result_section.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/catalog_direction.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/utils/responsive_breakpoints.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/details_layout_widgets.dart';
+import 'package:otakuflqma/features/home/presentation/view_all_screen.dart';
+import 'package:otakuflqma/features/home/presentation/widgets/media_horizontal_list.dart';
+import 'package:otakuflqma/features/home/presentation/widgets/provider_search_filter_dialog.dart';
+import 'package:otakuflqma/features/search/presentation/widgets/search_result_section.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/catalog_direction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

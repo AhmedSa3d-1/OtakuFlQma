@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/account/animewitcher_sync_ids.dart';
+import 'package:otakuflqma/core/account/animewitcher_sync_ids.dart';
 
 void main() {
   group('AnimeWitcherSyncIds', () {

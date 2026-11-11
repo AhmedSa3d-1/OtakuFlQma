@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/utils/request_generation.dart';
+import 'package:otakuflqma/core/utils/request_generation.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

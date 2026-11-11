@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:animewitcher/features/player/data/anime4k_color_signal.dart';
+import 'package:otakuflqma/features/player/data/anime4k_color_signal.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

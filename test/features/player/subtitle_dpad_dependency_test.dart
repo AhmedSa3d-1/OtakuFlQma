@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/player/presentation/widgets/subtitle_appearance_dialog.dart';
+import 'package:otakuflqma/features/player/presentation/widgets/subtitle_appearance_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';

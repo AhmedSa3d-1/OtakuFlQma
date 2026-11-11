@@ -11,7 +11,7 @@ import '../../../core/account/account_providers.dart';
 import '../../../core/extensions/base_provider.dart';
 import '../../../core/extensions/extension_manager.dart';
 
-import 'package:animewitcher/core/storage/episode_watch_repository.dart';
+import 'package:otakuflqma/core/storage/episode_watch_repository.dart';
 import '../../library/presentation/history_provider.dart';
 import 'playback_launcher.dart';
 import '../../library/presentation/downloads_provider.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// The one back affordance used throughout AnimeWitcher.
+/// The one back affordance used throughout OtakuFlQma.
 ///
 /// It is deliberately direction-independent: Back always occupies the physical
 /// left side of a page/player header and always points left, including on RTL

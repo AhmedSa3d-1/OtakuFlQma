@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/services/anizip_service.dart';
-import 'package:animewitcher/core/utils/episode_label.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/services/anizip_service.dart';
+import 'package:otakuflqma/core/utils/episode_label.dart';
 
 void main() {
   test('matches bounded Unicode episode base with visible quality suffix', () {

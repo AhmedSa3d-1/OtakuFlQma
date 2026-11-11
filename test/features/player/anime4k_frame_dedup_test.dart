@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:animewitcher/features/player/data/anime4k_metal_bridge.dart';
+import 'package:otakuflqma/features/player/data/anime4k_metal_bridge.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 class _TelemetryBindings implements Anime4kMetalNativeBindings {

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/utils/file_size_formatter.dart';
+import 'package:otakuflqma/core/utils/file_size_formatter.dart';
 
 void main() {
   test('page counts use localized units and honest unknown totals', () {

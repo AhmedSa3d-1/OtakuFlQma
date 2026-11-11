@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/player/presentation/player_shortcuts.dart';
+import 'package:otakuflqma/features/player/presentation/player_shortcuts.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 

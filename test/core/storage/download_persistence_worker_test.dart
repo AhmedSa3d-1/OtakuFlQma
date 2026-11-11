@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/storage/download_persistence_worker.dart';
+import 'package:otakuflqma/core/storage/download_persistence_worker.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

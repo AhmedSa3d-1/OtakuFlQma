@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 import '../../../../core/utils/layout_constants.dart';
 
 /// The searches you made last, offered where the empty-search placeholder was.

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons_200.dart';
-import 'package:animewitcher/shared/widgets/app_back_button.dart';
+import 'package:otakuflqma/shared/widgets/app_back_button.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../shared/widgets/custom_widgets.dart';

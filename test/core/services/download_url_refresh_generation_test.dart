@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/services/download_url_refresh.dart';
+import 'package:otakuflqma/core/services/download_url_refresh.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 class _MemoryBackend implements DownloadUrlRefreshBackend {

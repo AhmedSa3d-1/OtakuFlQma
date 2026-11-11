@@ -1,7 +1,7 @@
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/services/anilist_franchise_service.dart';
-import 'package:animewitcher/core/services/anizip_service.dart';
-import 'package:animewitcher/features/details/presentation/widgets/details_seasons_bar.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/services/anilist_franchise_service.dart';
+import 'package:otakuflqma/core/services/anizip_service.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/details_seasons_bar.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 MultimediaItem _item(String url, {String? type, int? year}) => MultimediaItem(

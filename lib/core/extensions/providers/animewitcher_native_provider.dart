@@ -229,50 +229,10 @@ class AnimeWitcherNativeProvider extends AniListProvider {
     );
   }
 
-  Future<ProviderMediaPage> getComingSoonPage({
-    int offset = 0,
-    int limit = 30,
-  }) async {
-    return const ProviderMediaPage(
-      items: <MultimediaItem>[],
-      nextOffset: 0,
-      hasMore: false,
-    );
-  }
-
-  Future<ProviderMediaPage> getUpcomingPage({
-    int offset = 0,
-  }) async => getComingSoonPage(offset: offset);
-
   Future<List<dynamic>> getSeasons() async => const [];
   Future<AnimeWitcherSeasonConfig> getSeasonConfig() async =>
       const AnimeWitcherSeasonConfig();
   Future<List<String>> getAllSeasons() async => const [];
-  Future<ProviderMediaPage> getSeasonPage(
-    String key, {
-    int offset = 0,
-  }) async {
-    return const ProviderMediaPage(
-      items: <MultimediaItem>[],
-      nextOffset: 0,
-      hasMore: false,
-    );
-  }
-
-  Future<List<MultimediaItem>> getSeasonAnime(String seasonKey) async => const [];
-  Future<Map<String, dynamic>> getGlobalStatistics() async => const <String, dynamic>{};
-  Future<ProviderMediaPage> getGlobalRankingPage(
-    AnimeWitcherGlobalRanking? ranking, {
-    int offset = 0,
-    int page = 0,
-    int limit = 30,
-  }) async {
-    return const ProviderMediaPage(
-      items: <MultimediaItem>[],
-      nextOffset: 0,
-      hasMore: false,
-    );
-  }
 
   Future<MultimediaItem?> getAnimeById(String id) async => null;
   Future<List<MultimediaItem>> getAnimesByMalIds(List<int> ids) async => const [];

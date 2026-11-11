@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/domain/stream_source_preferences.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/domain/stream_source_preferences.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 StreamResult source(String server, String? quality, String url) =>

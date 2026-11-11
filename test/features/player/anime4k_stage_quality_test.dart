@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/player/data/anime4k.dart';
+import 'package:otakuflqma/features/player/data/anime4k.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 final _fullFolder = <String>[

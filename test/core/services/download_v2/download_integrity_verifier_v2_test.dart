@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:animewitcher/core/services/download_v2/download_integrity_verifier_v2.dart';
+import 'package:otakuflqma/core/services/download_v2/download_integrity_verifier_v2.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

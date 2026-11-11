@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/services/download_v2/download_source_resolver_v2.dart';
+import 'package:otakuflqma/core/services/download_v2/download_source_resolver_v2.dart';
 
 final class StaticSourceResolverV2 implements DownloadSourceResolverV2 {
   StaticSourceResolverV2({

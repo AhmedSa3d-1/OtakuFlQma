@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:animewitcher/core/account/animewitcher_comment_models.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/details/presentation/details_ratings.dart';
+import 'package:otakuflqma/core/account/animewitcher_comment_models.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/details/presentation/details_ratings.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 MultimediaItem _item({

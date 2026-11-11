@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:animewitcher/features/player/presentation/player_teardown.dart';
+import 'package:otakuflqma/features/player/presentation/player_teardown.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:media_kit/media_kit.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/details/presentation/widgets/premium_details_widgets.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/premium_details_widgets.dart';
 
 int _unixSecondsFromNow(Duration remaining) {
   return DateTime.now().toUtc().add(remaining).millisecondsSinceEpoch ~/ 1000;

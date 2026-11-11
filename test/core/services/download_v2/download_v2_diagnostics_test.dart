@@ -2,9 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:animewitcher/core/services/download_v2/download_v2_diagnostics.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_identity.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_models.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_diagnostics.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_identity.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_models.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

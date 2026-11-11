@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:animewitcher/features/player/data/anime4k.dart';
-import 'package:animewitcher/features/player/presentation/widgets/anime4k_sample_preview.dart';
+import 'package:otakuflqma/features/player/data/anime4k.dart';
+import 'package:otakuflqma/features/player/presentation/widgets/anime4k_sample_preview.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

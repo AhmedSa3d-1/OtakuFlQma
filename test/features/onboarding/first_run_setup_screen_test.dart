@@ -1,13 +1,13 @@
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/features/onboarding/first_run_setup_screen.dart';
-import 'package:animewitcher/features/settings/presentation/general_settings_provider.dart';
-import 'package:animewitcher/features/player/presentation/widgets/skip_segment_overlay.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/features/onboarding/first_run_setup_screen.dart';
+import 'package:otakuflqma/features/settings/presentation/general_settings_provider.dart';
+import 'package:otakuflqma/features/player/presentation/widgets/skip_segment_overlay.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/shared/widgets/live_previews.dart';
+import 'package:otakuflqma/shared/widgets/live_previews.dart';
 
 import '../../support/memory_storage_service.dart';
 

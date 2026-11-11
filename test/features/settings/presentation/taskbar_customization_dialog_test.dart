@@ -1,5 +1,5 @@
-import 'package:animewitcher/features/settings/presentation/widgets/taskbar_customization_dialog.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/features/settings/presentation/widgets/taskbar_customization_dialog.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

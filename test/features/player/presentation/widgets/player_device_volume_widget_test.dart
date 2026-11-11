@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:animewitcher/features/player/presentation/player_controller.dart';
-import 'package:animewitcher/features/player/presentation/widgets/player_stream_widgets.dart';
+import 'package:otakuflqma/features/player/presentation/player_controller.dart';
+import 'package:otakuflqma/features/player/presentation/widgets/player_stream_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

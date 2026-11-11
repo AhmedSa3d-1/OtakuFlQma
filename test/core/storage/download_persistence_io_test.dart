@@ -4,7 +4,7 @@ import 'dart:io';
 import 'dart:isolate';
 import 'dart:typed_data';
 
-import 'package:animewitcher/core/storage/download_persistence_io.dart';
+import 'package:otakuflqma/core/storage/download_persistence_io.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 

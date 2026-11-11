@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:animewitcher/core/network/dio_client_provider.dart';
+import 'package:otakuflqma/core/network/dio_client_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

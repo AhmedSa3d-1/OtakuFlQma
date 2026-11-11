@@ -15,14 +15,14 @@ import '../../../../core/utils/factory_reset.dart';
 import '../player_settings_provider.dart';
 import '../general_settings_provider.dart';
 
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 
 import '../cache_provider.dart';
 import '../../../../core/services/download_concurrency.dart';
 import '../../../../core/services/download_parallel.dart';
 
-import 'package:animewitcher/core/services/notification_service.dart';
+import 'package:otakuflqma/core/services/notification_service.dart';
 
 /// Returns a localized label for a resize mode string.
 String getResizeModeLabel(String mode, AppLocalizations l10n) {

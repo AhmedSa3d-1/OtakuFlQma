@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/player/presentation/episode_navigation.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/player/presentation/episode_navigation.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 Episode _episode(int number, {bool filler = false}) => Episode(

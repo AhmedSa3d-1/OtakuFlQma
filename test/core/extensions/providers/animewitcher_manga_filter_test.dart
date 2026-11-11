@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/extensions/providers/animewitcher_native_provider.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/extensions/providers/animewitcher_native_provider.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// A manga record shaped like the live catalog's.

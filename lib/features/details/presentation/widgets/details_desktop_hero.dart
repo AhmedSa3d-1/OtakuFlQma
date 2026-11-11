@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:animewitcher/shared/widgets/mouse_drag_refresh_indicator.dart';
+import 'package:otakuflqma/shared/widgets/mouse_drag_refresh_indicator.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart' show Bidi;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -14,8 +14,8 @@ import '../../../../shared/widgets/thumbnail_error_placeholder.dart';
 import '../../../../shared/widgets/fallback_poster_image.dart';
 import 'premium_details_widgets.dart';
 
-import 'package:animewitcher/core/utils/localized_text.dart';
-import 'package:animewitcher/core/services/notification_service.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
+import 'package:otakuflqma/core/services/notification_service.dart';
 
 /// Immersive desktop/TV hero for non-TMDB details.
 ///

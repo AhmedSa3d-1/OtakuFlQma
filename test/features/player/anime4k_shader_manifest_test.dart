@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:animewitcher/features/player/data/anime4k_shader_manifest.dart';
+import 'package:otakuflqma/features/player/data/anime4k_shader_manifest.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;

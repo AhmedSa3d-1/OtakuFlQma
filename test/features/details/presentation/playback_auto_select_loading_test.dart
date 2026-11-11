@@ -1,15 +1,15 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/extensions/extension_manager.dart';
-import 'package:animewitcher/features/details/presentation/downloaded_file_provider.dart';
-import 'package:animewitcher/features/details/presentation/playback_launcher.dart';
-import 'package:animewitcher/features/settings/presentation/general_settings_provider.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/loading_dialog.dart';
-import 'package:animewitcher/shared/widgets/loading_indicator.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/extensions/extension_manager.dart';
+import 'package:otakuflqma/features/details/presentation/downloaded_file_provider.dart';
+import 'package:otakuflqma/features/details/presentation/playback_launcher.dart';
+import 'package:otakuflqma/features/settings/presentation/general_settings_provider.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/loading_dialog.dart';
+import 'package:otakuflqma/shared/widgets/loading_indicator.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

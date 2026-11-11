@@ -12,7 +12,7 @@ import '../../../library/presentation/download_progress_v2_provider.dart';
 import '../../../library/presentation/download_delete_confirmation.dart';
 import '../../../library/presentation/downloads_provider.dart';
 
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 
 class DownloadProgressDialog extends ConsumerStatefulWidget {
   final String title;

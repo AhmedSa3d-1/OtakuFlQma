@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/library/presentation/widgets/segmented_download_progress.dart';
+import 'package:otakuflqma/features/library/presentation/widgets/segmented_download_progress.dart';
 import 'package:background_downloader/background_downloader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

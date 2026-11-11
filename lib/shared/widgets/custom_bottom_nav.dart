@@ -3,9 +3,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:animewitcher/core/navigation/taskbar_destination.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/app_side_menu.dart';
+import 'package:otakuflqma/core/navigation/taskbar_destination.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/app_side_menu.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   final int currentBranchIndex;

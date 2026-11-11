@@ -1,6 +1,6 @@
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/details/presentation/widgets/details_desktop_hero.dart';
-import 'package:animewitcher/features/details/presentation/widgets/premium_details_widgets.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/details_desktop_hero.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/premium_details_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/services/download_retry_policy.dart';
+import 'package:otakuflqma/core/services/download_retry_policy.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

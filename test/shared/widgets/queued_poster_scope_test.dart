@@ -1,12 +1,12 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/network/poster_cache.dart';
-import 'package:animewitcher/core/network/queued_poster_image_provider.dart';
-import 'package:animewitcher/core/utils/artwork_host_fallback.dart';
-import 'package:animewitcher/core/utils/artwork_quality.dart';
-import 'package:animewitcher/shared/widgets/fallback_poster_image.dart';
-import 'package:animewitcher/shared/widgets/multimedia_card.dart';
+import 'package:otakuflqma/core/network/poster_cache.dart';
+import 'package:otakuflqma/core/network/queued_poster_image_provider.dart';
+import 'package:otakuflqma/core/utils/artwork_host_fallback.dart';
+import 'package:otakuflqma/core/utils/artwork_quality.dart';
+import 'package:otakuflqma/shared/widgets/fallback_poster_image.dart';
+import 'package:otakuflqma/shared/widgets/multimedia_card.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

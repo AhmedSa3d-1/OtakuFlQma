@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:animewitcher/core/account/animewitcher_account_models.dart';
-import 'package:animewitcher/core/account/animewitcher_account_service.dart';
-import 'package:animewitcher/core/account/animewitcher_notification_models.dart';
-import 'package:animewitcher/core/account/firestore_rest_client.dart';
-import 'package:animewitcher/core/account/firebase_auth_rest_client.dart';
-import 'package:animewitcher/core/storage/secure_token_storage.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_models.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_service.dart';
+import 'package:otakuflqma/core/account/animewitcher_notification_models.dart';
+import 'package:otakuflqma/core/account/firestore_rest_client.dart';
+import 'package:otakuflqma/core/account/firebase_auth_rest_client.dart';
+import 'package:otakuflqma/core/storage/secure_token_storage.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 

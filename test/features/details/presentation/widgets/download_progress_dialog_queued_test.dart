@@ -1,8 +1,8 @@
-import 'package:animewitcher/core/utils/download_progress_data.dart';
-import 'package:animewitcher/features/details/presentation/widgets/download_progress_dialog.dart';
-import 'package:animewitcher/features/library/presentation/download_progress_v2_provider.dart';
-import 'package:animewitcher/features/library/presentation/downloads_provider.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/utils/download_progress_data.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/download_progress_dialog.dart';
+import 'package:otakuflqma/features/library/presentation/download_progress_v2_provider.dart';
+import 'package:otakuflqma/features/library/presentation/downloads_provider.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:background_downloader/background_downloader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

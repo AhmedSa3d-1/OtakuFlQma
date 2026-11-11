@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/utils/download_resume.dart';
+import 'package:otakuflqma/core/utils/download_resume.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

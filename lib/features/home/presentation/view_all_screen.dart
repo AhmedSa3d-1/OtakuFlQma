@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:animewitcher/shared/widgets/mouse_drag_refresh_indicator.dart';
+import 'package:otakuflqma/shared/widgets/mouse_drag_refresh_indicator.dart';
 
 import '../../../core/domain/entity/multimedia_item.dart';
 import '../../../core/extensions/base_provider.dart';
 
-import 'package:animewitcher/core/router/app_router.dart';
+import 'package:otakuflqma/core/router/app_router.dart';
 
 import '../../../core/utils/image_utils.dart';
 import '../../../core/utils/localized_text.dart';

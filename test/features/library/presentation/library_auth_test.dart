@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/features/library/presentation/library_auth.dart';
+import 'package:otakuflqma/features/library/presentation/library_auth.dart';
 
 void main() {
   test('blocks library mutations when the account is signed out', () {

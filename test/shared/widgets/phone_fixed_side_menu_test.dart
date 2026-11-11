@@ -1,9 +1,9 @@
-import 'package:animewitcher/core/navigation/taskbar_destination.dart';
-import 'package:animewitcher/features/more/presentation/broadcast_schedule_screen.dart';
-import 'package:animewitcher/features/search/presentation/search_domain.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/app_side_menu.dart';
-import 'package:animewitcher/shared/widgets/phone_fixed_side_menu.dart';
+import 'package:otakuflqma/core/navigation/taskbar_destination.dart';
+import 'package:otakuflqma/features/more/presentation/broadcast_schedule_screen.dart';
+import 'package:otakuflqma/features/search/presentation/search_domain.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/app_side_menu.dart';
+import 'package:otakuflqma/shared/widgets/phone_fixed_side_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

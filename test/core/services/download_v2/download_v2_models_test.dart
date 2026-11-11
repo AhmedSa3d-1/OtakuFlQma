@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_identity.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_models.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_identity.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_models.dart';
 
 void main() {
   test('Manga snapshot progress counts pages without changing byte telemetry', () {

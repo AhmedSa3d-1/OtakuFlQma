@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/features/manga/reader/manga_reader_image_actions.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/features/manga/reader/manga_reader_image_actions.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 

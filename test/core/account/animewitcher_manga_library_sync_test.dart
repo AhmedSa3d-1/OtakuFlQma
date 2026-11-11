@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:animewitcher/core/account/animewitcher_account_models.dart';
-import 'package:animewitcher/core/account/animewitcher_account_service.dart';
-import 'package:animewitcher/core/account/firestore_rest_client.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/storage/library_category.dart';
-import 'package:animewitcher/core/storage/secure_token_storage.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_models.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_service.dart';
+import 'package:otakuflqma/core/account/firestore_rest_client.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/storage/library_category.dart';
+import 'package:otakuflqma/core/storage/secure_token_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../support/memory_storage_service.dart';

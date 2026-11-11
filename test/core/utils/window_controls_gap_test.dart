@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/utils/window_controls_inset.dart';
+import 'package:otakuflqma/core/utils/window_controls_inset.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

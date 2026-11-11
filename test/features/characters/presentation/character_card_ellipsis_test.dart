@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/account/animewitcher_character_models.dart';
-import 'package:animewitcher/features/characters/presentation/character_card.dart';
+import 'package:otakuflqma/core/account/animewitcher_character_models.dart';
+import 'package:otakuflqma/features/characters/presentation/character_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

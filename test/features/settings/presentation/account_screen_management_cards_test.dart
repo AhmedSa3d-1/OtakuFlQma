@@ -1,9 +1,9 @@
-import 'package:animewitcher/core/account/account_providers.dart';
-import 'package:animewitcher/core/account/animewitcher_account_models.dart';
-import 'package:animewitcher/features/settings/presentation/account_screen.dart';
-import 'package:animewitcher/features/settings/presentation/widgets/settings_widgets.dart';
-import 'package:animewitcher/features/comments/presentation/animewitcher_my_comments_screen.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/account/account_providers.dart';
+import 'package:otakuflqma/core/account/animewitcher_account_models.dart';
+import 'package:otakuflqma/features/settings/presentation/account_screen.dart';
+import 'package:otakuflqma/features/settings/presentation/widgets/settings_widgets.dart';
+import 'package:otakuflqma/features/comments/presentation/animewitcher_my_comments_screen.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

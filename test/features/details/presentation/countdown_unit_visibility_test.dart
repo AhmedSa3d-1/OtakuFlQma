@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/features/details/presentation/widgets/countdown_unit_visibility.dart';
+import 'package:otakuflqma/features/details/presentation/widgets/countdown_unit_visibility.dart';
 
 void main() {
   group('CountdownUnitVisibility.fromRemaining', () {

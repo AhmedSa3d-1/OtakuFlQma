@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/manga/reader/widgets/manga_zoomable_page.dart';
+import 'package:otakuflqma/features/manga/reader/widgets/manga_zoomable_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

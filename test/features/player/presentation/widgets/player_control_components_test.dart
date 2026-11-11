@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/player/presentation/widgets/player_control_components.dart';
+import 'package:otakuflqma/features/player/presentation/widgets/player_control_components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

@@ -1,9 +1,9 @@
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/search/presentation/widgets/search_result_section.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/catalog_direction.dart';
-import 'package:animewitcher/shared/widgets/multimedia_card.dart';
-import 'package:animewitcher/shared/widgets/shimmer_placeholder.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/search/presentation/widgets/search_result_section.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/catalog_direction.dart';
+import 'package:otakuflqma/shared/widgets/multimedia_card.dart';
+import 'package:otakuflqma/shared/widgets/shimmer_placeholder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

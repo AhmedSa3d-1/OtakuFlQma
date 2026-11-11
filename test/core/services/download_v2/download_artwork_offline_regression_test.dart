@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/network/poster_cache.dart';
-import 'package:animewitcher/core/services/download_v2/download_artwork_store_v2.dart';
-import 'package:animewitcher/features/library/presentation/download_episode_artwork.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/network/poster_cache.dart';
+import 'package:otakuflqma/core/services/download_v2/download_artwork_store_v2.dart';
+import 'package:otakuflqma/features/library/presentation/download_episode_artwork.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';

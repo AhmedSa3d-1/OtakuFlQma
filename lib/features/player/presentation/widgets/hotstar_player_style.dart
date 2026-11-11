@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:animewitcher/core/theme/app_theme.dart';
+import 'package:otakuflqma/core/theme/app_theme.dart';
 
 /// Visual + layout tokens for the player chrome.
 ///

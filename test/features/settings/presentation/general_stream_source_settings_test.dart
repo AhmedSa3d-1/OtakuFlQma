@@ -1,5 +1,5 @@
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/features/settings/presentation/general_settings_provider.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/features/settings/presentation/general_settings_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 

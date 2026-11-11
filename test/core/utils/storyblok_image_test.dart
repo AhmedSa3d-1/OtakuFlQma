@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/utils/storyblok_image.dart';
+import 'package:otakuflqma/core/utils/storyblok_image.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

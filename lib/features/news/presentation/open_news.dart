@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/extensions/extension_manager.dart';
-import 'package:animewitcher/core/router/app_router.dart';
-import 'package:animewitcher/features/home/presentation/home_provider.dart';
-import 'package:animewitcher/features/home/presentation/home_state.dart';
-import 'package:animewitcher/shared/widgets/taskbar_visibility.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/extensions/extension_manager.dart';
+import 'package:otakuflqma/core/router/app_router.dart';
+import 'package:otakuflqma/features/home/presentation/home_provider.dart';
+import 'package:otakuflqma/features/home/presentation/home_state.dart';
+import 'package:otakuflqma/shared/widgets/taskbar_visibility.dart';
 
 import 'news_list_screen.dart';
 import 'news_utils.dart';

@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/utils/artwork_host_fallback.dart';
+import 'package:otakuflqma/core/utils/artwork_host_fallback.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

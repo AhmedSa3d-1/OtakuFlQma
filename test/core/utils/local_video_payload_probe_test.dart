@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:animewitcher/core/utils/local_video_payload_probe.dart';
+import 'package:otakuflqma/core/utils/local_video_payload_probe.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

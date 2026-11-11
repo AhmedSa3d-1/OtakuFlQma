@@ -1,8 +1,8 @@
-import 'package:animewitcher/core/providers/device_info_provider.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/features/settings/presentation/app_version_provider.dart';
-import 'package:animewitcher/features/settings/presentation/settings_screen.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/core/providers/device_info_provider.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/features/settings/presentation/app_version_provider.dart';
+import 'package:otakuflqma/features/settings/presentation/settings_screen.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:animewitcher/features/player/data/anime4k_metal_bridge.dart';
-import 'package:animewitcher/features/player/data/anime4k_performance.dart';
+import 'package:otakuflqma/features/player/data/anime4k_metal_bridge.dart';
+import 'package:otakuflqma/features/player/data/anime4k_performance.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

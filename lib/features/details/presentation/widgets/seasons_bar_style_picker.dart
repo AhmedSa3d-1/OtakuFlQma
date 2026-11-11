@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:animewitcher/shared/widgets/glass_dialog.dart';
+import 'package:otakuflqma/shared/widgets/glass_dialog.dart';
 
 import 'details_seasons_bar.dart';
 

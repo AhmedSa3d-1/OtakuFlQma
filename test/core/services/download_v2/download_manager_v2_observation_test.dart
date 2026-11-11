@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:animewitcher/core/services/download_v2/background_downloader_gateway.dart';
-import 'package:animewitcher/core/services/download_v2/download_manager_v2.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_diagnostics.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_identity.dart';
-import 'package:animewitcher/core/services/download_v2/download_v2_models.dart';
-import 'package:animewitcher/core/services/download_v2/logical_download_store_v2.dart';
+import 'package:otakuflqma/core/services/download_v2/background_downloader_gateway.dart';
+import 'package:otakuflqma/core/services/download_v2/download_manager_v2.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_diagnostics.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_identity.dart';
+import 'package:otakuflqma/core/services/download_v2/download_v2_models.dart';
+import 'package:otakuflqma/core/services/download_v2/logical_download_store_v2.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'download_v2_test_support.dart';

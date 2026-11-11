@@ -1,8 +1,8 @@
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/core/storage/manga_reading_repository.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
-import 'package:animewitcher/features/manga/presentation/widgets/manga_chapter_browse.dart';
-import 'package:animewitcher/features/manga/presentation/widgets/manga_chapter_list.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/core/storage/manga_reading_repository.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
+import 'package:otakuflqma/features/manga/presentation/widgets/manga_chapter_browse.dart';
+import 'package:otakuflqma/features/manga/presentation/widgets/manga_chapter_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

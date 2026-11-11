@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/search/presentation/search_domain.dart';
+import 'package:otakuflqma/features/search/presentation/search_domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

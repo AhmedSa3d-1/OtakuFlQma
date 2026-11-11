@@ -1,5 +1,5 @@
-import 'package:animewitcher/features/manga/reader/manga_reader_settings.dart';
-import 'package:animewitcher/features/manga/reader/widgets/manga_reader_settings_panel.dart';
+import 'package:otakuflqma/features/manga/reader/manga_reader_settings.dart';
+import 'package:otakuflqma/features/manga/reader/widgets/manga_reader_settings_panel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

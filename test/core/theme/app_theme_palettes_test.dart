@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
-import 'package:animewitcher/core/theme/app_theme.dart';
-import 'package:animewitcher/core/theme/theme_provider.dart';
+import 'package:otakuflqma/core/theme/app_theme.dart';
+import 'package:otakuflqma/core/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:animewitcher/core/services/download_diagnostic_log.dart';
+import 'package:otakuflqma/core/services/download_diagnostic_log.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 Future<List<Map<String, dynamic>>> _readRows(DownloadDiagnosticLog log) async {

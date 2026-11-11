@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:animewitcher/core/services/download_v2/download_persistent_storage_v2.dart';
-import 'package:animewitcher/core/storage/download_persistence_worker.dart';
+import 'package:otakuflqma/core/services/download_v2/download_persistent_storage_v2.dart';
+import 'package:otakuflqma/core/storage/download_persistence_worker.dart';
 import 'package:background_downloader/background_downloader.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;

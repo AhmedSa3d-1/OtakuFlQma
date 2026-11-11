@@ -1,4 +1,4 @@
-import 'package:animewitcher/core/utils/responsive_breakpoints.dart';
+import 'package:otakuflqma/core/utils/responsive_breakpoints.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

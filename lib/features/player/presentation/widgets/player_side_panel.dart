@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:background_downloader/background_downloader.dart';
 import 'package:collection/collection.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 
 import '../../../../core/domain/entity/multimedia_item.dart';
 import '../../../../core/storage/history_repository.dart';
@@ -33,9 +33,9 @@ import '../../../details/presentation/widgets/download_progress_dialog.dart';
 import '../../../details/presentation/widgets/episode_action_chip.dart';
 import 'hotstar_player_style.dart';
 
-import 'package:animewitcher/core/utils/artwork_quality.dart';
-import 'package:animewitcher/core/utils/episode_label.dart';
-import 'package:animewitcher/core/utils/episode_order.dart';
+import 'package:otakuflqma/core/utils/artwork_quality.dart';
+import 'package:otakuflqma/core/utils/episode_label.dart';
+import 'package:otakuflqma/core/utils/episode_order.dart';
 
 const List<Shadow> _kGlassTextShadow = [
   Shadow(color: Colors.black54, offset: Offset(0, 1.5), blurRadius: 3.0),

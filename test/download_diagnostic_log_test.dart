@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:animewitcher/core/services/download_diagnostic_log.dart';
+import 'package:otakuflqma/core/services/download_diagnostic_log.dart';
 
 void main() {
   late Directory directory;

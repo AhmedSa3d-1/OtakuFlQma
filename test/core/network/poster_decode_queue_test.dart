@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:animewitcher/core/network/poster_decode_queue.dart';
+import 'package:otakuflqma/core/network/poster_decode_queue.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 class _Frame implements ui.FrameInfo {

@@ -1,8 +1,8 @@
-import 'package:animewitcher/features/search/presentation/search_domain.dart';
-import 'package:animewitcher/features/search/presentation/search_provider.dart';
-import 'package:animewitcher/features/search/presentation/widgets/search_header_bar.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
-import 'package:animewitcher/shared/widgets/apple_liquid_glass.dart';
+import 'package:otakuflqma/features/search/presentation/search_domain.dart';
+import 'package:otakuflqma/features/search/presentation/search_provider.dart';
+import 'package:otakuflqma/features/search/presentation/widgets/search_header_bar.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/apple_liquid_glass.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/foundation.dart';

@@ -405,7 +405,7 @@ class AppSideMenuPanel extends ConsumerWidget {
     final cover = profile?.coverUrl?.trim() ?? '';
     final title = profile == null
         ? 'تسجيل الدخول'
-        : (userName.isNotEmpty ? userName : 'AnimeWitcher');
+        : (userName.isNotEmpty ? userName : 'OtakuFlQma');
     final subtitle = profile == null ? 'مزامنة القوائم والتقدم' : '';
 
     return Material(

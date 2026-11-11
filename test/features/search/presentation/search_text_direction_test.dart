@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/search/presentation/search_text_direction.dart';
+import 'package:otakuflqma/features/search/presentation/search_text_direction.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 

@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/utils/artwork_quality.dart';
-import 'package:animewitcher/shared/widgets/cards_wrapper.dart';
-import 'package:animewitcher/shared/widgets/paged_rail.dart';
-import 'package:animewitcher/shared/widgets/shimmer_placeholder.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/utils/artwork_quality.dart';
+import 'package:otakuflqma/shared/widgets/cards_wrapper.dart';
+import 'package:otakuflqma/shared/widgets/paged_rail.dart';
+import 'package:otakuflqma/shared/widgets/shimmer_placeholder.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:animewitcher/shared/widgets/multimedia_card.dart';
+import 'package:otakuflqma/shared/widgets/multimedia_card.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'countdown_unit_visibility.dart';

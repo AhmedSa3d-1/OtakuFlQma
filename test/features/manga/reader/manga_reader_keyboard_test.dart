@@ -1,4 +1,4 @@
-import 'package:animewitcher/features/manga/reader/manga_reader_keyboard_handler.dart';
+import 'package:otakuflqma/features/manga/reader/manga_reader_keyboard_handler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 

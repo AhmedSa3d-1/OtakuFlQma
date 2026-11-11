@@ -1,5 +1,5 @@
-name: animewitcher
-description: "A new Flutter project."
+name: otakuflqma
+description: "OtakuFlQma - Arabic-first anime platform."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to use `flutter pub publish`.
@@ -8,7 +8,7 @@ version: 1.6.6+7
 
 environment:
   # background_downloader 9.6+ requires Dart 3.13 and provides the Transfers
-  # API used by AnimeWitcher's native single-file transport.
+  # API used by OtakuFlQma's native single-file transport.
   sdk: ^3.13.0
 
 dependencies:

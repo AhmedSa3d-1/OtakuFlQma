@@ -1,8 +1,8 @@
-import 'package:animewitcher/shared/widgets/multimedia_card.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/core/utils/catalog_rating.dart';
-import 'package:animewitcher/core/theme/app_theme.dart';
-import 'package:animewitcher/l10n/generated/app_localizations.dart';
+import 'package:otakuflqma/shared/widgets/multimedia_card.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/core/utils/catalog_rating.dart';
+import 'package:otakuflqma/core/theme/app_theme.dart';
+import 'package:otakuflqma/l10n/generated/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

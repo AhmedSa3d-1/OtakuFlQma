@@ -2,23 +2,23 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import 'package:animewitcher/shared/widgets/app_side_menu.dart';
-import 'package:animewitcher/core/navigation/taskbar_destination.dart';
-import 'package:animewitcher/core/navigation/home_tab_reselection.dart';
+import 'package:otakuflqma/shared/widgets/app_side_menu.dart';
+import 'package:otakuflqma/core/navigation/taskbar_destination.dart';
+import 'package:otakuflqma/core/navigation/home_tab_reselection.dart';
 
 import '../../settings/presentation/general_settings_provider.dart';
 
-import 'package:animewitcher/shared/widgets/mouse_drag_refresh_indicator.dart';
+import 'package:otakuflqma/shared/widgets/mouse_drag_refresh_indicator.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:animewitcher/core/navigation/app_layout_style.dart';
+import 'package:otakuflqma/core/navigation/app_layout_style.dart';
 
 import 'home_provider.dart';
 import 'home_section_titles.dart';
 import 'home_state.dart';
 import '../../news/presentation/open_news.dart';
 
-import 'package:animewitcher/features/home/presentation/widgets/continue_watching_section.dart';
-import 'package:animewitcher/features/library/presentation/history_provider.dart';
+import 'package:otakuflqma/features/home/presentation/widgets/continue_watching_section.dart';
+import 'package:otakuflqma/features/library/presentation/history_provider.dart';
 
 import 'widgets/home_hero_carousel.dart';
 import 'widgets/home_hero_layout.dart';
@@ -29,9 +29,9 @@ import '../../../shared/widgets/loading_indicator.dart';
 
 import '../../../l10n/generated/app_localizations.dart';
 
-import 'package:animewitcher/core/extensions/extension_manager.dart';
-import 'package:animewitcher/core/extensions/base_provider.dart';
-import 'package:animewitcher/core/router/app_router.dart';
+import 'package:otakuflqma/core/extensions/extension_manager.dart';
+import 'package:otakuflqma/core/extensions/base_provider.dart';
+import 'package:otakuflqma/core/router/app_router.dart';
 
 import '../../../shared/widgets/shimmer_placeholder.dart';
 import '../../../shared/widgets/anime_catalog_shimmer.dart';
@@ -44,14 +44,14 @@ import '../../../../core/providers/device_info_provider.dart';
 import 'widgets/news_section.dart';
 import '../../../shared/widgets/taskbar_visibility.dart';
 
-import 'package:animewitcher/features/news/presentation/news_list_screen.dart';
-import 'package:animewitcher/features/news/presentation/news_utils.dart';
-import 'package:animewitcher/core/domain/entity/manga.dart';
-import 'package:animewitcher/core/domain/entity/multimedia_item.dart';
-import 'package:animewitcher/features/search/data/mal_rankings.dart';
-import 'package:animewitcher/features/manga/presentation/manga_home_prefetch.dart';
-import 'package:animewitcher/core/network/poster_cache.dart';
-import 'package:animewitcher/core/utils/localized_text.dart';
+import 'package:otakuflqma/features/news/presentation/news_list_screen.dart';
+import 'package:otakuflqma/features/news/presentation/news_utils.dart';
+import 'package:otakuflqma/core/domain/entity/manga.dart';
+import 'package:otakuflqma/core/domain/entity/multimedia_item.dart';
+import 'package:otakuflqma/features/search/data/mal_rankings.dart';
+import 'package:otakuflqma/features/manga/presentation/manga_home_prefetch.dart';
+import 'package:otakuflqma/core/network/poster_cache.dart';
+import 'package:otakuflqma/core/utils/localized_text.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});

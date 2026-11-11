@@ -1,6 +1,6 @@
-import 'package:animewitcher/core/services/download_concurrency.dart';
-import 'package:animewitcher/core/services/download_parallel.dart';
-import 'package:animewitcher/core/storage/storage_service.dart';
+import 'package:otakuflqma/core/services/download_concurrency.dart';
+import 'package:otakuflqma/core/services/download_parallel.dart';
+import 'package:otakuflqma/core/storage/storage_service.dart';
 
 /// In-memory settings box for download-queue tests. Only settings getters
 /// used by Settings / DownloadService wiring are implemented.
