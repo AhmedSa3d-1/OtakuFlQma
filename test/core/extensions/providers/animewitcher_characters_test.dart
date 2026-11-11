@@ -14,7 +14,10 @@ class _TestStorageService extends StorageService {
 }
 
 AnimeWitcherNativeProvider _provider(Dio dio) =>
-    AnimeWitcherNativeProvider(dio, SettingsRepository(_TestStorageService()));
+    AnimeWitcherNativeProvider(
+      dio,
+      settingsRepository: SettingsRepository(_TestStorageService()),
+    );
 
 class _RecordedDio {
   _RecordedDio(this.dio, this.requests);
@@ -473,7 +476,11 @@ void main() {
     final document = await _provider(stub.dio).getCharacterDocument('417');
     final shows = await _provider(stub.dio).getCharacterAnimes(document!);
 
-    expect(document.animes.map((item) => item.malId).toList(), <String>[
+    expect(
+      document.animes
+          .map<String>((AnimeWitcherCharacterAnimeRef item) => item.malId)
+          .toList(),
+      <String>[
       '1575',
       '13759',
     ]);

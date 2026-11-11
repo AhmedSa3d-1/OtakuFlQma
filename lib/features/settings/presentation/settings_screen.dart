@@ -1,14 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:animewitcher/core/navigation/taskbar_destination.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'widgets/download_log_dialog.dart';
 
 import 'package:animewitcher/shared/widgets/app_page_header.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/utils/layout_constants.dart';
 import '../../../core/utils/responsive_breakpoints.dart';
@@ -225,26 +224,6 @@ class SettingsScreen extends ConsumerWidget {
               ref,
               generalSettings.defaultHomeScreen,
             ),
-          ),
-          SettingsTile(
-            key: const ValueKey<String>('settings-manga-tab'),
-            icon: Icons.menu_book_rounded,
-            title: 'قسم المانجا منفصل',
-            subtitle: 'المانجا في الشريط بقسم خاص بدل الصفحة الرئيسية',
-            trailing: Switch(
-              value: !generalSettings.hiddenTaskbarItems.contains(
-                TaskbarDestination.manga.id,
-              ),
-              onChanged: (show) =>
-                  ref.read(generalSettingsProvider.notifier).setMangaTab(show),
-            ),
-            onTap: () => ref
-                .read(generalSettingsProvider.notifier)
-                .setMangaTab(
-                  generalSettings.hiddenTaskbarItems.contains(
-                    TaskbarDestination.manga.id,
-                  ),
-                ),
           ),
           SettingsTile(
             icon: Icons.dashboard_customize_rounded,

@@ -5,6 +5,8 @@
 /// without competing for the same top-row button.
 library;
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../../../home/presentation/widgets/home_section_header.dart';

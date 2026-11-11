@@ -139,7 +139,8 @@ class _DetailsLoadFailureState extends State<_DetailsLoadFailure> {
               OutlinedButton.icon(
                 onPressed: () {
                   if (GoRouter.maybeOf(context) == null) return;
-                  const DownloadsRoute().go(context);
+                  // Downloads route removed in new 4-tab structure.
+                  // const DownloadsRoute().go(context);
                 },
                 icon: const Icon(Icons.download_for_offline_rounded),
                 label: Text(

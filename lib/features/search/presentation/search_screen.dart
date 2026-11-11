@@ -4,7 +4,6 @@ import 'package:animewitcher/shared/widgets/app_side_menu.dart';
 import 'package:animewitcher/shared/widgets/app_search_field.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:animewitcher/core/navigation/taskbar_destination.dart';
 
 import '../../../core/account/animewitcher_character_models.dart';
 import '../../../core/utils/layout_constants.dart';
@@ -671,12 +670,9 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
     );
 
     // These glass controls belong to this row, not the persistent overlay.
+    // Search is no longer a shell branch; keep it as a standalone page.
     if (!usePersistentGlass) return withBack;
-    return ApplePersistentGlassHeaderScope(
-      branchIndex: TaskbarDestination.search.branchIndex,
-      trailingButtons: const <AppleLiquidGlassToolbarButton>[],
-      child: withBack,
-    );
+    return withBack;
   }
 
   /// How far the floating search controls reach down the window. Content
@@ -840,7 +836,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
         return belowHeader(
           RecoverableNetworkState(
             onRetry: _retrySearch,
-            onOpenDownloads: () => const DownloadsRoute().go(context),
+            onOpenDownloads: () {},
           ),
         );
       }
@@ -879,7 +875,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
       return belowHeader(
         RecoverableNetworkState(
           onRetry: _retrySearch,
-          onOpenDownloads: () => const DownloadsRoute().go(context),
+          onOpenDownloads: () {},
         ),
       );
     }
@@ -960,7 +956,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
       return clearOfHeader(
         RecoverableNetworkState(
           onRetry: _retrySearch,
-          onOpenDownloads: () => const DownloadsRoute().go(context),
+          onOpenDownloads: () {},
         ),
       );
     }

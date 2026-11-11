@@ -163,7 +163,10 @@ bool _isAlgolia(Uri uri) =>
 }
 
 AnimeWitcherNativeProvider _provider(Dio dio) =>
-    AnimeWitcherNativeProvider(dio, SettingsRepository(_TestStorageService()));
+    AnimeWitcherNativeProvider(
+      dio,
+      settingsRepository: SettingsRepository(_TestStorageService()),
+    );
 
 Map<String, String> _queryParams(RequestOptions options) {
   if (options.uri.query.isNotEmpty) return options.uri.queryParameters;

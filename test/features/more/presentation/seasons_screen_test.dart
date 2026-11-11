@@ -51,7 +51,7 @@ class _MemoryStorage extends StorageService {
 }
 
 class _StubSeasonsProvider extends AnimeWitcherNativeProvider {
-  _StubSeasonsProvider() : super(Dio(), SettingsRepository(_MemoryStorage()));
+  _StubSeasonsProvider() : super(Dio(), settingsRepository: SettingsRepository(_MemoryStorage()));
 
   static const String past = 'ربيع عام 2026';
   static const String current = 'صيف عام 2026';

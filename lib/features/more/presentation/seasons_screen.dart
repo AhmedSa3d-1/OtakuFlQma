@@ -503,7 +503,7 @@ class _SeasonGridState extends State<_SeasonGrid>
     }
     final future = _pager.loadNext(
       (offset) => widget.provider
-          .getSeasonPage(widget.season, offset: offset, limit: 30)
+          .getSeasonPage(widget.season, offset: offset)
           .then(
             (page) => (
               items: page.items,

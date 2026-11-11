@@ -135,7 +135,7 @@ class _FirstRunSetupScreenState extends ConsumerState<FirstRunSetupScreen> {
     }
     ref.read(seasonsBarStyleProvider.notifier).select(_seasons);
     if (_mangaTab != ref.read(mangaHasOwnTabProvider)) {
-      await ref.read(generalSettingsProvider.notifier).setMangaTab(_mangaTab);
+      // Manga tab removed in 4-tab restructure; no-op.
     }
 
     final settings = ref.read(playerSettingsProvider.notifier);

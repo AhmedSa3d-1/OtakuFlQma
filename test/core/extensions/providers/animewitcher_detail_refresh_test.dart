@@ -56,7 +56,7 @@ void main() {
     final stub = _stubDio();
     final provider = AnimeWitcherNativeProvider(
       stub.dio,
-      SettingsRepository(_TestStorageService()),
+      settingsRepository: SettingsRepository(_TestStorageService()),
     );
 
     final first = await provider.getDetails(url);

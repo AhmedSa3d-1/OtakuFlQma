@@ -121,7 +121,7 @@ class _CharacterDetailsScreenState
       final animes = await provider.getCharacterAnimes(document);
       if (!mounted) return;
       setState(() {
-        _animes = animes;
+        _animes = List<AnimeWitcherCharacterShow>.from(animes);
         _animesError = null;
         _animesLoading = false;
       });

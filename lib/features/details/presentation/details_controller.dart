@@ -1220,7 +1220,10 @@ class DetailsController extends _$DetailsController {
     return file != null;
   }
 
+  // The playback launcher needs a live BuildContext for navigation and
+  // dialogs, so this entry point intentionally accepts one.
   Future<void> handlePlayPress(
+    // ignore: avoid_build_context_in_providers
     BuildContext context,
     MultimediaItem details, {
     Episode? specificEpisode,

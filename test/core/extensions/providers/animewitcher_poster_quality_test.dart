@@ -172,7 +172,7 @@ List<String> _batchGetDocumentIds(RequestOptions request) {
 AnimeWitcherNativeProvider _provider(Dio dio, {bool highQuality = true}) =>
     AnimeWitcherNativeProvider(
       dio,
-      _PosterQualitySettingsRepository(highQuality: highQuality),
+      settingsRepository: _PosterQualitySettingsRepository(highQuality: highQuality),
     );
 
 Iterable<RequestOptions> _batchGets(List<RequestOptions> requests) =>

@@ -221,7 +221,7 @@ void main() {
       );
     final provider = AnimeWitcherNativeProvider(
       dio,
-      SettingsRepository(MemoryStorageService()),
+      settingsRepository: SettingsRepository(MemoryStorageService()),
     );
     final episodes = await provider.getEpisodes(
       'https://animewitcher.com/watch/show',

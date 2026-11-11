@@ -146,7 +146,10 @@ class _TestStorageService extends StorageService {
 }
 
 AnimeWitcherNativeProvider _provider(Dio dio) =>
-    AnimeWitcherNativeProvider(dio, SettingsRepository(_TestStorageService()));
+    AnimeWitcherNativeProvider(
+      dio,
+      settingsRepository: SettingsRepository(_TestStorageService()),
+    );
 
 RequestOptions _algoliaQuery(List<RequestOptions> requests) {
   return requests.singleWhere(

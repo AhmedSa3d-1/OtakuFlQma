@@ -34,7 +34,7 @@ MultimediaItem _manga(String title) => MultimediaItem(
 );
 
 final class _MangaSource extends AnimeWitcherNativeProvider {
-  _MangaSource() : super(Dio(), SettingsRepository(_Storage()));
+  _MangaSource() : super(Dio(), settingsRepository: SettingsRepository(_Storage()));
 
   int popularCalls = 0;
 

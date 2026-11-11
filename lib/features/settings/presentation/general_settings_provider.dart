@@ -30,7 +30,7 @@ class GeneralSettings {
     this.defaultHomeScreen = '/home',
     this.alwaysOnTop = false,
     this.taskbarOrder = defaultTaskbarOrderIds,
-    this.hiddenTaskbarItems = const <String>{'manga'},
+    this.hiddenTaskbarItems = const <String>{},
     this.downloadConcurrency = kDownloadConcurrencyDefault,
     this.downloadParallelParts = kDownloadPartsAuto,
     this.downloadNotifications = const DownloadNotificationPrefs(),
@@ -170,37 +170,6 @@ class GeneralSettingsNotifier extends _$GeneralSettingsNotifier {
     );
   }
 
-  /// Whether manga has a tab of its own in the navigation.
-  bool get mangaHasOwnTab =>
-      !state.hiddenTaskbarItems.contains(TaskbarDestination.manga.id);
-
-  /// Gives manga its own tab, after search, or takes it away again. Saving
-  /// the order with manga in it is what keeps the tab once shown.
-  Future<void> setMangaTab(bool show) {
-    final order = List<String>.of(state.taskbarOrder);
-    // The loaded order always has manga, appended at the end when it was
-    // never saved; only a saved place for it is the viewer's own.
-    final placed = ref
-        .read(settingsRepositoryProvider)
-        .getTaskbarOrder()
-        .contains(TaskbarDestination.manga.id);
-    if (!placed) {
-      order.remove(TaskbarDestination.manga.id);
-      final searchAt = order.indexOf(TaskbarDestination.search.id);
-      order.insert(
-        searchAt < 0 ? order.length : searchAt + 1,
-        TaskbarDestination.manga.id,
-      );
-    }
-    final hidden = Set<String>.of(state.hiddenTaskbarItems);
-    if (show) {
-      hidden.remove(TaskbarDestination.manga.id);
-    } else {
-      hidden.add(TaskbarDestination.manga.id);
-    }
-    return setTaskbarPreferences(order, hidden);
-  }
-
   Future<void> setAutoSelectStreamSource(bool enabled) async {
     await ref
         .read(settingsRepositoryProvider)
@@ -270,12 +239,5 @@ class GeneralSettingsNotifier extends _$GeneralSettingsNotifier {
 /// Settings that cannot load (a screen shown on its own, in a test) mean no
 /// tab, which is also the default.
 final mangaHasOwnTabProvider = Provider<bool>((ref) {
-  try {
-    return !ref
-        .watch(generalSettingsProvider)
-        .hiddenTaskbarItems
-        .contains(TaskbarDestination.manga.id);
-  } catch (_) {
-    return false;
-  }
+  return false;
 });

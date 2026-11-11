@@ -5,15 +5,14 @@ import 'package:flutter/foundation.dart';
 
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/search/presentation/search_screen.dart';
-import '../../features/library/presentation/library_screen.dart';
-import '../../features/library/presentation/downloads_screen.dart';
 import '../../features/settings/presentation/settings_screen.dart';
 import '../../features/details/presentation/details_screen.dart';
 import '../../features/manga/presentation/manga_details_screen.dart';
-import '../../features/manga/presentation/manga_home_screen.dart';
 import '../../features/manga/reader/manga_reader_screen.dart';
 import '../../features/player/presentation/player_screen.dart';
 import '../../features/home/presentation/view_all_screen.dart';
+import '../../features/schedule/presentation/schedule_screen.dart';
+import '../../features/community/presentation/community_screen.dart';
 import '../domain/entity/manga.dart';
 import '../domain/entity/multimedia_item.dart';
 import '../../shared/widgets/app_scaffold.dart';
@@ -53,30 +52,19 @@ abstract class _AppGoRouteData extends GoRouteData {
     TypedStatefulShellBranch<HomeBranchData>(
       routes: <TypedRoute<RouteData>>[TypedGoRoute<HomeRoute>(path: '/home')],
     ),
-    TypedStatefulShellBranch<SearchBranchData>(
+    TypedStatefulShellBranch<ScheduleBranchData>(
       routes: <TypedRoute<RouteData>>[
-        TypedGoRoute<SearchRoute>(path: '/search'),
+        TypedGoRoute<ScheduleRoute>(path: '/schedule'),
       ],
     ),
-    TypedStatefulShellBranch<LibraryBranchData>(
+    TypedStatefulShellBranch<CommunityBranchData>(
       routes: <TypedRoute<RouteData>>[
-        TypedGoRoute<LibraryRoute>(path: '/library'),
-      ],
-    ),
-    TypedStatefulShellBranch<DownloadsBranchData>(
-      routes: <TypedRoute<RouteData>>[
-        TypedGoRoute<DownloadsRoute>(path: '/downloads'),
+        TypedGoRoute<CommunityRoute>(path: '/community'),
       ],
     ),
     TypedStatefulShellBranch<SettingsBranchData>(
       routes: <TypedRoute<RouteData>>[
         TypedGoRoute<SettingsRoute>(path: '/settings'),
-      ],
-    ),
-    // Last, so the branches before it keep their numbers.
-    TypedStatefulShellBranch<MangaBranchData>(
-      routes: <TypedRoute<RouteData>>[
-        TypedGoRoute<MangaHomeRoute>(path: '/manga'),
       ],
     ),
   ],
@@ -116,37 +104,26 @@ class HomeRoute extends _AppGoRouteData with $HomeRoute {
   Widget build(BuildContext context, GoRouterState state) => const HomeScreen();
 }
 
-class SearchBranchData extends StatefulShellBranchData {
-  const SearchBranchData();
+class ScheduleBranchData extends StatefulShellBranchData {
+  const ScheduleBranchData();
 }
 
-class SearchRoute extends _AppGoRouteData with $SearchRoute {
-  const SearchRoute();
+class ScheduleRoute extends _AppGoRouteData with $ScheduleRoute {
+  const ScheduleRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
-      const SearchScreen();
+      const ScheduleScreen();
 }
 
-class LibraryBranchData extends StatefulShellBranchData {
-  const LibraryBranchData();
+class CommunityBranchData extends StatefulShellBranchData {
+  const CommunityBranchData();
 }
 
-class LibraryRoute extends _AppGoRouteData with $LibraryRoute {
-  const LibraryRoute();
+class CommunityRoute extends _AppGoRouteData with $CommunityRoute {
+  const CommunityRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
-      const LibraryScreen();
-}
-
-class DownloadsBranchData extends StatefulShellBranchData {
-  const DownloadsBranchData();
-}
-
-class DownloadsRoute extends _AppGoRouteData with $DownloadsRoute {
-  const DownloadsRoute();
-  @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const DownloadsScreen();
+      const CommunityScreen();
 }
 
 class SettingsBranchData extends StatefulShellBranchData {
@@ -159,15 +136,13 @@ class SettingsRoute extends _AppGoRouteData with $SettingsRoute {
   Widget build(BuildContext context, GoRouterState state) => const SettingsScreen();
 }
 
-class MangaBranchData extends StatefulShellBranchData {
-  const MangaBranchData();
-}
-
-class MangaHomeRoute extends _AppGoRouteData with $MangaHomeRoute {
-  const MangaHomeRoute();
+// Full-screen routes kept for navigation from home/search/details
+@TypedGoRoute<SearchRoute>(path: '/search')
+class SearchRoute extends _AppGoRouteData with $SearchRoute {
+  const SearchRoute();
   @override
   Widget build(BuildContext context, GoRouterState state) =>
-      const MangaHomeScreen();
+      const SearchScreen();
 }
 
 // --- Typed Extras ---

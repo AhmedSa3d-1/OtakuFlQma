@@ -14,7 +14,10 @@ class _TestStorageService extends StorageService {
 }
 
 AnimeWitcherNativeProvider _provider(Dio dio) =>
-    AnimeWitcherNativeProvider(dio, SettingsRepository(_TestStorageService()));
+    AnimeWitcherNativeProvider(
+      dio,
+      settingsRepository: SettingsRepository(_TestStorageService()),
+    );
 
 Dio _catalogDio({
   required int Function() homeSectionStatus,

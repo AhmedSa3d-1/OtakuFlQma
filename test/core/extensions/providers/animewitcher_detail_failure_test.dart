@@ -23,7 +23,10 @@ _FirestoreTarget _targetFor(RequestOptions options) {
 }
 
 AnimeWitcherNativeProvider _provider(Dio dio) =>
-    AnimeWitcherNativeProvider(dio, SettingsRepository(_TestStorageService()));
+    AnimeWitcherNativeProvider(
+      dio,
+      settingsRepository: SettingsRepository(_TestStorageService()),
+    );
 
 Dio _stubDio({
   required int Function(_FirestoreTarget target) statusFor,

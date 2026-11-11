@@ -37,7 +37,7 @@ AnimeWitcherNativeProvider _provider(
 }) =>
     AnimeWitcherNativeProvider(
       dio,
-      SettingsRepository(storage ?? _MemoryStorageService()),
+      settingsRepository: SettingsRepository(storage ?? _MemoryStorageService()),
     );
 
 const String _browseAppId = 'BROWSEAPPID';

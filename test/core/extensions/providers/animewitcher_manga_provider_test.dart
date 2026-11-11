@@ -347,7 +347,10 @@ ${isB ? 'الفصل 30' : 'الفصل 20'}
 }
 
 AnimeWitcherNativeProvider _provider(Dio dio) =>
-    AnimeWitcherNativeProvider(dio, SettingsRepository(_TestStorageService()));
+    AnimeWitcherNativeProvider(
+      dio,
+      settingsRepository: SettingsRepository(_TestStorageService()),
+    );
 
 void main() {
   test('native provider advertises manga support', () {

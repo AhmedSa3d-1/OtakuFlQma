@@ -33,7 +33,7 @@ class _MemoryStorage extends StorageService {
 
 class _DelayedSeasonsProvider extends AnimeWitcherNativeProvider {
   _DelayedSeasonsProvider(this.gate)
-    : super(Dio(), SettingsRepository(_MemoryStorage()));
+    : super(Dio(), settingsRepository: SettingsRepository(_MemoryStorage()));
 
   final Completer<void> gate;
 

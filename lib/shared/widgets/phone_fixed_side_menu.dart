@@ -9,8 +9,6 @@ import '../../features/more/presentation/global_statistics_screen.dart';
 import '../../features/more/presentation/recent_watched_screen.dart';
 import '../../features/more/presentation/seasons_screen.dart';
 import '../../features/news/presentation/open_news.dart';
-import '../../features/search/presentation/search_domain.dart';
-import '../../features/settings/presentation/settings_screen.dart';
 import 'app_side_menu.dart';
 
 /// The phone side menu has a product-defined order. It deliberately does not
@@ -21,8 +19,6 @@ List<AppSideMenuEntry> phoneFixedSideMenuEntries(
   required int currentBranchIndex,
   required ValueChanged<TaskbarDestination> onDestination,
 }) {
-  final currentDomain = ref.watch(searchDomainProvider);
-
   void open(Widget page) {
     Navigator.of(
       context,
@@ -30,16 +26,14 @@ List<AppSideMenuEntry> phoneFixedSideMenuEntries(
     ).push(MaterialPageRoute<void>(builder: (_) => page));
   }
 
-  void openSearch(SearchDomain domain) {
-    ref.read(searchDomainProvider.notifier).set(domain);
-    onDestination(TaskbarDestination.search);
+  void openSearch() {
+    // Search is now a full-screen route, not a tab branch.
+    // Keep it accessible from the side menu.
+    Navigator.of(context, rootNavigator: true).pushNamed('/search');
   }
 
   bool selectedBranch(TaskbarDestination destination) =>
       currentBranchIndex == destination.branchIndex;
-
-  bool selectedSearch(SearchDomain domain) =>
-      selectedBranch(TaskbarDestination.search) && currentDomain == domain;
 
   return <AppSideMenuEntry>[
     AppSideMenuEntry(
@@ -52,37 +46,40 @@ List<AppSideMenuEntry> phoneFixedSideMenuEntries(
       onTap: () => onDestination(TaskbarDestination.home),
     ),
     AppSideMenuEntry(
-      id: 'anime-search',
-      icon: Icons.movie_rounded,
-      label: 'الأنمي',
-      selected: selectedSearch(SearchDomain.anime),
-      onTap: () => openSearch(SearchDomain.anime),
+      id: 'schedule',
+      icon: selectedBranch(TaskbarDestination.schedule)
+          ? Icons.calendar_today
+          : Icons.calendar_today_outlined,
+      label: 'الجدول',
+      selected: selectedBranch(TaskbarDestination.schedule),
+      onTap: () => onDestination(TaskbarDestination.schedule),
     ),
     AppSideMenuEntry(
-      id: 'manga-search',
-      icon: Icons.menu_book_rounded,
-      label: 'المانجا',
-      selected: selectedSearch(SearchDomain.manga),
-      onTap: () => openSearch(SearchDomain.manga),
+      id: 'search',
+      icon: Icons.search_rounded,
+      label: 'البحث',
+      onTap: openSearch,
     ),
     AppSideMenuEntry(
-      id: 'animation-search',
-      icon: Icons.animation_rounded,
-      label: 'الانميشن',
-      selected: selectedSearch(SearchDomain.animation),
-      onTap: () => openSearch(SearchDomain.animation),
+      id: 'community',
+      icon: selectedBranch(TaskbarDestination.community)
+          ? Icons.forum
+          : Icons.forum_outlined,
+      label: 'المجتمع',
+      selected: selectedBranch(TaskbarDestination.community),
+      onTap: () => onDestination(TaskbarDestination.community),
     ),
     AppSideMenuEntry(
       id: 'seasons',
       icon: Icons.calendar_month_rounded,
       label: 'المواسم',
+      dividerBefore: true,
       onTap: () => open(const SeasonsScreen()),
     ),
     AppSideMenuEntry(
       id: 'global-statistics',
       icon: Icons.query_stats_rounded,
       label: 'الإحصائيات العالمية',
-      dividerBefore: true,
       onTap: () => open(const GlobalStatisticsScreen()),
     ),
     AppSideMenuEntry(
@@ -92,14 +89,17 @@ List<AppSideMenuEntry> phoneFixedSideMenuEntries(
       onTap: () => open(const ComingSoonScreen()),
     ),
     AppSideMenuEntry(
-      id: 'library',
-      icon: selectedBranch(TaskbarDestination.library)
-          ? Icons.video_library_rounded
-          : Icons.video_library_outlined,
-      label: 'المكتبة',
-      selected: selectedBranch(TaskbarDestination.library),
+      id: 'recent-watched',
+      icon: Icons.history_rounded,
+      label: 'آخر المشاهدات',
       dividerBefore: true,
-      onTap: () => onDestination(TaskbarDestination.library),
+      onTap: () => open(const RecentWatchedScreen()),
+    ),
+    AppSideMenuEntry(
+      id: 'characters',
+      icon: Icons.groups_rounded,
+      label: 'الشخصيات',
+      onTap: () => open(const CharactersScreen(favoritesOnly: false)),
     ),
     AppSideMenuEntry(
       id: 'favorite-characters',
@@ -108,23 +108,10 @@ List<AppSideMenuEntry> phoneFixedSideMenuEntries(
       onTap: () => open(const CharactersScreen(favoritesOnly: true)),
     ),
     AppSideMenuEntry(
-      id: 'recent-watched',
-      icon: Icons.history_rounded,
-      label: 'آخر المشاهدات',
-      onTap: () => open(const RecentWatchedScreen()),
-    ),
-    AppSideMenuEntry(
-      id: 'characters-search',
-      icon: Icons.groups_rounded,
-      label: 'الشخصيات',
-      selected: selectedSearch(SearchDomain.characters),
-      dividerBefore: true,
-      onTap: () => openSearch(SearchDomain.characters),
-    ),
-    AppSideMenuEntry(
       id: 'broadcast-schedule',
       icon: Icons.calendar_month_rounded,
       label: 'جدول الحلقات',
+      dividerBefore: true,
       onTap: () => open(const BroadcastScheduleScreen()),
     ),
     AppSideMenuEntry(
@@ -138,7 +125,8 @@ List<AppSideMenuEntry> phoneFixedSideMenuEntries(
       icon: Icons.settings_rounded,
       label: 'الإعدادات',
       dividerBefore: true,
-      onTap: () => open(const SettingsScreen()),
+      selected: selectedBranch(TaskbarDestination.settings),
+      onTap: () => onDestination(TaskbarDestination.settings),
     ),
   ];
 }

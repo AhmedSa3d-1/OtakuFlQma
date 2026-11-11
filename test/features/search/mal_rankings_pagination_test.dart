@@ -29,7 +29,7 @@ class _Storage extends StorageService {
 }
 
 class _Catalogue extends AnimeWitcherNativeProvider {
-  _Catalogue(this.available) : super(Dio(), SettingsRepository(_Storage()));
+  _Catalogue(this.available) : super(Dio(), settingsRepository: SettingsRepository(_Storage()));
 
   final Set<int> available;
   final requestedIds = <List<int>>[];

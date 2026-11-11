@@ -87,7 +87,7 @@ void main() {
 
     final provider = AnimeWitcherNativeProvider(
       dio,
-      SettingsRepository(_TestStorageService()),
+      settingsRepository: SettingsRepository(_TestStorageService()),
     );
     final page = await provider.searchAnimationPage(
       'one',

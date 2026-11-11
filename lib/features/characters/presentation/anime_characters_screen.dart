@@ -66,7 +66,7 @@ class _AnimeCharactersScreenState extends ConsumerState<AnimeCharactersScreen> {
       setState(() {
         _cast
           ..clear()
-          ..addAll(cast);
+          ..addAll(cast.cast());
         _loading = false;
       });
     } catch (error) {

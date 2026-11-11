@@ -359,7 +359,7 @@ final class _MangaChapterTransportHandle implements MangaChapterTransportHandleV
       );
       final handle = await startPage(pageTask);
       _startingIndexes.remove(index);
-      _startingPages.remove(index);
+      unawaited(_startingPages.remove(index));
       if (_disposed) return;
       if (_canceled || generation != _generation || _current.isFinal) {
         await handle.cancel();
@@ -391,7 +391,7 @@ final class _MangaChapterTransportHandle implements MangaChapterTransportHandleV
       }
     } catch (error) {
       _startingIndexes.remove(index);
-      _startingPages.remove(index);
+      unawaited(_startingPages.remove(index));
       if (!_canceled && generation == _generation && !_current.isFinal) {
         await _fail(
           category: DownloadFailureCategory.transport,

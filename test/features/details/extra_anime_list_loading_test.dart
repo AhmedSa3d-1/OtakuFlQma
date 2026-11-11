@@ -30,7 +30,7 @@ void main() {
     final gate = Completer<List<MultimediaItem>>();
     final provider = AnimeWitcherNativeProvider(
       Dio(),
-      SettingsRepository(_MemoryStorage()),
+      settingsRepository: SettingsRepository(_MemoryStorage()),
     );
     await tester.pumpWidget(
       ProviderScope(

@@ -22,7 +22,7 @@ class _MemoryStorage extends StorageService {
 }
 
 class _HangingProvider extends AnimeWitcherNativeProvider {
-  _HangingProvider() : super(Dio(), SettingsRepository(_MemoryStorage()));
+  _HangingProvider() : super(Dio(), settingsRepository: SettingsRepository(_MemoryStorage()));
 
   final Completer<ProviderMediaPage> gate = Completer<ProviderMediaPage>();
 

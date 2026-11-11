@@ -170,7 +170,7 @@ void main() {
         episodes: [_episode.copyWith(serverName: label)],
       );
       final container = ProviderContainer(overrides: [
-        detailsControllerProvider(show.url).overrideWith((ref) => _Details(show)),
+        detailsControllerProvider(show.url).overrideWith(() => _Details(show)),
         historyRepositoryProvider.overrideWithValue(
           _History(position: 40000, duration: 100000),
         ),
@@ -245,7 +245,7 @@ void main() {
           downloadedFilesProvider.overrideWith(() => _Files(
             cached: otherStatus == TaskStatus.complete ? File('/tmp/retained-complete.mp4') : null,
           )),
-          detailsControllerProvider.overrideWith(() => _Details(_show)),
+          detailsControllerProvider(_show.url).overrideWith(() => _Details(_show)),
           playerControllerProvider.overrideWith(_Player.new),
           historyRepositoryProvider.overrideWithValue(_History()),
           episodeWatchRepositoryProvider.overrideWithValue(_Watch()),

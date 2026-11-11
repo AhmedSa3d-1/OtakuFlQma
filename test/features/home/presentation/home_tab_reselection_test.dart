@@ -532,7 +532,10 @@ _pumpHome(
         () => _Layout(layout ?? AppLayoutStyle.dock),
       ),
       activeProviderProvider.overrideWithValue(
-        AnimeWitcherNativeProvider(Dio(), SettingsRepository(storage)),
+        AnimeWitcherNativeProvider(
+          Dio(),
+          settingsRepository: SettingsRepository(storage),
+        ),
       ),
       homeDataProvider.overrideWith(() => data),
       continueWatchingProvider.overrideWith(() => history),

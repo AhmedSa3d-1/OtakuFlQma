@@ -117,7 +117,7 @@ AnimeWitcherNativeProvider _provider({
 }) {
   return AnimeWitcherNativeProvider(
     dio ?? _stubDio(searchHits: _catalogHits),
-    SettingsRepository(_TestStorageService()),
+    settingsRepository: SettingsRepository(_TestStorageService()),
     isEcchiHidden: () => hideEcchi,
     resolveAnimeByMalIds: resolveAnimeByMalIds,
   );

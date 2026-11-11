@@ -609,7 +609,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
   Widget _buildErrorState(BuildContext context, WidgetRef ref) {
     return RecoverableNetworkState(
       onRetry: () => ref.read(homeDataProvider.notifier).retry(),
-      onOpenDownloads: () => const DownloadsRoute().go(context),
+      onOpenDownloads: () {},
     );
   }
 

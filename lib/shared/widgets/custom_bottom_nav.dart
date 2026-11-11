@@ -256,14 +256,13 @@ String _appleTabSymbol(
 }) {
   return switch (destination) {
     TaskbarDestination.home => selected ? 'house.fill' : 'house',
-    TaskbarDestination.search => 'magnifyingglass',
-    TaskbarDestination.library =>
-      selected ? 'rectangle.stack.fill' : 'rectangle.stack',
-    TaskbarDestination.downloads =>
-      selected ? 'arrow.down.circle.fill' : 'arrow.down.circle',
-    TaskbarDestination.settings =>
-      selected ? 'ellipsis.circle.fill' : 'ellipsis.circle',
+    TaskbarDestination.search => selected ? 'magnifyingglass' : 'magnifyingglass',
+    TaskbarDestination.schedule => selected ? 'calendar' : 'calendar',
+    TaskbarDestination.community => selected ? 'bubble.left.and.bubble.right.fill' : 'bubble.left.and.bubble.right',
+    TaskbarDestination.library => selected ? 'book.fill' : 'book',
     TaskbarDestination.manga => selected ? 'book.fill' : 'book',
+    TaskbarDestination.downloads => selected ? 'arrow.down.circle.fill' : 'arrow.down.circle',
+    TaskbarDestination.settings => selected ? 'ellipsis.circle.fill' : 'ellipsis.circle',
   };
 }
 

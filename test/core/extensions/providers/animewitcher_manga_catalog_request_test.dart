@@ -66,7 +66,7 @@ void main() {
     final searches = <String>[];
     final provider = AnimeWitcherNativeProvider(
       _server(searches),
-      SettingsRepository(_Storage()),
+      settingsRepository: SettingsRepository(_Storage()),
     );
 
     final page = await provider.searchMangaPage(

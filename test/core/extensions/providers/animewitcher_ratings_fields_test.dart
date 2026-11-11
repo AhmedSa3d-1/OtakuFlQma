@@ -76,7 +76,7 @@ void main() {
           'state': _stringField('مستمر'),
         }),
       }),
-      SettingsRepository(_TestStorageService()),
+      settingsRepository: SettingsRepository(_TestStorageService()),
     );
 
     final item = await provider.getDetails(url);
@@ -100,7 +100,7 @@ void main() {
           'state': _stringField('لم يتم بثه بعد'),
         }),
       }),
-      SettingsRepository(_TestStorageService()),
+      settingsRepository: SettingsRepository(_TestStorageService()),
     );
 
     final item = await provider.getDetails(url);
@@ -120,7 +120,7 @@ void main() {
           'state': _stringField('مكتمل'),
         }),
       }),
-      SettingsRepository(_TestStorageService()),
+      settingsRepository: SettingsRepository(_TestStorageService()),
     );
 
     final item = await provider.getDetails(url);
@@ -137,7 +137,7 @@ void main() {
           'duration': _stringField('٢٤ دقيقة'),
         }),
       }),
-      SettingsRepository(_TestStorageService()),
+      settingsRepository: SettingsRepository(_TestStorageService()),
     );
 
     final item = await provider.getDetails(url);
@@ -152,7 +152,7 @@ void main() {
         'reviews_closed': _boolField(true),
         'rating': _mapField(<String, dynamic>{'rate': _doubleField(6)}),
       }),
-      SettingsRepository(_TestStorageService()),
+      settingsRepository: SettingsRepository(_TestStorageService()),
     );
 
     final item = await provider.getDetails(url);

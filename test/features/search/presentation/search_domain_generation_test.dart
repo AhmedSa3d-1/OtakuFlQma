@@ -23,7 +23,7 @@ final class _TestStorageService extends StorageService {
 
 final class _DeferredSearchProvider extends AnimeWitcherNativeProvider {
   _DeferredSearchProvider()
-    : super(Dio(), SettingsRepository(_TestStorageService()));
+    : super(Dio(), settingsRepository: SettingsRepository(_TestStorageService()));
 
   final Completer<ProviderMediaPage> anime = Completer<ProviderMediaPage>();
   final Completer<ProviderMediaPage> manga = Completer<ProviderMediaPage>();

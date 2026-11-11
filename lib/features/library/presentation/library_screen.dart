@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:animewitcher/core/navigation/taskbar_destination.dart';
 
 import '../../../core/providers/device_info_provider.dart';
 import '../../../core/storage/library_category.dart';
@@ -80,11 +79,7 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
 
     const phone = LibraryPhoneShelves();
     if (!appleUsesPersistentLiquidGlassHeader) return phone;
-    return ApplePersistentGlassHeaderScope(
-      branchIndex: TaskbarDestination.library.branchIndex,
-      trailingButtons: const <AppleLiquidGlassToolbarButton>[],
-      child: phone,
-    );
+    return phone;
   }
 
   Widget _buildWide(BuildContext context) {
